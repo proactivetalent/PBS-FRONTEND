@@ -66,5 +66,5 @@ export const navItems = [
     ],
   },
    { name: "Contact us", link: "/contacts" },
- {name: "Member Portal", link: `${process.env.NEXT_PUBLIC_API_URL}/portal/login`},
+ {name: "Member Portal", link: `${process.env.NEXT_PUBLIC_API_URL}portal/login`},
 ];
