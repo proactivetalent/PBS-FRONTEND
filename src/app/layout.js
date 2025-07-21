@@ -9,10 +9,11 @@ import { motion } from "framer-motion";
 import { MenuProvider } from "@/context/MenuContext";
 import { conthrax, gnuolane, poppins } from "@/lib/fonts";
 import { Suspense } from "react";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { UserProvider } from "@/context/UserContext";
-import {  usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
+import Script from "next/script";
 
 // export const metadata = {
 //   title: "PBS | Proactive Building Solutions",
@@ -30,6 +31,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"
+          strategy="afterInteractive"
+          async
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-54XWJQ7ZSL');
+  `}
+        </Script>
         <title>PBS | Proactive Building Solutions</title>
         <meta name="description" content="Proactive Building Solutions" />
         <link rel="icon" href="/icon.png" sizes="any" />
@@ -40,24 +54,24 @@ export default function RootLayout({ children }) {
         className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden bg-[#6C837D]`}
       >
         <UserProvider>
-            <MenuProvider>
-              <CustomErrorBoundary>
-                <PageLoader />
+          <MenuProvider>
+            <CustomErrorBoundary>
+              <PageLoader />
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
-                >
-                  {!pathname.startsWith("/portal/dashboard") && <Header />}
-                  {/* </motion.div> */}
-                  <Suspense fallback={<SplashScreen />}>{children}</Suspense>
-                  <Toaster position="top-right" />
-                  {!pathname.startsWith("/portal/dashboard") && <Footer />}
-                </motion.div>
-              </CustomErrorBoundary>
-            </MenuProvider>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+              >
+                 <Header />
+                {/* </motion.div> */}
+                <Suspense fallback={<SplashScreen />}>{children}</Suspense>
+                <Toaster position="top-right" />
+                 <Footer />
+              </motion.div>
+            </CustomErrorBoundary>
+          </MenuProvider>
         </UserProvider>
       </body>
     </html>
