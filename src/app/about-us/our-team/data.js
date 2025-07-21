@@ -49,7 +49,7 @@ export const leadershipTeam = [
 export const projectManagers = [
     {
         name: "Bill",
-        title: "Onsite Project Manager",
+        title: "Project Manager",
         description: "",
     },
     {
