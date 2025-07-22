@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 import toast from 'react-hot-toast'
-import axios from 'axios'
 import {apiRequest } from "@/utils/csrfHandler";
 
 export default function Page() {

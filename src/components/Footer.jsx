@@ -1,6 +1,9 @@
+'use client'
 import CustomImage from "@/app/CustomImage";
 import { DotIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import {apiRequest } from "@/utils/csrfHandler";
 
 /**
  * @typedef {Object} MenuSection
@@ -34,7 +37,8 @@ const Footer = () => {
    *
    * @type {MenuSection[]}
    */
-
+  const [email, setEmail] = useState('');
+  const [result, setResult] = useState('');
   const Router = useRouter();
   const menu = [
     {
@@ -94,6 +98,13 @@ const Footer = () => {
    * <div className="container mx-auto px-8 sm:px-0 relative z-10">
    */
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await apiRequest('post',`/subscribe`, {"widget-subscribe-form-email": email });
+    const data = await res.json();
+    setResult(data.message || 'Subscribed!');
+  };
+
   return (
     <div className="bg-brand-gray1 text-[#DCE2E2] py-10  lg:pb-0 lg:pt-10">
       <div className="md:w-[80vw] lg:w-full mx-auto">
@@ -135,9 +146,11 @@ const Footer = () => {
               Join our community to receive updates
             </p>
             {/* Email Subscription Form */}
-            <form className="relative overflow-hidden flex justify-center items-center w-full  lg:max-w-md ">
+            <form onSubmit = {(e)=>handleSubmit(e)} className="relative overflow-hidden flex justify-center items-center w-full  lg:max-w-md ">
               <input
                 type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="flex text-base px-4 py-2 rounded-2xl bg-white text-[#7A8E85] focus:outline-none w-5/6 md:w-4/6 lg:w-full"
                 aria-label="Email address"
@@ -150,6 +163,7 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
+            {result && <div className="text-sm font-semibold text-[#8AD5B7] mt-2 text-center">{result}</div>}
             <p className="text-sm font-semibold text-[#DCE2E2] mt-2 text-center">
               By subscribing, you agree to our Privacy Policy
             </p>
