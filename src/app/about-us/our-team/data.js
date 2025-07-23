@@ -10,9 +10,9 @@ export const leadershipTeam = [
         description: "A Strategic & Visionary Leader in PBS, Ali oversees PBS’s operational excellence and brings passion & strategic insight to PBS, her dedication to innovation and teamwork drives the company’s mission to Life.",
     },
     {
-        name: "Amanda Rojas",
-        title: "Construction manager & Head Expediting Consultant",
-        description: "Amanda Leads complex NYC projects with a focus on Code compliance and deadline mastery, As Head Expediting Consultant, she navigates DOB Hurdles, Securing approvals faster than industry averages.",
+        name: "Amanda Rojas",
+        title: "Construction Manager & Office Manager",
+        description: "Amanda oversees both field operations and administrative functions for the team. With a strong background in construction management and office leadership, she bridges the gap between job site coordination and internal operations. Her hands-on approach, attention to detail, and support to empowering women in construction help drive project success and a collaborative, efficient workplace.",
     },
     {
         name: "Ehsan Akram",
@@ -75,11 +75,11 @@ export const projectManagers = [
 ];
 
 export const specialists = [
-    {
-        name: "Amanda Rojas",
-        title: "Head Expediting Consultant",
-        description: "",
-    },
+    // {
+    //     name: "Amanda Rojas",
+    //     title: "Head Expediting Consultant",
+    //     description: "",
+    // },
     {
         name: "Said",
         title: "Alert Service Specialist",
@@ -107,7 +107,7 @@ export const specialists = [
     },
     {
         name: "Andrea Estrada",
-        title: "Admin Assistant",
+        title: "Head Expediting Consultant",
         description: "",
     },
     {

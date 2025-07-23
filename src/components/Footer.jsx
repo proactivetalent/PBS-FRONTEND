@@ -100,9 +100,14 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try{
     const res = await apiRequest('post',`/subscribe`, {"widget-subscribe-form-email": email });
     const data = await res.json();
     setResult(data.message || 'Subscribed!');
+    setEmail(''); // Clear the input field after successful submission
+    } catch (error) {
+      setResult(error.message || 'Subscription failed');
+    }
   };
 
   return (
@@ -150,7 +155,10 @@ const Footer = () => {
               <input
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) =>{ 
+                  setEmail(e.target.value)
+                  setResult('')
+                }}
                 placeholder="Enter your email"
                 className="flex text-base px-4 py-2 rounded-2xl bg-white text-[#7A8E85] focus:outline-none w-5/6 md:w-4/6 lg:w-full"
                 aria-label="Email address"
