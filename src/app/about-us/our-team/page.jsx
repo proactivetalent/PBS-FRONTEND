@@ -46,10 +46,10 @@ const Page = () => {
               {leadershipTeam.map((member, index) => (
                 <motion.div
                   key={index}
-                  className={`w-full 3xl:w-[85%] h-auto min-h-[25vh] xl:min-h-[30vh] bg-[#1E2322] flex  items-center justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
+                  className={`w-full 3xl:w-[85%] h-auto min-h-[25vh] xl:min-h-[38vh] 2xl:min-h-[30vh] bg-[#1E2322] flex  items-center justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
                     index === leadershipTeam.length - 1
                       ? index % 2 === 0
-                        ? "relative left-0 lg:left-[50%]"
+                        ? "relative left-0 xl:left-[50%]"
                         : ""
                       : ""
                   }`}
