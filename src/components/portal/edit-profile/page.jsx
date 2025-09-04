@@ -90,7 +90,7 @@ export default function Page() {
   return (
     <form
       onSubmit={(e) => handleSave(e)}
-      className = "relative bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:"
+      className = "relative bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:" suppressHydrationWarning
     >
       {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="border-t-4 border-[#8AD5B7] rounded-full w-12 h-12 animate-spin"/></div>}
       {/* Logo and Title */}

@@ -1,8 +1,8 @@
 "use client"; // Marks this as a client-side component in Next.js
 
 /**
- * @file Blog Post Page Component
- * @description Renders a detailed blog post with animated sections using GSAP and ScrollTrigger
+ * @file Alert System Guide Post Page Component
+ * @description Renders a detailed alert system guide post with animated sections using GSAP and ScrollTrigger
  * @requires react - For component functionality and hooks
  * @requires gsap - For animations
  * @requires gsap/ScrollTrigger - For scroll-based animations
@@ -26,18 +26,17 @@ import {
   Check,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { fetchPostBySlug, fetchPostsByCategory, fetchPosts } from "@/lib/wordpress";
+import { fetchPostBySlug, transformPost } from "@/lib/wordpress";
+import { WORDPRESS_CONFIG } from "@/lib/config";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 
-
-
 /**
- * Blog Post Page Component
- * Displays a complete blog article with animated sections that appear as the user scrolls
- * @returns {JSX.Element} The rendered blog post page
+ * Alert System Guide Post Page Component
+ * Displays a complete alert system guide article with animated sections that appear as the user scrolls
+ * @returns {JSX.Element} The rendered alert system guide post page
  */
-const BlogPostPage = () => {
+const AlertSystemGuidePostPage = () => {
   const params = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +56,6 @@ const BlogPostPage = () => {
   const articleHeaderRef = useRef(null);
   const featuredImageRef = useRef(null);
   const contentRef = useRef(null);
-  const headingRef = useRef(null); // Ref for the main heading animation
 
   /**
    * Generate table of contents from HTML content
@@ -154,9 +152,7 @@ const BlogPostPage = () => {
         const id = `heading-${index}`;
         heading.id = id;
         heading.className = `${heading.className} scroll-mt-20`;
-        console.log(`Added ID ${id} to heading:`, heading.textContent.trim());
       } else {
-        console.log(`Heading already has ID: ${heading.id}`, heading.textContent.trim());
       }
     });
     
@@ -222,54 +218,12 @@ const BlogPostPage = () => {
     }, 150); // 150ms delay for smoother navigation
   };
 
-     /**
-    * Fetch related posts from the same category by ID
-    */
-   const fetchRelatedPosts = async (categoryId, currentPostId) => {
-     try {
-       setRelatedLoading(true);
-       const posts = await fetchPostsByCategory(categoryId, 1, 10); // Get more posts to filter from
-       
-       // Filter out the current post and limit to 3 posts
-       const filteredPosts = posts
-         .filter(post => post.id !== currentPostId)
-         .slice(0, 3);
-       
-       setRelatedPosts(filteredPosts);
-     } catch (error) {
-       console.error('Error fetching related posts:', error);
-     } finally {
-       setRelatedLoading(false);
-     }
-   };
 
-   /**
-    * Fetch related posts from the same category by name
-    */
-   const fetchRelatedPostsByName = async (categoryName, currentPostId) => {
-     try {
-       setRelatedLoading(true);
-       
-       // First, get all posts and filter by category name
-       const allPosts = await fetchPosts(1, 50); // Get more posts to filter from
-       
-       // Filter posts by category name and exclude current post
-       const filteredPosts = allPosts
-         .filter(post => post.category === categoryName && post.id !== currentPostId)
-         .slice(0, 3);
-       
-       setRelatedPosts(filteredPosts);
-     } catch (error) {
-       console.error('Error fetching related posts by name:', error);
-     } finally {
-       setRelatedLoading(false);
-     }
-   };
 
-   /**
-    * Handle newsletter subscription
-    */
-   const handleNewsletterSubmit = async (e) => {
+  /**
+   * Handle newsletter subscription
+   */
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
     if (!newsletterEmail.trim()) return;
     
@@ -284,6 +238,52 @@ const BlogPostPage = () => {
       console.error('Newsletter subscription error:', error);
     } finally {
       setNewsletterSubmitting(false);
+    }
+  };
+
+  /**
+   * Fetch related posts from Alert System Guide category (latest 3)
+   */
+  const fetchRelatedPosts = async () => {
+    try {
+      setRelatedLoading(true);
+      
+      // Fetch posts directly from WordPress API with _embed to get category information
+      const response = await fetch(`${WORDPRESS_CONFIG.API_URL}/posts?_embed&per_page=100`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const wpPosts = await response.json();
+      
+      // Transform WordPress posts using the main transformPost function
+      const allPosts = wpPosts.map(transformPost);
+      
+      
+      // Filter posts by Alert System Guide category and exclude current post
+      const currentPostId = post?.id;
+      const alertSystemPosts = allPosts.filter(post => {
+        const category = post.category?.toLowerCase() || '';
+        const isAlertSystem = (
+          category.includes('alert system guide') || 
+          category.includes('alert-system-guide') ||
+          category.includes('alert system') ||
+          category.includes('alert')
+        );
+        
+        
+        return isAlertSystem && post.id !== currentPostId;
+      });
+      
+      
+      // Get the latest 3 posts
+      const filteredPosts = alertSystemPosts.slice(0, 3);
+      setRelatedPosts(filteredPosts);
+    } catch (error) {
+      console.error('Error fetching related posts:', error);
+    } finally {
+      setRelatedLoading(false);
     }
   };
 
@@ -307,13 +307,8 @@ const BlogPostPage = () => {
         
         // Post data loaded successfully
         
-        // Fetch related posts from the same category
-        if (fetchedPost?.categoryId) {
-          fetchRelatedPosts(fetchedPost.categoryId, fetchedPost.id);
-        } else if (fetchedPost?.category) {
-          // If we only have category name, try to find it by name
-          fetchRelatedPostsByName(fetchedPost.category, fetchedPost.id);
-        }
+        // Fetch related posts for the "More Blogs Related To This" section
+        fetchRelatedPosts();
       } catch (err) {
         console.error('Error loading post:', err);
         setError('Failed to load post. Please try again later.');
@@ -437,92 +432,6 @@ const BlogPostPage = () => {
     }
   }, [post]);
 
-  // Animate the main heading with word-by-word staggering effect
-  useEffect(() => {
-    if (headingRef.current && post?.title) {
-      // Split the text into individual words
-      const words = post.title.split(' ');
-      headingRef.current.innerHTML = '';
-      
-      // Create spans for each word
-      words.forEach((word, index) => {
-        const span = document.createElement('span');
-        span.textContent = word;
-        span.style.display = 'inline-block';
-        span.style.opacity = '0';
-        span.style.transform = 'translateY(20px)';
-        span.style.marginRight = '0.25em'; // Add spacing between words
-        headingRef.current.appendChild(span);
-      });
-
-      // Animate each word with stagger
-      const wordSpans = headingRef.current.querySelectorAll('span');
-      gsap.to(wordSpans, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1, // Increased stagger for word-by-word effect
-        ease: "power2.out",
-        delay: 0.3
-      });
-    }
-  }, [post?.title]);
-
-  /**
-   * Add IDs to headings and handle downloadable file links
-   */
-  useEffect(() => {
-    if (contentRef.current && post) {
-      // Add IDs to headings for table of contents
-      addIdsToHeadings();
-      
-      const handleDownloadLinks = (event) => {
-        const target = event.target;
-        
-        // Check if the clicked element is a link
-        if (target.tagName === 'A') {
-          const href = target.getAttribute('href');
-          
-          // Check if it's a downloadable file (common file extensions)
-          const downloadExtensions = [
-            '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
-            '.zip', '.rar', '.7z', '.tar', '.gz',
-            '.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp',
-            '.mp3', '.mp4', '.avi', '.mov', '.wmv',
-            '.txt', '.csv', '.json', '.xml'
-          ];
-          
-          const isDownloadable = downloadExtensions.some(ext => 
-            href && href.toLowerCase().includes(ext)
-          );
-          
-          // Also check for common download patterns
-          const isDownloadLink = href && (
-            href.includes('/download/') ||
-            href.includes('/wp-content/uploads/') ||
-            href.includes('blob:') ||
-            target.hasAttribute('download')
-          );
-          
-          if (isDownloadable || isDownloadLink) {
-            event.preventDefault();
-            window.open(href, '_blank', 'noopener,noreferrer');
-          }
-        }
-      };
-
-      // Add event listener to the content container
-      contentRef.current.addEventListener('click', handleDownloadLinks);
-      
-      // Cleanup function
-      return () => {
-        if (contentRef.current) {
-          contentRef.current.removeEventListener('click', handleDownloadLinks);
-        }
-      };
-    }
-  }, [post]);
-
   // Show loading state
   if (loading) {
     return (
@@ -530,7 +439,7 @@ const BlogPostPage = () => {
         <div className="container mx-auto max-w-4xl px-6 py-24 sm:w-[90%] md:pr-32 lg:px-6 lg:w-[80%] lg:py-12">
           <div className="text-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8AD5B7] mx-auto"></div>
-            <p className="text-[#89A096] mt-4">Loading post...</p>
+            <p className="text-[#89A096] mt-4">Loading guide...</p>
           </div>
         </div>
       </section>
@@ -563,39 +472,86 @@ const BlogPostPage = () => {
 
   return (
     <section className="bg-[#37403D] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
-      <div className="container mx-auto max-w-7xl">
+      {/* Article Header - Full Width Hero Section Above Three Columns */}
+      <div ref={articleHeaderRef} className="mb-16 text-center relative flex items-center justify-center rounded-xl overflow-hidden -mx-6 md:-mx-12 lg:-mx-24 mt-8 py-16">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/pics/local-law-hero.png')`
+          }}
+        />
         
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Content */}
+        <div className="relative z-10 px-6 py-12">
+          {/* Back to Alert System Guide Button */}
+          <div className="pt-8 mb-6">
+            <a
+              href="/alert-system-guide"
+              className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 flex items-center gap-2 font-poppins transition-all justify-center"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Back to Alert System Guide
+            </a>
+          </div>
+          
+          {/* Main Heading - Full width with top padding */}
+          <div className="pt-4 mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
+              {post.title}
+            </h1>
+          </div>
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-center text-[#89A096] font-poppins">
+            {/* <div className="flex items-center gap-3">
+              <User className="w-5 h-5" />
+              <span>{post.author}</span>
+            </div> */}
+            <div className="flex items-center gap-3">
+              <CalendarDays className="w-5 h-5" />
+              <span>{post.date}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Bookmark className="w-5 h-5" />
+              <span>{post.category}</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div className="container mx-auto max-w-7xl">
         {/* Three Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
-                     {/* Left Sidebar - Table of Contents */}
-           <div className="lg:col-span-3 order-2 lg:order-1">
-             <div className="lg:sticky lg:top-1/2 lg:-translate-y-1/2">
-               <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
+          {/* Left Sidebar - Table of Contents */}
+          <div className="lg:col-span-3 order-2 lg:order-1">
+            <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
+              <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
                 <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
                   <ClipboardList className="w-5 h-5 text-[#8AD5B7]" />
                   Table of Contents
                 </h3>
-                                 <nav className="space-y-2 flex-1 overflow-y-auto overflow-x-hidden">
-                   {tableOfContents.length > 0 ? (
-                     tableOfContents.map((item, index) => (
-                       <button
-                         key={index}
-                         onClick={() => scrollToHeading(item.id)}
-                         className={`w-full text-left text-sm font-poppins transition-colors hover:text-[#8AD5B7] break-words ${
-                           item.level === 1 ? 'text-[#DCE2E2] font-semibold' :
-                           item.level === 2 ? 'text-[#DCE2E2] ml-2' :
-                           item.level === 3 ? 'text-[#89A096] ml-4' :
-                           'text-[#89A096] ml-6'
-                         }`}
-                       >
-                         • {item.text}
-                       </button>
-                     ))
-                   ) : (
+                <nav className="space-y-2 flex-1 overflow-y-auto overflow-x-hidden">
+                  {tableOfContents.length > 0 ? (
+                    tableOfContents.map((item, index) => (
+                      <button
+                        key={index}
+                        onClick={() => scrollToHeading(item.id)}
+                        className={`w-full text-left text-sm font-poppins transition-colors hover:text-[#8AD5B7] break-words ${
+                          item.level === 1 ? 'text-[#DCE2E2] font-semibold' :
+                          item.level === 2 ? 'text-[#DCE2E2] ml-2' :
+                          item.level === 3 ? 'text-[#89A096] ml-4' :
+                          'text-[#89A096] ml-6'
+                        }`}
+                      >
+                        • {item.text}
+                      </button>
+                    ))
+                  ) : (
                     <div className="text-[#89A096] text-sm">
-                      <p className="italic">No headings found in this article.</p>
+                      <p className="italic">No headings found in this guide.</p>
                     </div>
                   )}
                 </nav>
@@ -603,44 +559,9 @@ const BlogPostPage = () => {
             </div>
           </div>
 
-          {/* Center Column - Main Blog Content */}
+          {/* Center Column - Main Guide Content */}
           <div className="lg:col-span-6 order-1 lg:order-2">
-                         {/* Article Header - Title and metadata */}
-             <div ref={articleHeaderRef} className="mb-12">
-               {/* Back to Blog Button - Above the heading */}
-               <div className="pt-8 mb-6">
-                 <a
-                   href="/blog"
-                   className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 flex items-center gap-2 font-poppins transition-all"
-                 >
-                   <ArrowLeft className="w-5 h-5" />
-                   Back to Blog
-                 </a>
-               </div>
-               
-               {/* Main Heading - Full width with top padding */}
-               <div className="pt-4 mb-6">
-                 <h1 ref={headingRef} className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax w-full">
-                   {post.title}
-                 </h1>
-               </div>
-              <div className="flex flex-col md:flex-row gap-6 items-start md:items-center text-[#89A096] font-poppins">
-                {/* <div className="flex items-center gap-3">
-                  <User className="w-5 h-5" />
-                  <span>{post.author}</span>
-                </div> */}
-                <div className="flex items-center gap-3">
-                  <CalendarDays className="w-5 h-5" />
-                  <span>{post.date}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Bookmark className="w-5 h-5" />
-                  <span>{post.category}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Featured Image - Main blog post image */}
+            {/* Featured Image - Main guide post image */}
             <div
               ref={featuredImageRef}
               className="mb-12 rounded-xl overflow-hidden"
@@ -667,17 +588,17 @@ const BlogPostPage = () => {
             </div>
           </div>
 
-                     {/* Right Sidebar - Newsletter Subscription */}
-           <div className="lg:col-span-3 order-3">
-             <div className="lg:sticky lg:top-1/2 lg:-translate-y-1/2">
-               <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
+          {/* Right Sidebar - Newsletter Subscription */}
+          <div className="lg:col-span-3 order-3">
+            <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
+              <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
                 <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
                   <Mail className="w-5 h-5 text-[#8AD5B7]" />
                   Subscribe to Newsletter
                 </h3>
                 <div className="flex-1 flex flex-col">
                   <p className="text-[#89A096] text-sm mb-4">
-                    Stay updated with our latest insights, industry news, and compliance updates.
+                    Stay updated with our latest alert system insights, compliance updates, and industry news.
                   </p>
                   {!newsletterSubmitted ? (
                     <form onSubmit={handleNewsletterSubmit} className="space-y-4 flex-1 flex flex-col">
@@ -713,139 +634,115 @@ const BlogPostPage = () => {
                       <div className="flex-1"></div>
                       <button
                         onClick={() => setNewsletterSubmitted(false)}
-                        className="mt-3 text-[#8AD5B7] hover:text-[#8AD5B7]/80 text-sm font-poppins"
+                        className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 text-sm font-poppins transition-colors"
                       >
                         Subscribe Another Email
                       </button>
-                      <p className="text-[#89A096] text-xs mt-3">
-                        We respect your privacy. Unsubscribe at any time.
-                      </p>
                     </div>
                   )}
                 </div>
               </div>
-                         </div>
-           </div>
- 
-         </div>
-       </div>
-       
-        {/* Related Blogs Section */}
-        <div className="mt-24 bg-[#1E2322] py-16 px-6 md:px-12 lg:px-24 -mx-6 md:-mx-12 lg:-mx-24">
-          <div className="w-full">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-left mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax mb-4">
-                  More Blogs Related To This Topic
-                </h2>
-                <p className="text-[#89A096] font-poppins">
-                  The PBS Alert System is designed to revolutionize how property managers, owners, and stakeholders navigate compliance, deadlines, and data in New York
-                </p>
-              </div>
-              
-              {relatedLoading ? (
-                <div className="col-span-full text-center py-12">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8AD5B7] mx-auto"></div>
-                  <p className="text-[#89A096] mt-4">Loading related posts...</p>
-                </div>
-              ) : relatedPosts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-                  {relatedPosts.map((relatedPost) => (
-                    <div
-                    key={post.id}
-                    className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2"
-                  >
-                    {/* Image Container with Overlay */}
-                    <div className="relative overflow-hidden">
-                      <CustomImage
-                        src={post.image}
-                        alt={post.title}
-                        width={100}
-                        height={100}
-                        className="w-full h-48 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    
-                      {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
-                          {post.category}
-                        </span>
-                      </div>
-    
-                      {/* Date Badge */}
-                      <div className="absolute top-4 right-4">
-                        <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
-                          <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
-                          <span className="text-[#DCE2E2] text-xs font-poppins font-medium">
-                            {post.date}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-    
-                    {/* Content Container */}
-                    <div className="p-6 md:p-8">
-                      {/* Title */}
-                      <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
-                        {post.title}
-                      </h2>
-    
-                      {/* Excerpt */}
-                      <p className="text-[#89A096] mb-6 font-poppins text-sm md:text-base leading-relaxed line-clamp-3">
-                        {post.excerpt}
-                      </p>
-    
-                      {/* Action Buttons */}
-                      <div className="flex items-center justify-between">
-                        {/* Read More Button */}
-                        <button
-                          onClick={() => {
-                            if (post.slug) {
-                              window.location.href = `/blog/${post.slug}`;
-                            } else {
-                              console.error('No slug found for post:', post.id);
-                            }
-                          }}
-                          className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
-                        >
-                          {/* Enhanced Circular Icon */}
-                          <div className="relative w-12 h-12 bg-gradient-to-r from-[#8AD5B7] to-[#7AC5A7] rounded-full flex items-center justify-center shadow-lg shadow-[#8AD5B7]/25 transition-all duration-300 group-hover/btn:scale-110 group-hover/btn:shadow-xl group-hover/btn:shadow-[#8AD5B7]/40">
-                            <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
-                          </div>
-                          <span className="font-semibold tracking-wide">Read Article</span>
-                        </button>
-    
-                        
-                      </div>
-                    </div>
-                  </div>
-                  ))}
-                </div>
-                             ) : (
-                 <div className="text-center py-12">
-                   <p className="text-[#89A096] font-poppins">
-                     No related posts found in this category.
-                   </p>
-                 </div>
-               )}
-               
-               {/* View More Button */}
-               <div className="text-center mt-12">
-                 <a
-                   href="/blog"
-                   className="inline-flex items-center gap-3 bg-[#8AD5B7] text-[#1E2322] px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-[#8AD5B7]/80 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                 >
-                   <span>View More</span>
-                   <ArrowLeft className="w-5 h-5 transform rotate-180" />
-                 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+       {/* More Blogs Related To This Section */}
+       <div className="bg-[#1E2322] py-16 px-6 md:px-12 lg:px-24 -mx-6 md:-mx-12 lg:-mx-24">
+         <div className="w-full">
+           <div className="max-w-7xl mx-auto">
+             <div className="text-left mb-12">
+               <h2 className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax mb-4">
+                 More Blogs Related To This
+               </h2>
+               <p className="text-[#89A096] font-poppins">
+                 Discover more insights and articles from our comprehensive collection of property management and compliance resources
+               </p>
+             </div>
+             
+             {relatedLoading ? (
+               <div className="col-span-full text-center py-12">
+                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#8AD5B7] mx-auto"></div>
+                 <p className="text-[#89A096] mt-4">Loading related blogs...</p>
                </div>
+             ) : relatedPosts.length > 0 ? (
+               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                 {relatedPosts.map((relatedPost) => (
+                   <div
+                     key={relatedPost.id}
+                     className="blog-card"
+                   >
+                     <CustomImage
+                       src={relatedPost.image}
+                       alt={relatedPost.title}
+                       width={100}
+                       height={100}
+                       className="w-full h-40 md:h-48 object-cover"
+                     />
+                     <div className="p-4 md:p-6">
+                       <div className="flex items-center gap-2 mb-3 md:mb-4 flex-wrap">
+                         <span className="text-[#8AD5B7] text-xs md:text-sm font-conthrax">
+                           {relatedPost.category}
+                         </span>
+                         <span className="text-[#89A096] text-xs md:text-sm">•</span>
+                         <CalendarDays className="w-3 h-3 md:w-4 md:h-4 text-[#89A096]" />
+                         <span className="text-[#89A096] text-xs md:text-sm font-poppins">
+                           {relatedPost.date}
+                         </span>
+                       </div>
+                       <h3 className="text-lg md:text-xl font-bold text-[#DCE2E2] mb-2 md:mb-3 font-conthrax leading-tight">
+                         {relatedPost.title}
+                       </h3>
+                       <p className="text-[#89A096] mb-3 md:mb-4 font-poppins text-sm md:text-base line-clamp-3">{relatedPost.excerpt}</p>
+                       
+                       {/* Action Buttons */}
+                       <div className="flex items-center justify-between gap-3">
+                         <button 
+                           onClick={() => {
+                             if (relatedPost.slug) {
+                               window.location.href = `/alert-system-guide/${relatedPost.slug}`;
+                             } else {
+                               console.error('No slug found for post:', relatedPost.id);
+                             }
+                           }}
+                           style={{ zIndex: 10, position: 'relative' }}
+                           className="flex items-center gap-3 text-[#89A096] hover:text-[#DCE2E2] transition-all font-poppins text-sm md:text-base cursor-pointer"
+                         >
+                           {/* Circular Icon with Arrow */}
+                           <div className="w-10 h-10 bg-[#8AD5B7] rounded-full flex items-center justify-center border border-[#2E3734] group">
+                             <ArrowRight className="w-6 h-6 text-[#1E2322] transform -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0" />
+                           </div>
+                           {/* Button Text */}
+                           <span className="font-semibold tracking-wide">READ FULL GUIDE.</span>
+                         </button>
+                       </div>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+             ) : (
+               <div className="text-center py-12">
+                 <p className="text-[#89A096] font-poppins">
+                   No related blogs found.
+                 </p>
+               </div>
+             )}
+             
+             {/* View More Button */}
+             <div className="text-center mt-12">
+               <a
+                 href="/alert-system-guide"
+                 className="inline-flex items-center gap-3 bg-[#8AD5B7] text-[#1E2322] px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:bg-[#8AD5B7]/80 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+               >
+                 <span>View More</span>
+                 <ArrowRight className="w-5 h-5 transform rotate-180" />
+               </a>
              </div>
            </div>
          </div>
-     </section>
-   );
- };
+       </div>
+    </section>
+    );
+  };
 
-export default BlogPostPage;
+export default AlertSystemGuidePostPage;

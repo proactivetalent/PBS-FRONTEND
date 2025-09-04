@@ -1,15 +1,9 @@
 'use client'
+import React, { useState, useEffect } from "react";
 import CustomImage from "@/app/CustomImage";
 import { DotIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import {apiRequest } from "@/utils/csrfHandler";
-
-/**
- * @typedef {Object} MenuSection
- * @property {string} title - The title of the menu section
- * @property {string[]} links - Array of link names in this section
- */
 
 /**
  * Footer Component
@@ -31,6 +25,13 @@ import {apiRequest } from "@/utils/csrfHandler";
  * @returns {JSX.Element} The rendered Footer component
  */
 const Footer = () => {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    // Set the year after component mounts to prevent hydration mismatch
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
+
   /**
    * Menu data structure defining the sections and links in the footer
    * Each section has a title and an array of link names
@@ -151,7 +152,7 @@ const Footer = () => {
               Join our community to receive updates
             </p>
             {/* Email Subscription Form */}
-            <form onSubmit = {(e)=>handleSubmit(e)} className="relative overflow-hidden flex justify-center items-center w-full  lg:max-w-md ">
+            <form onSubmit = {(e)=>handleSubmit(e)} className="relative overflow-hidden flex justify-center items-center w-full  lg:max-w-md " suppressHydrationWarning>
               <input
                 type="email"
                 value={email}
@@ -163,10 +164,12 @@ const Footer = () => {
                 className="flex text-base px-4 py-2 rounded-2xl bg-white text-[#7A8E85] focus:outline-none w-5/6 md:w-4/6 lg:w-full"
                 aria-label="Email address"
                 required
+                suppressHydrationWarning
               />
               <button
                 type="submit"
                 className="absolute right-6 md:right-16 lg:right-0 w-2/5 lg:w-[50%] xl:w-2/5 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-2xl hover:bg-[#8AD5B7] transition duration-300"
+                suppressHydrationWarning
               >
                 Subscribe
               </button>
@@ -196,7 +199,7 @@ const Footer = () => {
 
           {/* Copyright Notice - Automatically updates with current year */}
           <p className="text-center text-sm text-[#b9c0bf] font-semibold">
-            © {new Date().getFullYear()} PBS NYC. All rights reserved
+            © {currentYear} PBS NYC. All rights reserved
           </p>
 
           {/* Social Icons - Commented out but preserved for future use
@@ -234,21 +237,21 @@ const Footer = () => {
           {/* Privacy Links - Terms, Privacy, and Cookie policies */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[#7A8E85] mt-4 md:mt-0">
             <a
-              href="#"
+              href="/privacy-policy"
               className="hover:text-[#DCE2E2] transition duration-300"
               aria-label="View Privacy Policy"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
+              href="/terms-of-service"
               className="hover:text-[#DCE2E2] transition duration-300"
               aria-label="View Terms of Service"
             >
               Terms of Service
             </a>
             <a
-              href="#"
+              href="/cookies-policy"
               className="hover:text-[#DCE2E2] transition duration-300"
               aria-label="View Cookie Policy"
             >

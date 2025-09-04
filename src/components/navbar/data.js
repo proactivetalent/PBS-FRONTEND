@@ -1,6 +1,6 @@
 export const navItems = [
   {
-    name: "Our Services",
+    name: "Our Services▾",
     submenu: [
       {
         name: "Services",
@@ -48,17 +48,17 @@ export const navItems = [
     ],
   },
   {
-    name: "Resources",
+    name: "Resources▾",
     submenu: [
       { name: "Blogs", link: "/blog" },
-      { name: "Press", link: "/" },
-      { name: "Local Law Guide", link: "/law/local-law" },
-      { name: "Alert System Guide", link: "/alert" },
+      { name: "Local Law Guide", link: "/local-law-guide" },
+      //{ name: "Alert System Guide", link: "/alert-system-guide" },
+      { name: "FAQs", link: "/faqs" },
     ],
   },
    { name: "Alert Systems", link: "/alert" },
   {
-    name: "About Us",
+    name: "About Us▾",
     submenu: [
       { name: "About", link: "/about-us" },
       { name: "Our Team", link: "/about-us/our-team" },

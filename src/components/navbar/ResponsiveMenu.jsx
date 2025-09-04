@@ -99,5 +99,4 @@ const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
 
 };
 
-
 export default ResponsiveMenu;

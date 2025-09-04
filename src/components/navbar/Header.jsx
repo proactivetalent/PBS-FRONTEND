@@ -4,7 +4,7 @@ import CustomImage from "@/app/CustomImage";
 import { useMenu } from "@/context/MenuContext";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -64,8 +64,6 @@ const Header = () => {
       },
     });
 
-    // Debug log to confirm animation is running
-    console.log("GSAP animations set up for header");
   }, []);
 
   return (

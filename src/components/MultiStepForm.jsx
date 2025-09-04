@@ -182,7 +182,7 @@ const MultiStepForm = ({
       animate="visible"
     >
       <div className="space-y-4 sm:mx-auto md:mx-0 lg:w-full">
-        <form className="space-y-3" onSubmit={handleFormSubmit} noValidate>
+        <form className="space-y-3" onSubmit={handleFormSubmit} noValidate suppressHydrationWarning>
           <motion.div
             key={currentStep}
             initial={{ opacity: 0, x: 50 }}

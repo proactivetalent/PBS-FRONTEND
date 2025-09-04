@@ -61,7 +61,7 @@ export default function Page() {
       </p>
 
       <form onSubmit={handleSubmit}
-            className="flex flex-col gap-3 w-[80%] md:w-[60%] mx-auto rounded-xl bg-[#1E2322] p-6 lg:p-10">
+            className="flex flex-col gap-3 w-[80%] md:w-[60%] mx-auto rounded-xl bg-[#1E2322] p-6 lg:p-10" suppressHydrationWarning>
         {error && <p className="text-red-500">{error}</p>}
         <div className="flex flex-col gap-1">
           <label htmlFor="email"
