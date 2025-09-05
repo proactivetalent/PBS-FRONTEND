@@ -47,9 +47,10 @@ const Footer = () => {
       links: [
         { name:"About Us", href: "/about-us" },
         { name:"Contact Us", href: "/contacts" },
-        { name:"FAQs", href: "/faqs" },
-        { name:"Terms of Service", href: "/terms-of-service" },
+        // { name:"FAQs", href: "/faqs" },
+        { name:"Terms & Conditions", href: "/terms-of-service" },
         { name:"Privacy Policy", href: "/privacy-policy" },
+        { name:"Cookie Policy", href: "/cookies-policy"}
       ],
     },
     // {
@@ -59,10 +60,11 @@ const Footer = () => {
     {
       title: "Resources",
       links: [
-        {name: "Press",href:"/press"},
+        // {name: "Press",href:"/press"},
         {name: "Blog",href:"/blog"},
-        {name: "Local Law guide",href:"/law/local-law"},
-        {name: "Alert System guide",href:"/alert"},
+        {name: "Local Law guide",href:"/local-law-guide"},
+        {name: "FAQs",href:"/faqs"}
+        // {name: "Alert System guide",href:"/alert-system-guide"},
         /*"Events", "Community", "Social Media"*/
       ],
     },
@@ -248,7 +250,7 @@ const Footer = () => {
               className="hover:text-[#DCE2E2] transition duration-300"
               aria-label="View Terms of Service"
             >
-              Terms of Service
+              Terms & Conditions
             </a>
             <a
               href="/cookies-policy"

@@ -15,11 +15,6 @@ export const leadershipTeam = [
         description: "Amanda oversees both field operations and administrative functions for the team. With a strong background in construction management and office leadership, she bridges the gap between job site coordination and internal operations. Her hands-on approach, attention to detail, and support to empowering women in construction help drive project success and a collaborative, efficient workplace.",
     },
     {
-        name: "Ehsan Akram",
-        title: "Finance Manager, Operations Manager",
-        description: "Ehsan Bridges financial rigor with operational efficiency, managing budgets, cost optimizations and cross-department workflows.",
-    },
-    {
         name: "Abdallah Elcherbini",
         title: "Registered Architect",
         description: "Abdallah has designed many projects in the industry. He maximizes square inches for every property while going head to head with the departments on your behalf.",
