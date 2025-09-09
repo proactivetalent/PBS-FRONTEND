@@ -121,8 +121,9 @@
  */
 
 import axios from "axios";
+import { API_URL } from "@/config";
 
-const LARAVEL = process.env.NEXT_PUBLIC_API_URL || "https://pbsnyc-production.up.railway.app";
+const LARAVEL = API_URL || "https://pbsnyc-production.up.railway.app";
 
 // 1) Global Axios defaults
 axios.defaults.baseURL        = LARAVEL;

@@ -3,6 +3,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useUser } from "@/context/UserContext";
 import PageLoader from "@/components/PageLoader";
 import { useEffect } from "react";
+import { API_URL } from "@/config";
 
 export default function AuthWrapper({ children }) {
   const { user, loadingUser } = useUser();
@@ -21,7 +22,7 @@ export default function AuthWrapper({ children }) {
     } else {
       // authenticated but not a member
         if(!user?.memberuser && pathname.startsWith("/portal")) {
-        window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+        window.location.href = `${API_URL}/portal/subscribe`;
         return;
       }
       else if (pathname === "/portal/login") {

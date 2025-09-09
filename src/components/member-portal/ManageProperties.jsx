@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { boroughs, getBoroId, getIdFromBoro } from '@/utils/borough';
 import { X, Check, Search, ChevronDown } from 'lucide-react'
 import toast from 'react-hot-toast';
+import { API_URL } from "@/config";
 
 const ManageProperties = ({
   searchByAddress,
@@ -127,7 +128,7 @@ const ManageProperties = ({
           {buttonList.map(tab => (
             tab === 'Add Property For Me' ? (
               <a 
-                href={`${process.env.NEXT_PUBLIC_API_URL}/property-add`}
+                href={`${API_URL}/property-add`}
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`p-2 rounded-full text-center font-semibold flex justify-center items-center ${activeTab===tab ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087]'}`}

@@ -29,6 +29,8 @@ const Header = () => {
         setIsVisible(true); // Show on scroll up
       }
       lastScrollY.current = currentScrollY;
+      console.log("DEBUG ENV:", process.env.NEXT_PUBLIC_API_URL);
+
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -73,6 +75,7 @@ const Header = () => {
       } transition-transform duration-500`}
       ref={ref}
     >
+
       {/* Header Container with GSAP Animation */}
       <motion.div
         className="flex flex-row justify-between items-center w-full h-[70px] xl:h-[100px]"

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useUser } from "@/context/UserContext";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { API_URL } from "@/config";
 
 export default function Page() {
   const [profileImage, setProfileImage] = useState(null);
@@ -44,7 +45,7 @@ export default function Page() {
       if (profileImage) formData.append("image", profileImage);
       // send multipart/form-data with axios
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/user/profile/update`,
+        `${API_URL}/api/user/profile/update`,
         formData,
         {
           headers: {
@@ -117,7 +118,7 @@ export default function Page() {
                   alt="Preview"
                   className="w-full h-full object-cover"
                 />
-              ) :  profileData?.photo ? <img src={process.env.NEXT_PUBLIC_API_URL + profileData?.photo} alt="dp" className="w-32 h-32 rounded-full"/> :<div className="w-32 h-32 bg-[#D9D9D9] rounded-full"></div>}
+              ) :  profileData?.photo ? <img src={API_URL + profileData?.photo} alt="dp" className="w-32 h-32 rounded-full"/> :<div className="w-32 h-32 bg-[#D9D9D9] rounded-full"></div>}
             </div>
             <label
               htmlFor="avatarUpload"

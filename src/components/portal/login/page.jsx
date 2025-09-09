@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 import toast from 'react-hot-toast'
 import {apiRequest } from "@/utils/csrfHandler";
+import { API_URL } from "@/config";
 
 export default function Page() {
   const router = useRouter()
@@ -37,7 +38,7 @@ export default function Page() {
       setUser({ ...data.user, memberuser: data.memberuser })
       if(data.memberuser)
         router.push('/portal/dashboard')
-      else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+      else window.location.href = `${API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
       toast.error(err.message)
@@ -100,16 +101,16 @@ export default function Page() {
         </button>
 
         <div className="mt-6 lg:mt-10 flex flex-col gap-2">
-          <a href={`${process.env.NEXT_PUBLIC_API_URL}/portal/password/reset`} className="underline text-white font-semibold cursor-pointer">
+          <a href={`${API_URL}/portal/password/reset`} className="underline text-white font-semibold cursor-pointer">
             Forgot Password?
           </a>
-          <a href={`${process.env.NEXT_PUBLIC_API_URL}/portal/register`} className="underline text-white font-semibold cursor-pointer">
+          <a href={`${API_URL}/portal/register`} className="underline text-white font-semibold cursor-pointer">
             Register
           </a>
         </div>
 
         <div className="flex justify-end cursor-pointer">
-          <a href={`${process.env.NEXT_PUBLIC_API_URL}/alerts#alert`} className="underline underline-offset-2 decoration-[#8BD5B7] font-semibold">
+          <a href={`${API_URL}/alerts#alert`} className="underline underline-offset-2 decoration-[#8BD5B7] font-semibold">
             <span className="text-white">New Member?</span>&nbsp;
             <span className="text-[#8BD5B7]">Register Here</span>
           </a>

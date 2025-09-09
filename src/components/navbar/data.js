@@ -1,3 +1,4 @@
+import { API_URL } from "@/config";
 export const navItems = [
   {
     name: "Our Services▾",
@@ -66,5 +67,5 @@ export const navItems = [
     ],
   },
    { name: "Contact us", link: "/contacts" },
- {name: "Member Portal", link: `${process.env.NEXT_PUBLIC_API_URL}/portal/login`},
+ {name: "Member Portal", link: `${API_URL}/portal/login`},
 ];
