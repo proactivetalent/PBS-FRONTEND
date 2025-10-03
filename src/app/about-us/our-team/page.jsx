@@ -119,7 +119,7 @@ const Page = () => {
           <div className="w-[80vw] md:w-[80vw] lg:w-3/5 flex flex-col justify-center mx-auto">
             <div className="w-full h-auto min-h-[40vh] md:h-auto md:min-h-[50vh] lg:h-[80vh] bg-[#1E2322] rounded-[40px] p-3 md:p-4 lg:p-5 flex flex-col justify-start overflow-y-auto scrollbar-hide shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
               {/* CEO Message */}
-              <div className={`text-[#89A096] font-light leading-relaxed text-left text-sm md:text-base lg:text-lg ${textSize}`}>
+              <div className={`text-[#89A096] font-light leading-relaxed text-left text-sm md:text-base lg:text-md ${textSize}`}>
                 <p className="mb-4">
                   Dear Valued Clients,<br />
                   At Proactive Building Solutions (PBS), we specialize in guiding NYC developers, owners, and contractors to simplify the complexity of the city's construction and compliance landscape, working with a proactive team with over 100 years of combined experience. From planning and permitting to inspections and sign-off.
@@ -181,7 +181,7 @@ const Page = () => {
                         <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
                           {member.title}
                         </p>
-                        <p className="text-sm text-[#89A096] text-semibold mt-8 break-words md:pr-3">
+                        <p className="text-xs text-[#89A096] text-semibold mt-8 break-words md:pr-3">
                           {member.description}
                         </p>
                       </div>
