@@ -12,17 +12,17 @@ export const coreValues = [
     title: "Here at PBS we redefine how we approach compliance. ",
     description: [
       "Your Insurance Policy: Smoother projects, stronger partnerships, and stress-free compliance.",
-"Proven Results: 98% of PBS projects finish on time and under budget.",
+"Proven Results: 98% of PBS' projects finish on time and under budget.",
 "Client Trust: 200+ NYC developers rely on us as their secret weapon."
     ],
     icon: "/pics/Isolation_Mode (4).png"
   },
   {
     id: 2,
-    title: "We Don’t Just Meet Standards We Redefine Them",
+    title: "We don’t just meet standards, we redefine them",
     description:
       [
-        "Your Trusted Partner for :",
+        "Your Trusted Partner for",
 "Construction Compliance",
 "Inspections & Expediting",
 "Risk Mitigation",

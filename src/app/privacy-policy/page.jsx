@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
             <h1 className="text-2xl  font-bold text-[#DCE2E2] font-conthrax w-full leading-tight mb-4">
             Introduction
             </h1>
-            <p className="text-lg text-[#DCE2E2]/90 leading-relaxed font-light">
+            <p className="text-lg text-[#DCE2E2]/90 leading-relaxed font-poppins">
             At Proactive Building Solutions ("PBS," "we," "us," or "our"), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://pbs.nyc/ or use our services.
             </p>
           </div>
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   Information We Collect
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   We may collect personal information that you voluntarily provide to us when you:
                   </p>
                   <div className="space-y-3 mb-6">
@@ -84,33 +84,33 @@ const PrivacyPolicy = () => {
                     ].map((item, index) => (
                       <div key={index} className="flex items-center space-x-3">
                         <div className="w-1.5 h-1.5 bg-[#8AD5B7] rounded-full"></div>
-                        <span className="text-[#DCE2E2]/80 text-sm">{item}</span>
+                        <span className="text-[#DCE2E2]/80 text-md font-light font-poppins">{item}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   This information may include:
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Personal Identifiers:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">Name, company name, email address, phone number.</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">Name, company name, email address, phone number.</span>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Property Information:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">Property address, type, and specific details related to your service inquiry.</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">Property address, type, and specific details related to your service inquiry.</span>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Technical Data:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">IP address, browser type, operating system, and pages visited on our site (collected automatically via cookies).</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">IP address, browser type, operating system, and pages visited on our site (collected automatically via cookies).</span>
                       </div>
                     </div>
                     
@@ -130,7 +130,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   How We Use Your Information
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   We use the information we collect to:
                   </p>
                   <div className="space-y-3 mb-6">
@@ -143,7 +143,7 @@ const PrivacyPolicy = () => {
                     ].map((item, index) => (
                       <div key={index} className="flex items-center space-x-3">
                         <div className="w-1.5 h-1.5 bg-[#8AD5B7] rounded-full"></div>
-                        <span className="text-[#DCE2E2]/80 text-sm">{item}</span>
+                        <span className="text-[#DCE2E2]/80 text-md font-poppins font-light">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -161,33 +161,33 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   How We Share Your Information
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   We may share your information with:
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Service Providers:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">Trusted third parties who assist us in operating our website and providing our services (e.g., cloud hosting, payment processing). These parties are obligated to keep your information confidential.</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">Trusted third parties who assist us in operating our website and providing our services (e.g., cloud hosting, payment processing). These parties are obligated to keep your information confidential.</span>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Government Agencies:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">As required to file permits, applications, and other documents necessary to provide our expediting and compliance services on your behalf.</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">As required to file permits, applications, and other documents necessary to provide our expediting and compliance services on your behalf.</span>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-poppins'>
                         <span className="font-semibold text-[#8AD5B7]">Legal Requirements:</span>
-                        <span className="text-[#DCE2E2]/80 ml-2">If required to do so by law or in response to valid legal process.</span>
+                        <span className="text-[#DCE2E2]/80 ml-2 font-light">If required to do so by law or in response to valid legal process.</span>
                       </div>
                     </div>
                   </div>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 my-6 leading-relaxed font-light font-poppins">
                   We do not sell your personal information to third parties.
                   </p>
                 </div>
@@ -204,7 +204,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   Data Security
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   We implement appropriate technical and organizational security measures designed to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee its absolute security.
                   </p>
                   
@@ -222,7 +222,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   Your Privacy Rights
                   </h3>
-                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light font-poppins">
                   Depending on your location, you may have the right to:
                   </p>
                   <div className="space-y-3 my-6">
@@ -234,11 +234,11 @@ const PrivacyPolicy = () => {
                     ].map((item, index) => (
                       <div key={index} className="flex items-center space-x-3">
                         <div className="w-1.5 h-1.5 bg-[#8AD5B7] rounded-full"></div>
-                        <span className="text-[#DCE2E2]/80 text-sm">{item}</span>
+                        <span className="text-[#DCE2E2]/80 text-md font-light font-poppins">{item}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light font-poppins">
                   To exercise any of these rights, please contact us using the details below.
                   </p>
                 </div>
@@ -255,7 +255,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   Cookies
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   Our website uses "cookies" to enhance User experience. You can choose to set your browser to refuse cookies, but this may limit your ability to use some parts of our site.
                   </p>
                 </div>
@@ -272,7 +272,7 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                   Changes to This Privacy Policy
                   </h3>
-                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 leading-relaxed font-light font-poppins">
                   We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.
                   </p>
                 </div>
@@ -289,19 +289,19 @@ const PrivacyPolicy = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                     Contact Us
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light font-poppins">
                   If you have any questions about these Terms and Conditions, please contact us at:
                   </p>
                   <div className="bg-gradient-to-br from-[#2A2F2D] to-[#1F2321] p-8 rounded-3xl border border-[#8AD5B7]/10 shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl">
                     <div className="grid md:grid-cols-2 gap-8">
-                      <div>
+                      <div className='font-poppins'>
                         <h4 className="text-xl font-bold text-[#8AD5B7] mb-4">Proactive Building Solutions</h4>
                         <div className="space-y-2 text-[#DCE2E2]/80">
                           <p>22 E 41st Street, Third Floor</p>
                           <p>New York, NY 10017</p>
                         </div>
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-3 font-poppins">
                         <div className="flex items-center space-x-3">
                           <div className="w-2 h-2 bg-[#8AD5B7] rounded-full"></div>
                           <span className="text-[#DCE2E2]/80">

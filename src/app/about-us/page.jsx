@@ -49,7 +49,7 @@ const AboutPage = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -241,7 +241,7 @@ const AboutPage = () => {
               </h2>
             </div>
 
-            <p className="text-[#89A096] mt-3 font-semibold text-sm">
+            <p className="text-[#89A096] mt-3 font-normal text-base">
               {mission?.body}
             </p>
             <div className="mx-auto w-[30%] bg-[#8AD5B7] rounded-full h-1 my-8"></div>
@@ -348,7 +348,7 @@ const AboutPage = () => {
           <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
             Who we serve
           </h2>
-          <div className="slider-container w-full bg-[#2B3331] rounded-xl">
+          <div className="slider-container w-[60vw] bg-[#2B3331] rounded-xl">
             <Slider {...settings2}>
              
               {service?.clientTypes?.map((client, index) => {

@@ -11,8 +11,8 @@ const FAQS = () => {
 
   const faqData = [
     {
-      question: "What is Proactive Building Solutions (PBS)?",
-      answer: "Proactive Building Solutions (PBS) is a New York-based consultancy and management firm. We specialize in navigating NYC's complex building codes, zoning laws, and permit processes. Our core services include Local Law Compliance, Expediting, Owner Representation, and Property Management, all designed to protect your investment and ensure your property is safe, compliant, and profitable."
+      question: "What is Proactive Building Solutions?",
+      answer: "Proactive Building Solutions is a New York-based consultancy and management firm. We specialize in navigating NYC's complex building codes, zoning laws, and permit processes. Our core services include Local Law Compliance, Expediting, Owner Representation, and Property Management, all designed to protect your investment and ensure your property is safe, compliant, and profitable."
     },
     {
       question: "What makes PBS different from other expeditors or property managers?",
@@ -50,7 +50,7 @@ const FAQS = () => {
     },
     {
       question: "How will I receive these alerts?",
-      answer: "You can choose your preferred method of communication. We can send alerts via email, SMS text messages, or as notifications within the client portal itself, ensuring you never miss critical information."
+      answer: "You can choose your preferred method of communication. We can send alerts via email, SMS, or as notifications within the client portal itself, ensuring you never miss critical information."
     },
     {
       question: "Is my information secure in the client portal?",
@@ -69,11 +69,11 @@ const FAQS = () => {
     },
     {
       question: "Which agencies can PBS file with?",
-      answer: "We are experienced in filing with all relevant NYC agencies, including:<ul class='list-disc list-inside space-y-1 mt-2'><li>Department of Buildings (DOB): Work permits, equipment use, amendments.</li><li>FDNY: Fire suppression system permits, place of assembly certificates.</li><li>Department of Transportation (DOT): Scaffolding, sidewalk shed permits.</li><li>Landmarks Preservation Commission (LPC): For historic properties.</li><li>Department of Environmental Protection (DEP): Sign-offs.</li><li>DSNY: Permits based on Environmental Data</li><li>ECB: Handles Hearings</li><li>HPD: Housing Preservation and Development Violations</li><li>DOT: Transportation Controls</li></ul>"
+      answer: "We are experienced in filing with all relevant NYC agencies, including:<ul class='list-disc list-inside space-y-1 mt-2'><li>Department of Buildings (DOB): Work permits, equipment use, amendments.</li><li>Fire Department of New York (FDNY): Fire suppression system permits, place of assembly certificates.</li><li>Department of Transportation (DOT): Scaffolding, sidewalk shed permits.</li><li>Landmarks Preservation Commission (LPC): For historic properties.</li><li>Department of Environmental Protection (DEP): Sign-offs.</li><li>Department of Sanitation, New York (DSNY): Permits based on Environmental Data</li><li>Environmental Control Board (ECB): Handles Hearings</li><li>Housing Preservation and Development (HPD): Housing Preservation and Development Violations</li><li>DOT: Transportation Controls</li></ul>"
     },
     {
       question: "What do you need from me to start the expediting process?",
-      answer: "To get started, we typically need basic project information, property details, and architectural plans. We’ll handle the rest, from preparing the application to securing your approved permits."
+      answer: "To get started, we typically need basic project information, property details and architectural plans. We’ll handle the rest, from preparing the application to securing your approved permits."
     }
   ];
 

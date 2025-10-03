@@ -7,7 +7,7 @@
 
   export const section2 = {
     heading: "Stress-Free Permitting, Step by Step",
-    text: "We have 5 Step pathway for your permitting needs",
+    text: "We have 4 Step pathway for your permitting needs",
     items: [
       {
         title: "Consultation & Scope Review",

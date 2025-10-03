@@ -57,7 +57,7 @@ const Page = () => {
     <div className="w-screen overflow-hidden box-border">
       {/* Hero Section - Page Title and Introduction */}
       <HeroSection
-        heading="Your Trusted Partner in Property Compliance, Safety, and Management"
+        heading="Your Trusted Partner in Property Compliance, Safety and Management"
         className="font-conthrax max-w-4xl lg:max-w-5xl text-3xl lg:text-5xl font-semibold"
         bgStyle="bg-top md:bg-top bg-cover mix-blend-luminosity"
         isLine={false}

@@ -80,7 +80,7 @@ const Page = () => {
                   return (
                     <p
                       key={index}
-                      className="text-xs text-center lg:text-left font-semibold text-[#89A096]"
+                      className="text-base text-center lg:text-left font-normal text-[#89A096]"
                     >
                       {item}
                     </p>

@@ -56,7 +56,7 @@ const AboutCompany = () => {
   ];
 
   const reasons = [
-    "30+ years of Combined expertise: Decades of hands-on experience in industry for navigating NYC’s Complex & ever-evolving  Building Codes,zoning Laws, and permit processes",
+    "30+ years of Combined expertise: Decades of hands-on experience in industry for navigating NYC’s Complex & ever-evolving  Building Codes, Zoning Laws, and permit processes",
     "360° Compliance Guardrails: Full-spectrum code adherence, from design to final inspection, ensuring no detail slips through cracks",
 "Pre-inspection audits: Identification and resolving of compliance gaps before official inspections to guarantee first-time approval",
 "Real-time documentations:Digital tracking of permits, revisions, and approvals for full transparency and audit readiness",

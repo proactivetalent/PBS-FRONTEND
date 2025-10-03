@@ -19,7 +19,7 @@ const Page = () => {
     >
       {/* Hero Section */}
       <HeroSection
-        heading="NYC Permitting Made Simple. Pick Your Services, we’ll handle the rest"
+        heading="NYC Permitting made simple. Pick your services, we’ll handle the rest"
         text="From Single Permits to Full-Suite Approvals: Fast, Flexible, and Transparent Expediting for Every Project Size."
         className="font-conthrax max-w-[90%] md:max-w-full xl:max-w-[95%] text-2xl sm:text-3xl 4xl:max-w-[70%] lg:text-4xl xl:text-5xl font-semibold"
         bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"

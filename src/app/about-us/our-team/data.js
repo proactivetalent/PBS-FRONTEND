@@ -1,47 +1,183 @@
+export const CEO = [{
+    name: "Jon Credendino",
+    title: "Executive Director",
+    description: "Jon is a licensed General Contractor, Superintendent and Filing Representative specializing in real estate development and problem solving. Using his experience in developing and relationships within the departments he ensures efficiency and promptness, and he is with you every step of the way.",
+    image: "/pics/home-solution.png",
+}]
+
 export const leadershipTeam = [
+    
     {
-        name: "Jon Credindino",
-        title: "Executive Director",
-        description: "Jon is a licensed General Contractor, Superintendent and Filing Representative specializing in real estate development and problem solving. Using his experience in developing and relationships within the departments he ensures efficiency and promptness, and he is with you every step of the way.",
+        name: "Amanda Rojas",
+        title: "Construction Manager & Office Manager",
+        description: "Amanda Leads complex NYC projects with a focus on Code compliance and deadline mastery, As Head Expediting Consultant, she navigates DOB Hurdles, Securing approvals faster than industry averages.",
+        image: "/pics/home-solution.png",
+    
     },
     {
         name: "Ali Credendino",
         title: "Chief Operations Officer",
         description: "A Strategic & Visionary Leader in PBS, Ali oversees PBS’s operational excellence and brings passion & strategic insight to PBS, her dedication to innovation and teamwork drives the company’s mission to Life.",
-    },
-    {
-        name: "Amanda Rojas",
-        title: "Construction Manager & Office Manager",
-        description: "Amanda oversees both field operations and administrative functions for the team. With a strong background in construction management and office leadership, she bridges the gap between job site coordination and internal operations. Her hands-on approach, attention to detail, and support to empowering women in construction help drive project success and a collaborative, efficient workplace.",
+        image: "/pics/home-solution.png",
     },
     {
         name: "Abdallah Elcherbini",
         title: "Registered Architect",
         description: "Abdallah has designed many projects in the industry. He maximizes square inches for every property while going head to head with the departments on your behalf.",
-    },
-    {
-        name: "Arthur Estupinian",
-        title: "Licensed Master Plumber",
-        description: "Arthur is the owner of a third generation plumbing company with a remarkable 90 years in business. His family helped create the plumbing industry while he has continued their legacy of quality workmanship and service.",
+        image: "/pics/home-solution.png",
+        
     },
     {
         name: "Hal Ozkurt",
         title: "Licensed Master Electrician",
         description: "Hal has been known for his personal attention on every project. He is a perfectionist at heart ensuring safety, compliance and excellence. With Hal on the job no wires are crossed.",
+        image: "/pics/home-solution.png",
+        
+    },
+    {
+        name: "Arthur Estupinian",
+        title: "Licensed Master Plumber",
+        description: "Arthur is the owner of a third generation plumbing company with a remarkable 90 years in business. His family helped create the plumbing industry while he has continued their legacy of quality workmanship and service.",
+        image: "/pics/home-solution.png",
+
     },
     {
         name: "James Powers",
         title: "MEP Engineer",
         description: "James takes pride in every design ensuring code compliance and energy efficiency. He is known for travelling the world to investigate new technologies bringing your building to the next level.",
+        image: "/pics/home-solution.png",
+        
     },
     {
         name: "Glen Langer",
         title: "Structural Engineer",
         description: "Glen has been involved with over 1,200 filings in NYC making sure your building is structurally sound, code compliant and built to specifications. Glen maintains client satisfaction with personal attention and consistent work ethic.",
+        image: "/pics/home-solution.png",
+        
     },
 ];
 
 export const projectManagers = [
+    {
+        name: "Bill",
+        title: "Onsite Project Manager",
+        description: "",
+    },
+    {
+        name: "Lucian",
+        title: "Assistant Site Supervisor",
+        description: "",
+    },
+    {
+        name: "Uzair",
+        title: "Assistant Project Manager",
+        description: "",
+    },
+    {
+        name: "Samia",
+        title: "Assistant Project Manager",
+        description: "",
+    },
+    {
+        name: "Mahnoor",
+        title: "Assistant Project Manager",
+        description: "",
+    },
+];
+
+export const admin = [
+    {
+        name: "Karlis",
+        title: "Construction Controller",
+        description: "",
+    },
+    {
+        name: "Andrea",
+        title: "Admin Assistant",
+        description: "",
+    },
+    {
+        name: "Aila",
+        title: "Construction Admin / Purchaser",
+        description: "",
+    },
+    {
+        name:"Amaranta",
+        title: "Content Writer / Photographer",
+        description: "",
+    },
+];
+
+export const expediting = [
+    {
+        name: "Sumayya",
+        title: "Oath Hearing & Violations / Compliance Associate",
+        description: "",
+    },
+    {
+        name:"Haania",
+        title: "Expeditor",
+        description: "",
+    },
+    {
+        name: "Faizan Ahmad",
+        title: "Expeditor",
+        description: "",
+    },
+    {
+        name: "Nida",
+        title: "Compliance Associate",
+        description: "",
+    }
+];
+
+export const accounting = [
+    {
+        name: "Ifrah",
+        title: "Senior Accountant",
+        description: "",
+    },
+    {
+        name: "Heiba",
+        title: "Staff Accountant, AR Associate",
+        description: "",
+    },
+    {
+        name: "Laiba",
+        title: "AP Assistant, Job Costing",
+        description: "",
+    },
+    {
+        name: "Jannat",
+        title: "AP Assistant, Expense Tracker",
+        description: "",
+    }
+];
+
+export const marketing = [
+    {
+        name: "Ans",
+        title: "Branding & Social Media Designer",
+        description: "",
+    },
+    {
+        name:"Ali",
+        title: "Digital Marketing Specialist",
+        description: "",
+    },
+    {
+        name: "Hamza",
+        title: "Web Developer / DevOps",
+        description: "",
+    },
+];
+
+export const specialists = [
+    // {
+    //     name: "Amanda Rojas",
+    //     title: "Head Expediting Consultant",
+    //     description: "",
+    // },
     {
         name: "Bill",
         title: "Project Manager",
@@ -67,17 +203,9 @@ export const projectManagers = [
         title: "Assistant Project Manager",
         description: "",
     },
-];
-
-export const specialists = [
-    // {
-    //     name: "Amanda Rojas",
-    //     title: "Head Expediting Consultant",
-    //     description: "",
-    // },
     {
-        name: "Said",
-        title: "Alert Service Specialist",
+        name: "Hamza",
+        title: "Web Developer",
         description: "",
     },
     {
@@ -152,8 +280,15 @@ export const specialists = [
     },
 ];
 
+
+
 export const teamMembers = [
     ...leadershipTeam,
     ...projectManagers,
     ...specialists,
+    ...CEO,
+    ...admin,
+    ...expediting,
+    ...accounting,
+    ...marketing,
 ];

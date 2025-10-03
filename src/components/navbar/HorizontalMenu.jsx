@@ -117,7 +117,7 @@ const HorizontalMenu = () => {
                       >
                         <Link
                           href={subItem.link || "#"}
-                          className="flex items-center gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#8AD5B7]"
+                          className="flex items-center gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#37403D] hover:font-bold"
                         >
                           {subItem.name}
                           {subItem.submenu && (
@@ -144,7 +144,7 @@ const HorizontalMenu = () => {
                               <Link
                                 key={nestedItem.name}
                                 href={nestedItem.link || "#"}
-                                className="block px-4 py-2 text-sm text-[#DCE2E2] hover:text-[#1E232261] hover:bg-gray-100"
+                                className="block px-4 py-2 text-sm text-[#DCE2E2] hover:text-[#37403D] hover:font-bold hover:bg-gray-100"
                               >
                                 {nestedItem.name}
                               </Link>

@@ -8,7 +8,7 @@ export const metadata = {
 
 const TermsOfService = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#1F2321]">
+    <div className="min-h-screen bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#1F2321] font-poppins">
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -28,7 +28,7 @@ const TermsOfService = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-conthrax tracking-tight">
             Terms and Conditions of Use
           </h1>
-          <p className="text-lg md:text-xl text-[#DCE2E2]/80 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#DCE2E2]/80 font-light font-poppins max-w-2xl mx-auto leading-relaxed">
             Review the Terms and Conditions governing your use of Proactive Building Solutions' website and services. Learn about user obligations, intellectual property, and liability.
           </p>
         </div>
@@ -39,7 +39,7 @@ const TermsOfService = () => {
         <div className="max-w-5xl mx-auto">
           {/* Header Information */}
           <div className="text-left mb-8">
-            <div className="inline-flex items-center space-x-8 text-[#DCE2E2]/70 text-sm font-medium">
+            <div className="inline-flex items-center font-poppins space-x-8 text-[#DCE2E2]/70 text-sm font-medium">
               <span className="flex items-center">
                 <span className="w-2 h-2 bg-[#8AD5B7] rounded-full mr-2"></span>
                 Last Updated: 08/26/2025
@@ -56,7 +56,7 @@ const TermsOfService = () => {
             <h1 className="text-2xl  font-bold text-[#DCE2E2] font-conthrax w-full leading-tight mb-4">
               Introduction
             </h1>
-            <p className="text-lg text-[#DCE2E2]/90 leading-relaxed font-light">
+            <p className="text-md text-[#DCE2E2]/90 leading-relaxed font-light">
               Welcome to PBS. These Terms of Service (“Terms”) govern your use of our website, services, and any related platforms operated by PBS (“we,” “our,” “us”). By accessing or using our services, you agree to comply with and be bound by these Terms. If you do not agree, please discontinue use of our website and services.
             </p>
             <p className="text-lg text-[#DCE2E2]/90 leading-relaxed font-light">
@@ -76,10 +76,10 @@ const TermsOfService = () => {
                   <h3 className="text-2xl font-bold text-white mb-4 font-conthrax">
                     Services Offered
                   </h3>
-                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light">
+                  <p className="text-[#DCE2E2]/80 mb-6 leading-relaxed font-light text-md">
                     Proactive Building Solutions provides comprehensive property management, compliance, expediting, and owner representation services within the New York Metropolitan area. These services include, but are not limited to:
                   </p>
-                  <div className="space-y-3">
+                  <div className="font-light space-y-3">
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
                       <div>

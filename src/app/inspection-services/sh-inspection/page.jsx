@@ -65,7 +65,7 @@ const Page = () => {
                   return (
                     <p
                       key={index}
-                      className="text-xs text-center lg:text-left font-semibold text-[#89A096]"
+                      className="text-base text-center lg:text-left font-normal text-[#89A096]"
                     >
                       {item}
                     </p>
@@ -190,20 +190,31 @@ const Page = () => {
           titleWidth="w-[80%] md:w-[75%] lg:w-[90%] xl:w-[75%] 2xl:w-[70%]"
           isFormatted={true}
         />
-        <PhaseItem
+        {/* <PhaseItem
           title={SprinklerInspection.inspectionPhases.firstRow[1].title}
           description={SprinklerInspection.inspectionPhases.firstRow[1].description}
           titleWidth="w-[80%] md:w-[75%] lg:w-full xl:w-[80%] 2xl:w-[75%]"
-        />
-      </div>
-
-      {/* Second Column */}
-      <div className="flex flex-col justify-start gap-4 sm:gap-6 lg:gap-8 w-full lg:w-[40%] 2xl:w-[30%]">
+        /> */}
         <PhaseItem
           title={SprinklerInspection.inspectionPhases.secondRow.title}
           description={SprinklerInspection.inspectionPhases.secondRow.description}
           titleWidth="w-[80%] md:w-[75%] lg:w-[55%] 2xl:w-[50%]"
         />
+      </div>
+
+      {/* Second Column */}
+      <div className="flex flex-col justify-start gap-4 sm:gap-6 lg:gap-8 w-full lg:w-[40%] 2xl:w-[30%]">
+      <PhaseItem
+          title={SprinklerInspection.inspectionPhases.firstRow[1].title}
+          description={SprinklerInspection.inspectionPhases.firstRow[1].description}
+          titleWidth="w-[80%] md:w-[75%] lg:w-full xl:w-[80%] 2xl:w-[75%]"
+        />
+        
+        {/* <PhaseItem
+          title={SprinklerInspection.inspectionPhases.secondRow.title}
+          description={SprinklerInspection.inspectionPhases.secondRow.description}
+          titleWidth="w-[80%] md:w-[75%] lg:w-[55%] 2xl:w-[50%]"
+        /> */}
       </div>
     </div>
           </div>

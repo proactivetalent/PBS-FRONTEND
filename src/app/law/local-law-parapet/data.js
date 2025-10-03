@@ -36,7 +36,7 @@
   };
 
   export const complianceDetails = [
-    "Starting 1 January, every year, NYC mandates annual parapet inspections for buildings with parapets facing public right-of-ways",
+    "Starting January 1st, every year, NYC mandates annual parapet inspections for buildings with parapets facing public right-of-ways",
     "Inspection must be completed and observation report kept on file by December 31 of each year, deadlines Unsafe conditions must be fixed within 90 Days",
     "The penalty for failing to provide the required annual parapet observation report upon request is a minimum of $1250, with a maximum penalty of $10K"
   ];

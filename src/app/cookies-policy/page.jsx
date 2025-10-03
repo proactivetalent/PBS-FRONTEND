@@ -7,7 +7,7 @@ export const metadata = {
 
 const CookiePolicy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#1F2321]">
+    <div className="min-h-screen bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#1F2321] font-poppins">
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -27,7 +27,7 @@ const CookiePolicy = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-conthrax tracking-tight">
             Cookies Policy
           </h1>
-          <p className="text-lg md:text-xl text-[#DCE2E2]/80 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#DCE2E2]/80 font-light max-w-2xl font-poppins mx-auto leading-relaxed">
             Learn how Proactive Building Solutions uses cookies and similar tracking technologies to enhance your experience on our website.
           </p>
         </div>
@@ -84,7 +84,7 @@ const CookiePolicy = () => {
             </div>
 
             {/* Section 2: How We Use Cookies */}
-            <div className="group">
+            <div className="group font-light">
               <div className="flex items-start space-x-6">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#8AD5B7] to-[#6BC4A3] rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   2
@@ -259,8 +259,7 @@ const CookiePolicy = () => {
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-[#8AD5B7] rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
+                      <div className='font-light'>
                         <span className="font-semibold text-[#8AD5B7]">Browser Controls:</span>
                         <span className="text-[#DCE2E2]/80 ml-2">You can manage your cookie settings through your web browser. Typically, these settings can be found in the "Options," "Tools," or "Preferences" menu of your browser. For more information, visit the help section of your browser:</span>
                         <div className="space-y-3 mb-6">

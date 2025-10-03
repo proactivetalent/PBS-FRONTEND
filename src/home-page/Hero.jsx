@@ -13,7 +13,7 @@ const heroInfo = [
     img: "/pics/homeHero/building-1.png",
     text1: "Owner Representative",
     text2: "Simplify your Construction Journey with Expert Oversight",
-    text3: "Avoid the stress of managing Contractors, Budgets, and timelines. Ensure accountability, quality, and compliance for your projects.",
+    text3: "Avoid the stress of managing contractors, budgets, and timelines. Ensure accountability, quality, and compliance for your projects.",
     text4: "Let us handle the Hassle, Start your Project Right",
     cta: "Learn More",
     ctaLink: "/owner-representative"
@@ -74,7 +74,7 @@ const Hero = () => {
     slidesToScroll: 1,
     arrows: true, // Enable arrows
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
