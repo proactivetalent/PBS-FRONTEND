@@ -10,48 +10,48 @@ export const leadershipTeam = [
     {
         name: "Amanda Rojas",
         title: "Construction Manager & Office Manager",
-        description: "Amanda Leads complex NYC projects with a focus on Code compliance and deadline mastery, As Head Expediting Consultant, she navigates DOB Hurdles, Securing approvals faster than industry averages.",
+        description: "She leads complex NYC projects with a focus on Code compliance and deadline mastery",
         image: "/pics/home-solution.png",
     
     },
     {
         name: "Ali Credendino",
         title: "Chief Operations Officer",
-        description: "A Strategic & Visionary Leader in PBS, Ali oversees PBS’s operational excellence and brings passion & strategic insight to PBS, her dedication to innovation and teamwork drives the company’s mission to Life.",
+        description: "She oversees the operations and brings passion & strategic insight with her dedication to innovation and teamwork.",
         image: "/pics/home-solution.png",
     },
     {
         name: "Abdallah Elcherbini",
         title: "Registered Architect",
-        description: "Abdallah has designed many projects in the industry. He maximizes square inches for every property while going head to head with the departments on your behalf.",
+        description: "He maximizes square inches for every property while going head to head with the departments on your behalf.",
         image: "/pics/home-solution.png",
         
     },
     {
         name: "Hal Ozkurt",
         title: "Licensed Master Electrician",
-        description: "Hal has been known for his personal attention on every project. He is a perfectionist at heart ensuring safety, compliance and excellence. With Hal on the job no wires are crossed.",
+        description: "He is a perfectionist at heart ensuring safety, compliance and excellence.",
         image: "/pics/home-solution.png",
         
     },
     {
         name: "Arthur Estupinian",
         title: "Licensed Master Plumber",
-        description: "Arthur is the owner of a third generation plumbing company with a remarkable 90 years in business. His family helped create the plumbing industry while he has continued their legacy of quality workmanship and service.",
+        description: "He has over 90 years of collective experience and has a legacy of quality workmanship and service.",
         image: "/pics/home-solution.png",
 
     },
     {
         name: "James Powers",
         title: "MEP Engineer",
-        description: "James takes pride in every design ensuring code compliance and energy efficiency. He is known for travelling the world to investigate new technologies bringing your building to the next level.",
+        description: "He is known for travelling the world to investigate new technologies bringing your building to new heights.",
         image: "/pics/home-solution.png",
         
     },
     {
         name: "Glen Langer",
         title: "Structural Engineer",
-        description: "Glen has been involved with over 1,200 filings in NYC making sure your building is structurally sound, code compliant and built to specifications. Glen maintains client satisfaction with personal attention and consistent work ethic.",
+        description: "He has been involved with over 1,200 filings in NYC making sure your building is structurally sound.",
         image: "/pics/home-solution.png",
         
     },
