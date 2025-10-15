@@ -121,7 +121,7 @@ const Page = () => {
 
               {/* Leadership Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/leadership.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
@@ -134,7 +134,7 @@ const Page = () => {
                   {leadershipTeam.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-[40vh] md:h-[35vh] lg:h-[40vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
+                      className={`w-full h-[40vh] md:h-[35vh] lg:h-[30vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -204,7 +204,7 @@ const Page = () => {
 
               {/* Managers Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/manager.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
@@ -213,11 +213,11 @@ const Page = () => {
               </div>
               {/* Managers Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 mb-6">
                   {projectManagers.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -282,7 +282,7 @@ const Page = () => {
 
               {/* Admin Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/admin.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
@@ -291,11 +291,11 @@ const Page = () => {
               </div>
               {/* Admin Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
                   {admin.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === specialists.length - 1
+                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -360,7 +360,7 @@ const Page = () => {
 
               {/* Expediting Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[40%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
@@ -369,7 +369,7 @@ const Page = () => {
               </div>
               {/* Expediting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
                   {expediting.map((member, index) => (
                     <div
                       key={index}
@@ -379,7 +379,7 @@ const Page = () => {
                         '--mouse-x': activeCard === index ? `${mousePosition.x}px` : '50%',
                         '--mouse-y': activeCard === index ? `${mousePosition.y}px` : '50%'
                       }}
-                      className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -450,7 +450,7 @@ const Page = () => {
 
               {/* Accounting Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/accounting.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Accounting Team</h2>
@@ -459,11 +459,11 @@ const Page = () => {
               </div>
               {/* Accounting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
                   {accounting.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -529,7 +529,7 @@ const Page = () => {
 
               {/* Marketing Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[40vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/marketing.png" alt="Leadership" />
                     <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
@@ -538,11 +538,11 @@ const Page = () => {
               </div>
               {/* Marketing Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
                   {marketing.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
