@@ -61,21 +61,21 @@ const Page = () => {
 
       {/* CEO Section */}
       <div className="px-4 md:px-6 lg:px-12 xl:px-16 pt-8 flex justify-center">
-        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-3 md:gap-4 lg:gap-12 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-3 md:gap-4 lg:gap-12 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
           {/* CEO Image Section */}
-          <div className="w-[90vw] md:w-[85vw] lg:w-[35%] flex flex-col justify-start items-center space-y-10 h-full md:h-full lg:min-h-[450px] xl:min-h-[450px] 2xl:min-h-[450px] 3xl:min-h-[450px] 4xl:min-h-[550px] mx-auto">
+          <div className="w-[90vw] md:w-[85vw] lg:w-[35%] flex flex-col justify-start items-center space-y-10 h-full md:h-full lg:min-h-[450px] mx-auto">
             {/* Header Section */}
             <div className="w-full h-[35%] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] px-4 md:px-6 py-4 md:py-6 flex flex-row justify-center items-center gap-3 md:gap-4  backdrop-blur-sm border border-white/5">
               <div className="flex justify-center items-center">
                 <img className="w-16 md:w-20 lg:w-20 h-auto" src="/PBS Assets/About Us/Our Team/CEO.png" alt="CEO" />
               </div>
-              <h2 className="font-conthrax text-xl lg:text-fluid-h3 font-semibold text-white text-center leading-tight flex-1">Message From Executive Director</h2>
+              <h2 className="font-conthrax text-xl 3xl:text-2xl font-semibold text-white text-center leading-tight flex-1">Message From Executive Director</h2>
             </div>
 
             {/* CEO Info Section */}
             <div className="w-full h-auto min-h-[40%] md:h-auto md:min-h-[50%] lg:h-[75%] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] py-6 md:py-6 lg:p-8 flex flex-col justify-center  backdrop-blur-sm border border-white/10  transition-all duration-300">
               <div className="w-full flex flex-col items-center md:items-center lg:items-start text-center md:text-center lg:text-left space-y-0 md:space-y-0">
-                <h1 className="font-conthrax font-semibold text-[#8AD5B7] text-xl lg:text-fluid-h3 5xl:mb-2">{CEO_data.name}</h1>
+                <h1 className="font-conthrax font-semibold text-[#8AD5B7] text-xl lg:text-fluid-h3 3xl:mb-2">{CEO_data.name}</h1>
                 <p className="font-semibold text-white text-fluid-base font-poppins">{CEO_data.title}</p>
                 <div className="text-white text-center text-sm md:text-fluid-base font-normal leading-relaxed lg:text-start">
                   <p>Licensed General Contractor</p>
@@ -89,7 +89,7 @@ const Page = () => {
           {/* CEO Content Section */}
           <div className="w-[90vw] md:w-[85vw] lg:w-[65%] flex flex-col justify-center mx-auto">
             {/* <div className="w-full h-auto min-h-[40vh] md:h-auto md:min-h-[50vh] lg:h-[50vh] bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide  backdrop-blur-sm border border-white/10  transition-all duration-300"> */}
-            <div className="w-full h-auto min-h-[400px] md:h-auto lg:min-h-[450px] xl:min-h-[450px] 2xl:min-h-[450px] 3xl:min-h-[450px] 4xl:min-h-[550px] bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide  backdrop-blur-sm border border-white/10  transition-all duration-300">
+            <div className="w-full h-auto min-h-[400px] md:h-auto lg:min-h-[450px]  bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide  backdrop-blur-sm border border-white/10  transition-all duration-300">
 
               {/* CEO Message */}
               <div className="text-white font-normal leading-relaxed text-left text-sm p-4 md:p-0 md:text-fluid-base">
@@ -117,11 +117,11 @@ const Page = () => {
         <section className="w-[100%]">
           {/* Leadership Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16 flex justify-center">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-10 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-10 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Leadership Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/leadership.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
@@ -134,21 +134,21 @@ const Page = () => {
                   {leadershipTeam.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-[40vh] md:h-[250px] lg:min-h-[250px] xl:min-h-[250px] 2xl:min-h-[250px] 3xl:min-h-[275px] 4xl:min-h-[320px] 5xl:min-h-[360px] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl 4xl:rounded-[36px] 5xl:rounded-[40px]  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
+                      className={`w-full h-[40vh] md:h-[260px] 3xl:min-h-[275px] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl 4xl:rounded-[36px] 5xl:rounded-[40px]  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
                         : ""
                         }`}
                     >
-                      <div className="w-full flex flex-col justify-stretch gap-1 text-start p-2 3xl:p-4 4xl:p-2 5xl:p-6">
+                      <div className="w-full flex flex-col justify-stretch gap-1 text-start p-2 3xl:p-4">
 
                         <div>
                           <h3 className="text-fluid-h3 text-start font-conthrax font-semibold text-[#8AD5B7]">
                             {member.name}
                           </h3>
 
-                          <p className="text-[#ffff] text-fluid-base font-semibold mb-2 4xl:mb-0 5xl:mb-2">
+                          <p className="text-[#ffff] text-fluid-base font-semibold mb-2">
                             {member.title}
                           </p>
                         </div>
@@ -200,11 +200,11 @@ const Page = () => {
 
           {/* Managers Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Managers Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/manager.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
@@ -213,7 +213,7 @@ const Page = () => {
               </div>
               {/* Managers Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[260px] 3xl:h-[275px]">
                   {projectManagers.map((member, index) => (
                     <div
                       key={index}
@@ -272,11 +272,11 @@ const Page = () => {
 
           {/* Admin Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Admin Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/admin.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
@@ -285,7 +285,7 @@ const Page = () => {
               </div>
               {/* Admin Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[260px] 3xl:h-[275px]">
                   {admin.map((member, index) => (
                     <div
                       key={index}
@@ -344,11 +344,11 @@ const Page = () => {
 
           {/* Expediting Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Expediting Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
@@ -357,7 +357,7 @@ const Page = () => {
               </div>
               {/* Expediting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[260px] 3xl:h-[275px]">
                   {expediting.map((member, index) => (
                     <div
                       key={index}
@@ -422,11 +422,11 @@ const Page = () => {
 
           {/* Accounting Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Accounting Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/accounting.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Accounting Team</h2>
@@ -435,7 +435,7 @@ const Page = () => {
               </div>
               {/* Accounting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[260px] 3xl:h-[275px]">
                   {accounting.map((member, index) => (
                     <div
                       key={index}
@@ -496,11 +496,11 @@ const Page = () => {
 
           {/* Marketing Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Marketing Image Section */}
               <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
-                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
+                <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/marketing.png" alt="Leadership" />
                     <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
@@ -509,7 +509,7 @@ const Page = () => {
               </div>
               {/* Marketing Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[260px] 3xl:h-[275px]">
                   {marketing.map((member, index) => (
                     <div
                       key={index}
