@@ -49,9 +49,9 @@ export const leadershipTeam = [
         
     },
     {
-        name: "Hal Ozkurt",
+        name: "Marcos Urra",
         title: "Licensed Master Electrician",
-        description: "He is a perfectionist at heart ensuring safety, compliance and excellence.",
+        description: "He is committed to excellence, partnered with PBS. Marcos Urra brings Park Ave Electrical's master-level expertise to every project",
         image: "/pics/home-solution.png",
         
     },
