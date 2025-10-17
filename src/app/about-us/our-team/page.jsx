@@ -50,35 +50,34 @@ const Page = () => {
       <div className="w-[100vw] relative flex justify-center">
         <div className="bg-[#8AD5B7] w-full h-2"></div>
         <div
-          className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] sm:w-[45%] lg:w-[35%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+          className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] sm:w-[45%] lg:w-[35%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20 mb-24"
         >
           Our Team
         </div>
       </div>
 
-      <p className="w-full text-center my-12 font-semibold text-base text-[#89A096]">
-        Meet the professionals driving our success.
-      </p>
+      <div className="my-24">
+      </div>
 
       {/* CEO Section */}
-      <div className="px-4 md:px-6 lg:px-12 xl:px-16 py-8 flex justify-center">
-        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-3 md:gap-4 lg:gap-12 w-full max-w-[75vw]">
+      <div className="px-4 md:px-6 lg:px-12 xl:px-16 pt-8 flex justify-center">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-3 md:gap-4 lg:gap-12 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
           {/* CEO Image Section */}
-          <div className="w-[80vw] md:w-[80vw] lg:w-2/5 flex flex-col justify-start items-center space-y-4 h-full md:h-full lg:h-[60vh] mx-auto">
+          <div className="w-[90vw] md:w-[85vw] lg:w-[35%] flex flex-col justify-start items-center space-y-10 h-full md:h-full lg:min-h-[450px] xl:min-h-[450px] 2xl:min-h-[450px] 3xl:min-h-[450px] 4xl:min-h-[550px] mx-auto">
             {/* Header Section */}
-            <div className="w-full h-[25%] bg-[#1E2322] rounded-2xl lg:rounded-3xl sm:rounded-3xl px-4 md:px-6 py-4 md:py-6 flex flex-row justify-center items-center gap-3 md:gap-4 shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5">
+            <div className="w-full h-[35%] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] px-4 md:px-6 py-4 md:py-6 flex flex-row justify-center items-center gap-3 md:gap-4  backdrop-blur-sm border border-white/5">
               <div className="flex justify-center items-center">
                 <img className="w-16 md:w-20 lg:w-20 h-auto" src="/PBS Assets/About Us/Our Team/CEO.png" alt="CEO" />
               </div>
-              <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center leading-tight flex-1">Message From Executive Director</h2>
+              <h2 className="font-conthrax text-xl lg:text-fluid-h3 font-semibold text-white text-center leading-tight flex-1">Message From Executive Director</h2>
             </div>
-            
+
             {/* CEO Info Section */}
-            <div className="w-full h-auto min-h-[40%] md:h-auto md:min-h-[50%] lg:h-[75%] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] rounded-[24px] py-6 md:py-6 lg:p-8 flex flex-col justify-center shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+            <div className="w-full h-auto min-h-[40%] md:h-auto md:min-h-[50%] lg:h-[75%] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] py-6 md:py-6 lg:p-8 flex flex-col justify-center  backdrop-blur-sm border border-white/10  transition-all duration-300">
               <div className="w-full flex flex-col items-center md:items-center lg:items-start text-center md:text-center lg:text-left space-y-0 md:space-y-0">
-                <h1 className="font-conthrax font-semibold text-[#8AD5B7] text-fluid-h3">{CEO_data.name}</h1>
-                 <p className="font-semibold text-white text-fluid-base-sm pb-2 sm:pb-2 md:pb-2 lg:pb-10 font-poppins">{CEO_data.title}</p>
-                <div className="text-[#89A096] text-start text-fluid-base font-normal leading-relaxed">
+                <h1 className="font-conthrax font-semibold text-[#8AD5B7] text-xl lg:text-fluid-h3 5xl:mb-2">{CEO_data.name}</h1>
+                <p className="font-semibold text-white text-fluid-base font-poppins">{CEO_data.title}</p>
+                <div className="text-white text-center text-sm md:text-fluid-base font-normal leading-relaxed lg:text-start">
                   <p>Licensed General Contractor</p>
                   <p>Superintendent & Filing Representative</p>
                   <p>Specialized in Real Estate Development & Problem Solving</p>
@@ -88,21 +87,22 @@ const Page = () => {
           </div>
 
           {/* CEO Content Section */}
-          <div className="w-[80vw] md:w-[80vw] lg:w-3/5 flex flex-col justify-center mx-auto">
-            <div className="w-full h-auto min-h-[40vh] md:h-auto md:min-h-[50vh] lg:h-[60vh] bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+          <div className="w-[90vw] md:w-[85vw] lg:w-[65%] flex flex-col justify-center mx-auto">
+            {/* <div className="w-full h-auto min-h-[40vh] md:h-auto md:min-h-[50vh] lg:h-[50vh] bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide  backdrop-blur-sm border border-white/10  transition-all duration-300"> */}
+            <div className="w-full h-auto min-h-[400px] md:h-auto lg:min-h-[450px] xl:min-h-[450px] 2xl:min-h-[450px] 3xl:min-h-[450px] 4xl:min-h-[550px] bg-[#1E2322] rounded-[24px] p-3 md:p-4 lg:p-5 flex flex-col justify-center overflow-y-auto scrollbar-hide  backdrop-blur-sm border border-white/10  transition-all duration-300">
+
               {/* CEO Message */}
-              <div className="text-[#89A096] font-normal leading-relaxed text-left text-fluid-base">
+              <div className="text-white font-normal leading-relaxed text-left text-sm p-4 md:p-0 md:text-fluid-base">
                 <p className="mb-4">
-                  Dear Valued Clients,<br />
                   We specialize in guiding NYC developers, owners, and contractors to simplify the complexity of the city’s construction and compliance landscape, working with a proactive team with over 100 years of combined experience. From planning and permitting to inspections and sign-off.
                 </p>
                 <p className="mb-4">
-                Our job isn’t just about great design and execution, it’s about offering a proactive system to keep your projects moving. Our real time alerts across all relevant city databases, pre-inspection audits to avoid surprises, deep-dive planning tools for accurate soft-cost estimates, and complete owner representation throughout the lifecycle of a project, helps ensure compliance from day one. We work alongside a trusted network of professionals across engineering, architecture, and legal advisory to deliver reliable, end-to-end support.
+                  Our job isn’t just about great design and execution, it’s about offering a proactive system to keep your projects moving. Our real time alerts across all relevant city databases, pre-inspection audits to avoid surprises, deep-dive planning tools for accurate soft-cost estimates, and complete owner representation throughout the lifecycle of a project, helps ensure compliance from day one. We work alongside a trusted network of professionals across engineering, architecture, and legal advisory to deliver reliable, end-to-end support.
                 </p>
-                <p className="mb-4">
-                Advocating for our neighbors. PBS makes a difference being trusted, experienced, and always one step ahead. Whether you’re breaking ground or finalizing a sign-off, we provide clarity, accountability, and peace of mind at every stage. We are here to redefine excellence in NYC construction.
+                <p className="">
+                  Advocating for our neighbors. PBS makes a difference being trusted, experienced, and always one step ahead. Whether you’re breaking ground or finalizing a sign-off, we provide clarity, accountability, and peace of mind at every stage. We are here to redefine excellence in NYC construction.
                 </p>
-                
+
               </div>
             </div>
           </div>
@@ -110,49 +110,49 @@ const Page = () => {
       </div>
 
 
-      <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 mb-10 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+      <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
 
-      <div className="py-4 xl:py-6 ">
+      <div className="">
         <section className="w-[100%]">
           {/* Leadership Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16 flex justify-center">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 w-full max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-10 w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Leadership Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/leadership.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
                   </div>
                 </div>
               </div>
               {/* Leadership Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 ">
                   {leadershipTeam.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-[40vh] md:h-[35vh] lg:h-[30vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
+                      className={`w-full h-[40vh] md:h-[250px] lg:min-h-[250px] xl:min-h-[250px] 2xl:min-h-[250px] 3xl:min-h-[275px] 4xl:min-h-[320px] 5xl:min-h-[360px] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl 4xl:rounded-[36px] 5xl:rounded-[40px]  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-300 ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
                         : ""
                         }`}
                     >
-                      <div className="w-full flex flex-col justify-between gap-1 text-start p-2">
-                        
-                        <div>
-                        <h3 className="text-fluid-h3 text-start font-conthrax font-semibold text-[#8AD5B7]">
-                          {member.name}
-                        </h3>
+                      <div className="w-full flex flex-col justify-stretch gap-1 text-start p-2 3xl:p-4 4xl:p-2 5xl:p-6">
 
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
-                          {member.title}
-                        </p>
+                        <div>
+                          <h3 className="text-fluid-h3 text-start font-conthrax font-semibold text-[#8AD5B7]">
+                            {member.name}
+                          </h3>
+
+                          <p className="text-[#ffff] text-fluid-base font-semibold mb-2 4xl:mb-0 5xl:mb-2">
+                            {member.title}
+                          </p>
                         </div>
-                        <p className="text-fluid-base-sm text-[#89A096] text-semibold break-words md:pr-3">
+                        <p className="text-xs xl:text-sm 2xl:text-fluid-base text-white font-normal md:pr-3 leading-[2.5] lg:leading-[1.2]">
                           {member.description}
                         </p>
                       </div>
@@ -170,7 +170,7 @@ const Page = () => {
                 {leadershipTeam.map((member, index) => (
                   <div
                     key={index}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-300 ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-300 ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -184,7 +184,7 @@ const Page = () => {
                       <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
                         {member.title}
                       </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
+                      <p className="text-xs md:text-sm text-white text-center leading-relaxed">
                         {member.description}
                       </p>
                     </div>
@@ -194,30 +194,30 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
           {/* <div className="w-1/2 md:w-[30%] mx-auto mb-10 bg-[#D9D9D9] h-1"></div> */}
 
           {/* Managers Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Managers Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/manager.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
                   </div>
                 </div>
               </div>
               {/* Managers Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
                   {projectManagers.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto  bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -229,11 +229,8 @@ const Page = () => {
                           {member.name}
                         </h3>
 
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
+                        <p className="text-[#ffff] text-fluid-base font-normal">
                           {member.title}
-                        </p>
-                        <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
-                          {member.description}
                         </p>
                       </div>
                     </div>
@@ -250,7 +247,7 @@ const Page = () => {
                 {projectManagers.map((member, index) => (
                   <div
                     key={index}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[12vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -264,9 +261,6 @@ const Page = () => {
                       <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
                         {member.title}
                       </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
-                        {member.description}
-                      </p>
                     </div>
                   </div>
                 ))}
@@ -274,28 +268,28 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
           {/* Admin Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Admin Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/admin.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
                   </div>
                 </div>
               </div>
               {/* Admin Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
                   {admin.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === specialists.length - 1
+                      className={`w-full h-auto  bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px]  backdrop-blur-sm border border-white/10  hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -307,11 +301,8 @@ const Page = () => {
                           {member.name}
                         </h3>
 
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
+                        <p className="text-[#ffff] text-fluid-base font-normal">
                           {member.title}
-                        </p>
-                        <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
-                          {member.description}
                         </p>
                       </div>
                     </div>
@@ -328,7 +319,7 @@ const Page = () => {
                 {admin.map((member, index) => (
                   <div
                     key={index}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[12vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -342,9 +333,6 @@ const Page = () => {
                       <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
                         {member.title}
                       </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
-                        {member.description}
-                      </p>
                     </div>
                   </div>
                 ))}
@@ -352,34 +340,28 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
           {/* Expediting Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Expediting Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
-                    <img className="w-[40%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
+                    <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
                   </div>
                 </div>
               </div>
               {/* Expediting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
                   {expediting.map((member, index) => (
                     <div
                       key={index}
-                      onMouseMove={(e) => handleMouseMove(e, index)}
-                      onMouseLeave={handleMouseLeave}
-                      style={{
-                        '--mouse-x': activeCard === index ? `${mousePosition.x}px` : '50%',
-                        '--mouse-y': activeCard === index ? `${mousePosition.y}px` : '50%'
-                      }}
-                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto  bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -391,11 +373,8 @@ const Page = () => {
                           {member.name}
                         </h3>
 
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
+                        <p className="text-[#ffff] text-fluid-base font-normal">
                           {member.title}
-                        </p>
-                        <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
-                          {member.description}
                         </p>
                       </div>
                     </div>
@@ -418,7 +397,7 @@ const Page = () => {
                       '--mouse-x': activeCard === index ? `${mousePosition.x}px` : '50%',
                       '--mouse-y': activeCard === index ? `${mousePosition.y}px` : '50%'
                     }}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[12vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -429,11 +408,8 @@ const Page = () => {
                       <h3 className="text-xl md:text-2xl lg:text-3xl text-center font-conthrax font-semibold text-[#8AD5B7] mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
+                      <p className="text-[#ffff] text-sm md:text-base font-normal mb-2 text-center">
                         {member.title}
-                      </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
-                        {member.description}
                       </p>
                     </div>
                   </div>
@@ -442,28 +418,28 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
           {/* Accounting Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Accounting Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/accounting.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Accounting Team</h2>
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Accounting Team</h2>
                   </div>
                 </div>
               </div>
               {/* Accounting Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
                   {accounting.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-auto  bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -474,11 +450,9 @@ const Page = () => {
                         <h3 className="text-fluid-h3 font-conthrax font-semibold text-[#8AD5B7]">
                           {member.name}
                         </h3>
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
+
+                        <p className="text-[#ffff] text-fluid-base font-normal">
                           {member.title}
-                        </p>
-                        <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
-                          {member.description}
                         </p>
                       </div>
                     </div>
@@ -495,7 +469,7 @@ const Page = () => {
                 {accounting.map((member, index) => (
                   <div
                     key={index}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[12vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -506,11 +480,8 @@ const Page = () => {
                       <h3 className="text-xl md:text-2xl lg:text-3xl text-center font-conthrax font-semibold text-[#8AD5B7] mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
+                      <p className="text-[#ffff] text-sm md:text-base font-normal mb-2 text-center">
                         {member.title}
-                      </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
-                        {member.description}
                       </p>
                     </div>
                   </div>
@@ -519,30 +490,30 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
-          
-          
+
+
           {/* Marketing Section */}
           <div className="px-4 md:px-6 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto max-w-[75vw]">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 4xl:max-w-[66vw] 5xl:max-w-[60vw]">
 
               {/* Marketing Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center">
-                <div className="h-[40vh] md:h-[35vh] lg:h-[30vh] w-full max-w-sm lg:max-w-none bg-[#1E2322] rounded-[24px] shadow-xl shadow-black/25 backdrop-blur-sm border border-white/10 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300">
+              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+                <div className="h-[20vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/marketing.png" alt="Leadership" />
-                    <h2 className="font-conthrax text-fluid-h3 font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
+                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
                   </div>
                 </div>
               </div>
               {/* Marketing Team Cards Grid 3*2 - Hidden on mobile */}
               <div className="hidden lg:flex w-full lg:w-3/4 flex flex-col justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 h-[40vh] md:h-[250px] lg:h-[250px] xl:h-[250px] 2xl:h-[250px] 3xl:h-[275px] 4xl:h-[320px] 5xl:h-[360px]">
                   {marketing.map((member, index) => (
                     <div
                       key={index}
-                      className={`w-full h-auto min-h-[14vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/10 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
+                      className={`w-full h-[50%]  bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  hover:border-white/10 transition-all duration-700 ease-in-out  ${index === specialists.length - 1
                         ? index % 2 === 0
                           ? "relative left-0 lg:left-[50%]"
                           : ""
@@ -554,11 +525,8 @@ const Page = () => {
                           {member.name}
                         </h3>
 
-                        <p className="text-[#ffff] text-fluid-base font-semibold">
+                        <p className="text-[#ffff] text-fluid-base font-normal">
                           {member.title}
-                        </p>
-                        <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
-                          {member.description}
                         </p>
                       </div>
                     </div>
@@ -575,7 +543,7 @@ const Page = () => {
                 {marketing.map((member, index) => (
                   <div
                     key={index}
-                    className={`w-full h-auto min-h-[18vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-3xl shadow-lg shadow-black/20 backdrop-blur-sm border border-white/5 hover:shadow-xl hover:shadow-black/25 hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
+                    className={`w-full h-auto min-h-[12vh] bg-gradient-to-br from-[#1E2322] via-[#1E2322] to-[#2A2F2E] hover:from-[#2A2F2E] hover:via-[#1E2322] hover:to-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-3xl  backdrop-blur-sm border border-white/5  hover:border-white/10 transition-all duration-700 ease-in-out ${index === projectManagers.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
                         : "relative left-0 lg:left-[50%]"
@@ -586,11 +554,8 @@ const Page = () => {
                       <h3 className="text-xl md:text-2xl lg:text-3xl text-center font-conthrax font-semibold text-[#8AD5B7] mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-[#ffff] text-sm md:text-base font-semibold mb-2 text-center">
+                      <p className="text-[#ffff] text-sm md:text-base font-normal mb-2 text-center">
                         {member.title}
-                      </p>
-                      <p className="text-xs md:text-sm text-[#89A096] leading-relaxed">
-                        {member.description}
                       </p>
                     </div>
                   </div>
@@ -599,7 +564,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-32 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
 
 
 

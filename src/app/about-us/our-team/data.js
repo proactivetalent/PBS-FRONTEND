@@ -21,16 +21,16 @@ export const leadershipTeam = [
         image: "/pics/home-solution.png",
     },
     {
-        name: "Abdallah Elcherbini",
-        title: "Registered Architect",
-        description: "He maximizes square inches for every property while going head to head with the departments on your behalf.",
+        name: "Glen Langer",
+        title: "Structural Engineer",
+        description: "He has been involved with over 1,200 filings in NYC making sure your building is structurally sound.",
         image: "/pics/home-solution.png",
         
     },
     {
-        name: "Hal Ozkurt",
-        title: "Licensed Master Electrician",
-        description: "He is a perfectionist at heart ensuring safety, compliance and excellence.",
+        name: "Abdallah Elcherbini",
+        title: "Registered Architect",
+        description: "He maximizes square inches for every property while going head to head with the departments on your behalf.",
         image: "/pics/home-solution.png",
         
     },
@@ -39,7 +39,7 @@ export const leadershipTeam = [
         title: "Licensed Master Plumber",
         description: "He has over 90 years of collective experience and has a legacy of quality workmanship and service.",
         image: "/pics/home-solution.png",
-
+        
     },
     {
         name: "James Powers",
@@ -49,9 +49,9 @@ export const leadershipTeam = [
         
     },
     {
-        name: "Glen Langer",
-        title: "Structural Engineer",
-        description: "He has been involved with over 1,200 filings in NYC making sure your building is structurally sound.",
+        name: "Hal Ozkurt",
+        title: "Licensed Master Electrician",
+        description: "He is a perfectionist at heart ensuring safety, compliance and excellence.",
         image: "/pics/home-solution.png",
         
     },
@@ -74,11 +74,6 @@ export const projectManagers = [
         description: "",
     },
     {
-        name: "Samia",
-        title: "Assistant Project Manager",
-        description: "",
-    },
-    {
         name: "Mahnoor",
         title: "Assistant Project Manager",
         description: "",
@@ -97,21 +92,21 @@ export const admin = [
         description: "",
     },
     {
-        name: "Aila",
-        title: "Construction Admin / Purchaser",
+        name:"Amaranta",
+        title: "Admin Assistant",
         description: "",
     },
     {
-        name:"Amaranta",
-        title: "Content Writer / Photographer",
+        name: "Ailla",
+        title: "Construction Admin / Purchaser",
         description: "",
     },
 ];
 
 export const expediting = [
     {
-        name: "Sumayya",
-        title: "Oath Hearing & Violations / Compliance Associate",
+        name: "Azka",
+        title: "Expeditor",
         description: "",
     },
     {
@@ -120,13 +115,13 @@ export const expediting = [
         description: "",
     },
     {
-        name: "Faizan Ahmad",
+        name: "Faizan",
         title: "Expeditor",
         description: "",
     },
     {
         name: "Nida",
-        title: "Compliance Associate",
+        title: "OATH Hearings & Violations, Compliance Associate",
         description: "",
     }
 ];
@@ -157,17 +152,17 @@ export const accounting = [
 export const marketing = [
     {
         name: "Ans",
-        title: "Branding & Social Media Designer",
+        title: "Creative Designer",
         description: "",
     },
     {
         name:"Ali",
-        title: "Digital Marketing Specialist",
+        title: "Digital Marketer",
         description: "",
     },
     {
         name: "Hamza",
-        title: "Web Developer / DevOps",
+        title: "Website Developer",
         description: "",
     },
 ];
