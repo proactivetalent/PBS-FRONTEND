@@ -203,7 +203,7 @@ const Page = () => {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Managers Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+              <div className="w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/manager.png" alt="Leadership" />
@@ -275,7 +275,7 @@ const Page = () => {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Admin Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+              <div className="w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/admin.png" alt="Leadership" />
@@ -347,7 +347,7 @@ const Page = () => {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Expediting Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+              <div className="w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
@@ -425,7 +425,7 @@ const Page = () => {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Accounting Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+              <div className="w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/accounting.png" alt="Leadership" />
@@ -499,7 +499,7 @@ const Page = () => {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-4 md:gap-6 lg:gap-8 mx-auto w-full max-w-[90vw] md:max-w-[85vw] lg:max-w-[75vw] 3xl:max-w-[1440px]">
 
               {/* Marketing Image Section */}
-              <div className="mb-8 w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
+              <div className="w-full lg:w-1/4 flex flex-col justify-center items-center lg:items-start">
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px] bg-[#1E2322] rounded-[24px] 4xl:rounded-[36px] 5xl:rounded-[40px] backdrop-blur-sm border border-white/10  transition-all duration-300">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/marketing.png" alt="Leadership" />
@@ -564,7 +564,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 h-[2px] bg-[#1E2322]/70 rounded-full"></div>
+          <div className="w-1/2 md:w-[80%] mx-auto my-20 md:my-20 lg:my-24 "></div>
 
 
 
