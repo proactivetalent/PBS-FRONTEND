@@ -126,85 +126,79 @@ const Alerts = () => {
   }, []);
 
   return (
-    <div className="bg-[#37403D] py-16" ref={ref}>
-      <div className="sm:px-6 lg:px-16">
-        <div className="px-4 sm:px-8 flex flex-col lg:flex-row lg:justify-between">
-          <div ref={leftRef} className="lg:w-[45%] relative hidden lg:block">
-            <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-[#8AD5B7]">
-              <CustomImage
+    <div className="bg-[#2B3331] py-8 sm:py-12 lg:py-16" ref={ref}>
+      <div className="px-4 sm:px-6 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] 3xl:min-h-[665px] mx-auto bg-[#1E2322] rounded-[20px] overflow-hidden">
+        <div className="px-4 sm:px-8 flex flex-col lg:flex-row lg:justify-between lg:pr-0">
+          <div ref={leftRef} className="lg:w-[45%] relative w-full lg:block">
+            <div className="relative h-full w-full lg:w-[80%] overflow-hidden py-6 sm:py-8 lg:py-10 font-poppins">
+
+              <div className="capitalize text-lg sm:text-xl lg:text-2xl text-[#8AD5B7] font-semibold ">
+                Stay Ahead of Property Violations — Before They Cost You
+              </div>
+              <div className="text-sm sm:text-base font-normal text-[#C5D3CD] mt-2">
+                Our Alert System monitors NYC agencies in real time and notifies you instantly of any violation on your property
+              </div>
+
+              {/* Problem, Solution, Benefits section */}
+              <div>
+                <div>
+                  <div className="flex flex-row mt-4 sm:mt-6 gap-3 sm:gap-6 items-start">
+                    <div className="flex-shrink-0">
+                      <img src="/PBS Assets/homepage/alerts/problem.png" alt="" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                    </div>
+                    <div className="flex-1">
+                      <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">Problem</h1>
+                      <p className="text-sm sm:text-base font-normal text-[#C5D3CD] mt-2">Missing a violation notice can lead to thousands in fines and project delays</p>
+                    </div>
+
+                  </div>
+
+                  <div className="flex flex-row mt-4 sm:mt-6 gap-3 sm:gap-6 items-start">
+                    <div className="flex-shrink-0">
+                      <img src="/PBS Assets/homepage/alerts/solution.png" alt="" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                    </div>
+                    <div className="flex-1">
+                      <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">Solution</h1>
+                      <p className="text-sm sm:text-base font-normal text-[#C5D3CD] mt-2">Our Alert System tracks all major NYC departments (DOB, FDNY, DOT, HPD, DEP, LPC, ECB) and updates you the moment a violation is issued</p>
+                    </div>
+
+                  </div>
+
+                  <div className="flex flex-row mt-4 sm:mt-6 gap-3 sm:gap-6 items-start">
+                    <div className="flex-shrink-0">
+                      <img src="/PBS Assets/homepage/alerts/benefits.png" alt="" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                    </div>
+                    <div className="flex-1">
+                      <h1 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">Benefits</h1>
+                      <p className="text-sm sm:text-base font-normal text-[#C5D3CD] mt-2">Stay compliant, save money, and focus on managing your properties—not chasing paperwork</p>
+                    </div>
+
+                  </div>
+
+                  <CTA2
+                    text="Sign up for free"
+                    href="/alert"
+                    styling="w-full lg:w-auto mt-6 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] flex px-0 lg:px-8 lg:mx-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                  />
+                </div>
+              </div>
+              {/* <CustomImage
                 src="/PBS%20Assets/better-assets/Images%20Without%20Bg/Facebook%20Cover.webp"
                 height={100}
                 width={100}
                 alt="Notification alerts interface"
                 className="w-auto h-full rounded-2xl mix-blend-luminosity opacity-90"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              /> */}
+
+
+              <div className="" />
             </div>
           </div>
 
-          <div className="lg:pt-12 lg:pb-6 lg:w-[55%] flex flex-col justify-center lg:ml-12">
-            <div ref={textRef} className="mb-8">
-              <Heading
-                main="Alert System"
-                subpart="Never Miss a Critical step for property again"
-                styling="mb-4 text-brand-light"
-              />
-              <div className="text-brand-gray3 space-y-6">
-                <p className="text-sm font-semibold leading-relaxed">
-                  Revolutionizing the industry by providing access to every
-                  demographic of data in real-time. Our enhanced alert system
-                  covers all relevant departments in New York City to ensure you
-                  never miss any critical step again. Free for the first 3
-                  months
-                </p>
-                <div className="flex flex-col lg:flex-row items-center gap-4">
-                  <div className="flex flex-col justify-center">
-                    <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-4"></div>
-
-                    <span className="text-lg font-semibold font-conthrax text-[#DCE2E2] text-nowrap">
-                      SIGN UP
-                    </span>
-                    <span className="text-lg font-semibold text-[#DCE2E2] font-conthrax">
-                      BELOW{" "}
-                    </span>
-                  </div>
-
-                  <CTA2
-                    text="Get your Property registered for Free"
-                    href="/alert"
-                    styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
-                  />
-                </div>
-              </div>
-            </div>
-
-                    <div className="text-2xl lg:text-3xl relative">
-        <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl flex flex-col items-center justify-between gap-4 w-full">
-      <p className="text-[#DCE2E2] w-full text-lg lg:text-xl font-medium text-center">
-        Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
-      </p>
-      
-      <CTA2
-                text="Click to watch now"
-                href="/alert"
-                styling="w-full lg:w-auto mt-0 h-10 xl:h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 font-semibold whitespace-nowrap hover:brightness-105 transition text-xl xl:text-2xl"
-              />
-    </div>
-    </div>
-
-            {/* <div ref={formRef}>
-              <MultiStepForm
-                steps={formSteps}
-                buttonObj={button}
-                onSubmit={(data) => console.log(data)}
-                containerClass="space-y-6 relative z-10 backdrop-blur-lg rounded-3xl p-6 lg:p-4 transition-all duration-300 group/form"
-                inputClass="w-full rounded-xl text-brand-light placeholder-brand-gray3 focus:border-brand-light focus:ring-2 focus:ring-brand-light transition-all"
-                buttonClass="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-brand-green1/20"
-                errorClass="text-rose-400 mt-2 text-sm"
-              />
-            </div> */}
+          {/* {laptop image section} */}
+          <div className="lg:w-[50%] flex items-end justify-end -mr-2 sm:-mr-4 lg:-mr-8 -mb-2 sm:-mb-4 lg:-mb-8 mt-4 lg:mt-0">
+            <img src="/PBS Assets/homepage/alerts/laptop.png" alt="" className="w-full max-w-none object-cover object-right" />
           </div>
-          <div></div>
         </div>
 
         {/* <div className="text-2xl lg:text-3xl relative mt-8">
@@ -220,6 +214,18 @@ const Alerts = () => {
               />
     </div>
     </div> */}
+      </div>
+      <div className="px-4 sm:px-6 lg:px-14 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] 3xl:min-h-[100px] mx-auto bg-[#1E2322] rounded-[20px] overflow-hidden mt-4 sm:mt-6 flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0 py-4 lg:py-0">
+          <div className="flex flex-row items-center gap-3 sm:gap-4 max-w-xl w-full lg:w-auto">
+            <img src="/PBS Assets/homepage/alerts/yt.png" alt="" className="w-8 h-8 sm:w-auto sm:h-auto flex-shrink-0" />
+            <p className="text-sm sm:text-base font-medium font-poppins text-white">Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared</p>
+          </div>
+          {/* click to watch now */}
+          <div className="w-full lg:w-auto flex justify-center lg:justify-end"><CTA2
+                    text="Click to watch now"
+                    href="/alert"
+                    styling="w-full lg:w-auto my-0 lg:my-6 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] flex px-0 lg:px-8 lg:mx-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                  /></div>
       </div>
     </div>
   );

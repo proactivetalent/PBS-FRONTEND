@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-brand-dark">
-        <div className="lg:w-[100%] mx-auto overflow-hidden">
+        <div className="lg:w-[100%] mx-auto overflow-hidden pt-[70px] xl:pt-[100px]">
           <Hero />
           <Alerts />
           <Solutions />

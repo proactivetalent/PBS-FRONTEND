@@ -66,11 +66,11 @@ const HorizontalMenu = () => {
             {navItems.map((item, index) => (
               <div
                 key={item.name}
-                className="relative group h-full"
+                className={`relative group ${item.name === "Member Portal" ? "flex items-center" : "h-full"}`}
                 onMouseEnter={() => handleMouseEnter(index, !!item.submenu)}
                 onMouseLeave={handleMouseLeave}
               >
-                {item.name !== "Member Login" && <Link
+                {item.name !== "Member Portal" && <Link
                   href={item.link || "#"}
                   className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center h-full ${
                     item.submenu
@@ -93,17 +93,8 @@ const HorizontalMenu = () => {
                 </Link>
 }
 
-                {item.name == "Member Login" && <a href={item.link}  className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center h-full text-[#DCE2E2] hover:text-[#8AD5B7]`}>
+                {item.name == "Member Portal" && <a href={item.link} className="px-6 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center justify-center rounded-full bg-[#8AD5B7] text-[#37403D] hover:bg-[#8AD5B7]/90 self-center">
                    {item.name}
-                    <span
-                    ref={(el) => (lineRefs.current[index] = el)}
-                    className={`absolute ${
-                      item.submenu ? "top-0" : "bottom-1"
-                    } left-0 h-1 bg-[#8AD5B7] ${
-                      openDropdown === index ? "opacity-100" : "opacity-0"
-                    }`}
-                    style={{ width: 0 }}
-                  /> 
                 </a>}
 
                 {item.submenu && openDropdown === index && (

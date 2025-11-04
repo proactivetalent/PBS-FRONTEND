@@ -237,6 +237,22 @@ export const inspectionServices = [
         },
         bg: "/pics/Inspection-service-2-6.png"
       },
+      {
+        id: 7,
+        heading: "7- Boiler Inspection",
+        subheading: "Your Silent Asset, Your Hidden Liability",
+        text: "Don't Wait for a Crisis to Comply",
+        items: [
+          "The Risk: Aging boilers, gas leaks, or pressure failures can lead to carbon monoxide poisoning, explosions, or catastrophic system breakdowns. Missed inspections trigger immediate NYC fines, operational shutdowns, and voided insurance, putting tenants, property, and profits at risk.",
+          "Our Solution: Our certified technicians perform pressure tests, combustion analysis, and safety valve checks, ensuring strict adherence to NYC codes. We file all required documentation, manage deadlines, and provide actionable repair plans to keep your systems safe, compliant, and operational.",
+        ],
+        additionalText: "Stay Compliant, Avoid Shutdowns, Protect Lives",
+        cta: {
+          text: "Stay Compliant, Avoid Shutdowns, Protect Lives",
+          href: "/inspection-services/boiler-inspection", // Dummy href, change as needed
+        },
+        bg: "/pics/Inspection-service-2-6.png"
+      },
     ],
     additionalText: "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance. With PBS, you’re not just complying with regulations; you’re investing in peace of mind for your family, tenants, stakeholders and community.",
   },

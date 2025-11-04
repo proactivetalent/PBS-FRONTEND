@@ -78,7 +78,7 @@ const Header = () => {
 
       {/* Header Container with GSAP Animation */}
       <motion.div
-        className="flex flex-row justify-between items-center w-full h-[70px] xl:h-[100px]"
+        className="flex flex-row justify-between items-center w-full h-[70px] xl:h-[100px] bg-[#37403D]"
       >
         {/* Logo Container with Click Navigation */}
         <div

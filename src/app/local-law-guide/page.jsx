@@ -8,6 +8,26 @@ import { fetchPosts, fetchTotalPosts, fetchCategories, transformPost } from "@/l
 import { WORDPRESS_CONFIG } from "@/lib/config";
 import { createStaggeredTextAnimation } from "@/utils/animationUtils";
 
+// Helper function to decode HTML entities
+const decodeHtmlEntities = (text) => {
+  if (!text) return '';
+  if (typeof window === 'undefined') {
+    // Server-side: Use a simple replacement for common entities
+    return text
+      .replace(/&amp;/g, '&')
+      .replace(/&#8217;/g, "'")
+      .replace(/&#8211;/g, '–')
+      .replace(/&#8212;/g, '—')
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+  }
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = text;
+  return textarea.value;
+};
+
 // Share Button Component
 const ShareButton = ({ post }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -385,12 +405,12 @@ const LocalLawGuidePage = () => {
                 <div className="p-6 md:p-8">
                   {/* Title */}
                   <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
-                    {post.title}
+                    {decodeHtmlEntities(post.title)}
                   </h2>
 
                   {/* Excerpt */}
                   <p className="text-[#89A096] mb-6 font-poppins text-sm md:text-base leading-relaxed line-clamp-3">
-                    {post.excerpt}
+                    {decodeHtmlEntities(post.excerpt)}
                   </p>
 
                   {/* Action Buttons */}
@@ -480,12 +500,12 @@ const LocalLawGuidePage = () => {
                 <div className="p-6 md:p-8">
                   {/* Title */}
                   <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
-                    {relatedPost.title}
+                    {decodeHtmlEntities(relatedPost.title)}
                   </h2>
 
                   {/* Excerpt */}
                   <p className="text-[#89A096] mb-6 font-poppins text-sm md:text-base leading-relaxed line-clamp-3">
-                    {relatedPost.excerpt}
+                    {decodeHtmlEntities(relatedPost.excerpt)}
                   </p>
 
                   {/* Action Buttons */}

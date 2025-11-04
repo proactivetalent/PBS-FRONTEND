@@ -30,6 +30,26 @@ import { fetchPostBySlug, fetchPostsByCategory, fetchPosts } from "@/lib/wordpre
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 
+// Helper function to decode HTML entities
+const decodeHtmlEntities = (text) => {
+  if (!text) return '';
+  if (typeof window === 'undefined') {
+    // Server-side: Use a simple replacement for common entities
+    return text
+      .replace(/&amp;/g, '&')
+      .replace(/&#8217;/g, "'")
+      .replace(/&#8211;/g, '–')
+      .replace(/&#8212;/g, '—')
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+  }
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = text;
+  return textarea.value;
+};
+
 
 
 /**
@@ -621,7 +641,7 @@ const BlogPostPage = () => {
                {/* Main Heading - Full width with top padding */}
                <div className="pt-4 mb-6">
                  <h1 ref={headingRef} className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax w-full">
-                   {post.title}
+                   {decodeHtmlEntities(post.title)}
                  </h1>
                </div>
               <div className="flex flex-col md:flex-row gap-6 items-start md:items-center text-[#89A096] font-poppins">
@@ -789,12 +809,12 @@ const BlogPostPage = () => {
                     <div className="p-6 md:p-8">
                       {/* Title */}
                       <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
-                        {post.title}
+                        {decodeHtmlEntities(post.title)}
                       </h2>
     
                       {/* Excerpt */}
                       <p className="text-[#89A096] mb-6 font-poppins text-sm md:text-base leading-relaxed line-clamp-3">
-                        {post.excerpt}
+                        {decodeHtmlEntities(post.excerpt)}
                       </p>
     
                       {/* Action Buttons */}

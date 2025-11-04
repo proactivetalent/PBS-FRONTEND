@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,8 +9,8 @@ import HeroCarousel from "@/home-page/HeroCarousel";
 // Define the hero sections array with 3 images
 const heroInfo = [
   {
-    bg: "/pics/homeHero/bg-1.png",
-    img: "/pics/homeHero/building-1.png",
+    bg: "/PBS Assets/homepage/herosection/hero-bg.png",
+    img: "/PBS Assets/homepage/herosection/owner.png",
     text1: "Owner Representative",
     text2: "Simplify your Construction Journey with Expert Oversight",
     text3: "Avoid the stress of managing contractors, budgets, and timelines. Ensure accountability, quality, and compliance for your projects.",
@@ -19,21 +19,21 @@ const heroInfo = [
     ctaLink: "/owner-representative"
   },
   {
-    bg: "/pics/homeHero/bg-2.png",
-    img: "/pics/homeHero/building-2.png",
+    bg: "/PBS Assets/homepage/herosection/hero-bg.png",
+    img: "/PBS Assets/homepage/herosection/property.png",
     text1: "Property Management",
     text2: "Hassle-Free Management for Busy Owners",
     text3: "Streamline maintenance, tenant relations, and compliance. Focus on growth, not daily headaches.",
-    cta: "Optimize Your Property",
+    cta: "Learn More",
     ctaLink: "/property-management"
   },
    {
-    bg: "/pics/homeHero/bg-3.png",
-    img: "/pics/homeHero/building-3.png",
+    bg: "/PBS Assets/homepage/herosection/hero-bg.png",
+    img: "/PBS Assets/homepage/herosection/compliance.png",
     text1: "Compliance Inspection Services",
     text2: "All major Inspection services addressed",
     text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",
-    cta: "Optimize Your Property",
+    cta: "Learn More",
     ctaLink: "/inspection-services"
   },
 ];
@@ -65,6 +65,16 @@ function SamplePrevArrow(props) {
 }
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = React.useRef(null);
+
+  // Handle dot click navigation
+  const handleDotClick = (index) => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
   // Slick carousel settings
   const settings = {
     dots: false,
@@ -77,15 +87,26 @@ const Hero = () => {
     autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    beforeChange: (current, next) => setCurrentSlide(next),
   };
 
-
   return (
-    <Slider {...settings} className="relative">
-
-
-{heroInfo.map((heroData, index) => (
-      <HeroCarousel key={index} bg={heroData.bg} img={heroData.img} text1={heroData.text1} text2={heroData.text2} text3={heroData.text3} text4={heroData?.text4} cta={heroData.cta} ctaLink={heroData.ctaLink} />
+    <Slider ref={sliderRef} {...settings} className="relative">
+      {heroInfo.map((heroData, index) => (
+        <HeroCarousel 
+          key={index} 
+          bg={heroData.bg} 
+          img={heroData.img} 
+          text1={heroData.text1} 
+          text2={heroData.text2} 
+          text3={heroData.text3} 
+          text4={heroData?.text4} 
+          cta={heroData.cta} 
+          ctaLink={heroData.ctaLink}
+          currentSlide={currentSlide}
+          totalSlides={heroInfo.length}
+          onDotClick={handleDotClick}
+        />
       ))}   
     </Slider>
   );
