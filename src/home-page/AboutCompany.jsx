@@ -108,7 +108,7 @@ const AboutCompany = () => {
 
   return (
     <div className="bg-[#2B3331]" ref={containerRef}>
-      <div className="container px-4 sm:px-6 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] min-h-[550px] mx-auto pt-8 sm:pt-12 lg:pt-16 flex flex-col lg:flex-row justify-between gap-5 xl:gap-8 pb-8 sm:pb-12 mb-8 sm:mb-12 lg:mb-16">
+      <div className="container px-4 lg:px-0 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] min-h-[550px] mx-auto pt-8 sm:pt-12 lg:pt-16 flex flex-col lg:flex-row justify-between gap-5 xl:gap-8 pb-8 sm:pb-12 mb-8 sm:mb-12 lg:mb-16">
         {/* Left Side - What we Specialize in */}
         <div className="lg:w-[50%] 3xl:w-[680px] gsap-animate flex flex-col justify-between">
           {/* What we Specialize in */}
@@ -211,7 +211,7 @@ const AboutCompany = () => {
       </div>
 
       {/* Why NYC Trusts PBS? */}
-      <div className="px-4 sm:px-6 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-10 sm:py-16 lg:py-20">
+      <div className="px-4 lg:px-0 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-10 sm:py-16 lg:py-20">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center font-conthrax font-semibold text-[#DCE2E2] mb-3">
           Why NYC Trusts PBS?
         </h2>
