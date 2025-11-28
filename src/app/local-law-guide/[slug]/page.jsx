@@ -748,7 +748,7 @@ const LocalLawGuidePostPage = () => {
           
           {/* Main Heading - Full width with top padding */}
           <div className="pt-4 mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
+            <h1 className="text-4xl md:text-3xl lg:text-3xl max-w-7xl mx-auto font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
               {decodeHtmlEntities(post.title)}
             </h1>
           </div>
@@ -757,10 +757,10 @@ const LocalLawGuidePostPage = () => {
               <User className="w-5 h-5" />
               <span>{post.author}</span>
             </div> */}
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               <CalendarDays className="w-5 h-5" />
               <span>{post.date}</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-3">
               <Bookmark className="w-5 h-5" />
               <span>{post.category}</span>
@@ -777,8 +777,8 @@ const LocalLawGuidePostPage = () => {
           <div className="lg:col-span-3 order-2 lg:order-1">
             <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
               <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
-                <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
-                  <ClipboardList className="w-5 h-5 text-[#8AD5B7]" />
+                <h3 className="text-lg font-bold text-[#DCE2E2] font-poppins mb-4 flex items-center gap-2">
+                  <ClipboardList className="w-10 h-10 text-[#8AD5B7]" />
                   Table of Contents
                 </h3>
                 <nav className="space-y-2 flex-1 overflow-y-auto overflow-x-hidden">
@@ -839,8 +839,8 @@ const LocalLawGuidePostPage = () => {
           <div className="lg:col-span-3 order-3">
             <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
               <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
-                <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-[#8AD5B7]" />
+                <h3 className="text-lg font-bold text-[#DCE2E2] leading-tight font-poppins mb-4 flex items-center gap-2">
+                  <Mail className="w-10 h-10 text-[#8AD5B7]" />
                   Subscribe to Newsletter
                 </h3>
                 <div className="flex-1 flex flex-col">
@@ -936,27 +936,27 @@ const LocalLawGuidePostPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
   
                     {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
+                    {/* <div className="absolute top-4 left-4">
                       <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
                         {relatedPost.category}
                       </span>
-                    </div>
+                    </div> */}
   
                     {/* Date Badge */}
-                    <div className="absolute top-4 right-4">
+                    {/* <div className="absolute top-4 right-4">
                       <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
                         <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
                         <span className="text-[#DCE2E2] text-xs font-poppins font-medium">
                           {relatedPost.date}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
   
                   {/* Content Container */}
                   <div className="p-6 md:p-8">
                     {/* Title */}
-                    <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
+                    <h2 className="text-xl md:text-xl font-bold text-[#DCE2E2] mb-4 font-poppins leading-tight line-clamp-3 group-hover:text-[#8AD5B7] transition-colors duration-300">
                       {decodeHtmlEntities(relatedPost.title)}
                     </h2>
   

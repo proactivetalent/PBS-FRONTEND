@@ -115,9 +115,9 @@ const Footer = () => {
 
   return (
     <div className="bg-brand-gray1 text-[#DCE2E2] py-10  lg:pb-0 lg:pt-10">
-      <div className="md:w-[80vw] lg:w-full mx-auto">
+      <div className="w-full lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto">
         {/* Top Section - Menu Columns and Subscription Form */}
-        <div className="container mx-auto px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
+        <div className="px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
           {/* Menu Columns - Responsive Grid Layout */}
           <div className="w-full lg:w-[70%] grid grid-cols-2 lg:grid-cols-3 gap-8">
             {menu.map((section) => (
@@ -187,7 +187,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 my-4"></div>
 
         {/* Bottom Section - Logo, Copyright, and Privacy Links */}
-        <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="px-8 flex flex-col md:flex-row justify-between items-center">
           {/* Logo - Hidden on mobile, visible on larger screens */}
           <div className="flex items-center gap-4 mb-4 md:mb-0 md:block pb-4">
             <CustomImage

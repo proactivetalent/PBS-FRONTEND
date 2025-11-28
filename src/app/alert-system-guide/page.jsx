@@ -3,9 +3,8 @@
 import { ArrowRight, CalendarDays, Search, X, Share2, Mail, Copy, Check } from "lucide-react";
 import { useEffect, useState, useCallback, useRef } from "react";
 import CustomImage from "../CustomImage";
-import { fetchPosts, fetchTotalPosts, fetchCategories, transformPost } from "@/lib/wordpress";
-import { WORDPRESS_CONFIG } from "@/lib/config";
 import { createStaggeredTextAnimation } from "@/utils/animationUtils";
+import { getAllGuides } from "./data";
 
 // Share Button Component
 const ShareButton = ({ post }) => {
@@ -25,10 +24,36 @@ const ShareButton = ({ post }) => {
     }
   };
 
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+  };
+
+  const handleShareClick = (e, action) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleShare(action);
+  };
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
-    <div className="relative">
+    <div 
+      className="relative share-button-container" 
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+      onMouseDown={handleMouseDown}
+    >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        type="button"
+        onClick={handleButtonClick}
+        onMouseDown={handleMouseDown}
         className="flex items-center gap-2 text-[#89A096] hover:text-[#8AD5B7] transition-colors font-poppins text-sm md:text-base"
       >
         <Share2 className="w-3 h-3 md:w-4 md:h-4" />
@@ -36,17 +61,26 @@ const ShareButton = ({ post }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute bottom-full right-0 mb-2 bg-[#2E3734] border border-[#8AD5B7]/30 rounded-lg shadow-xl z-50 min-w-[200px]">
+        <div 
+          className="absolute bottom-full right-0 mb-2 bg-[#2E3734] border border-[#8AD5B7]/30 rounded-lg shadow-xl z-50 min-w-[200px]"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          onMouseDown={handleMouseDown}
+        >
           <div className="p-2">
             <button
-              onClick={() => handleShare('email')}
+              type="button"
+              onClick={(e) => handleShareClick(e, 'email')}
               className="w-full flex items-center gap-3 px-3 py-2 text-[#DCE2E2] hover:bg-[#8AD5B7]/10 rounded-md transition-colors"
             >
               <Mail className="w-4 h-4 text-gray-400" />
               <span className="text-sm font-poppins">Email</span>
             </button>
             <button
-              onClick={() => handleShare('copy')}
+              type="button"
+              onClick={(e) => handleShareClick(e, 'copy')}
               className="w-full flex items-center gap-3 px-3 py-2 text-[#DCE2E2] hover:bg-[#8AD5B7]/10 rounded-md transition-colors"
             >
               {copied ? (
@@ -159,64 +193,44 @@ const AlertSystemGuidePage = () => {
   };
 
   /**
-   * Fetch all posts from WordPress API, filtered by alert-system-guide category
+   * Load alert system guides from custom data
    */
-  const fetchAlertSystemPosts = async () => {
+  const loadAlertSystemGuides = () => {
     try {
       setLoading(true);
       setError(null);
 
-      // First, find the alert-system-guide category ID
-      const allCategories = await fetch(`${WORDPRESS_CONFIG.API_URL}/categories?per_page=50`);
+      // Get all guides from custom data
+      const guides = getAllGuides();
       
-      if (!allCategories.ok) {
-        console.error(`Alert system categories API returned ${allCategories.status}: ${allCategories.statusText}`);
-        setError('Failed to load categories. Please try again later.');
-        setLoading(false);
-        return;
-      }
-      
-      const categories = await allCategories.json();
-      
-      if (!Array.isArray(categories)) {
-        console.error('Categories response is not an array:', categories);
-        setError('Invalid categories response. Please try again later.');
-        setLoading(false);
-        return;
-      }
-      
-      // Find the alert-system-guide category by slug or name
-      const alertSystemCategory = categories.find(cat => 
-        cat.slug === 'alert-system-guide' || 
-        cat.name.toLowerCase() === 'alert system guide' ||
-        cat.name.toLowerCase().includes('alert system guide')
-      );
-
-      if (!alertSystemCategory) {
-        setPosts([]);
-        setLoading(false);
-        return;
-      }
-
-
-      // Use the main fetchPosts function to get properly transformed posts
-      const transformedPosts = await fetchPosts(1, 100, alertSystemCategory.id);
+      // Transform guides to match the expected post format
+      const transformedPosts = guides.map(guide => ({
+        id: guide.id,
+        title: guide.title,
+        excerpt: guide.excerpt,
+        content: guide.content,
+        modules: guide.modules,
+        slug: guide.slug,
+        date: guide.date,
+        category: guide.category,
+        image: guide.image,
+        author: guide.author,
+        modified: guide.modified
+      }));
       
       setPosts(transformedPosts);
       
     } catch (err) {
-      console.error('Error fetching alert system posts:', err);
+      console.error('Error loading alert system guides:', err);
       setError('Failed to load alert system guides. Please try again later.');
     } finally {
       setLoading(false);
     }
   };
 
-  // Using the imported transformPost function from wordpress.js
-
   // Load initial data
   useEffect(() => {
-    fetchAlertSystemPosts();
+    loadAlertSystemGuides();
   }, []);
 
   // Animate the main heading with staggering text effect
@@ -237,7 +251,7 @@ const AlertSystemGuidePage = () => {
   return (
     <div>
       {/* Main Alert System Guide Section */}
-      <section data-section="alert-system-guide" className="bg-[#37403D] text-[#DCE2E2] py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 xl:px-24">
+      <section data-section="alert-system-guide" className="bg-[#2B3331] text-[#DCE2E2] py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 xl:px-24">
         <div className="container mx-auto max-w-7xl">
           
           {/* Header Section with Title and Search */}
@@ -344,9 +358,19 @@ const AlertSystemGuidePage = () => {
 
             {/* Posts Grid */}
             {!loading && !error && displayPosts.map((post, index) => (
-              <div
+              <a
               key={post.id}
-              className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2"
+              href={post.slug ? `/alert-system-guide/${post.slug}` : '#'}
+              onClick={(e) => {
+                // Prevent navigation if clicking on Share button or its dropdown
+                const target = e.target;
+                const shareButton = target.closest('.share-button-container');
+                if (shareButton) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }
+              }}
+              className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2 block cursor-pointer"
             >
               {/* Image Container with Overlay */}
               <div className="relative overflow-hidden">
@@ -361,27 +385,27 @@ const AlertSystemGuidePage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4">
+                {/* <div className="absolute top-4 left-4">
                   <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
                     {post.category}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Date Badge */}
-                <div className="absolute top-4 right-4">
+                {/* <div className="absolute top-4 right-4">
                   <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
                     <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
                     <span className="text-[#DCE2E2] text-xs font-poppins font-medium">
                       {post.date}
                     </span>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Content Container */}
               <div className="p-6 md:p-8">
                 {/* Title */}
-                <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
+                <h2 className="text-xl font-bold text-[#DCE2E2] mb-4 font-poppins leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
                   {post.title}
                 </h2>
 
@@ -393,14 +417,9 @@ const AlertSystemGuidePage = () => {
                 {/* Action Buttons */}
                 <div className="flex items-center justify-between">
                   {/* Read More Button */}
-                  <button
-                    onClick={() => {
-                      if (post.slug) {
-                        window.location.href = `/blog/${post.slug}`;
-                      } else {
-                        console.error('No slug found for post:', post.id);
-                      }
-                    }}
+                  <a
+                    href={post.slug ? `/alert-system-guide/${post.slug}` : '#'}
+                    onClick={(e) => e.stopPropagation()}
                     className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
                   >
                     {/* Enhanced Circular Icon */}
@@ -408,13 +427,13 @@ const AlertSystemGuidePage = () => {
                       <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
                     </div>
                     <span className="font-semibold tracking-wide">Read Article</span>
-                  </button>
+                  </a>
 
                   {/* Share Button */}
                   <ShareButton post={post} />
                 </div>
               </div>
-            </div>
+            </a>
             ))}
           </div>
         </div>
@@ -436,9 +455,19 @@ const AlertSystemGuidePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
               {/* Latest 3 blogs (excluding current ones) */}
               {posts.slice(0, 3).map((relatedPost) => (
-                <div
+                <a
                 key={relatedPost.id}
-                className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2"
+                href={relatedPost.slug ? `/alert-system-guide/${relatedPost.slug}` : '#'}
+                onClick={(e) => {
+                  // Prevent navigation if clicking on Share button or its dropdown
+                  const target = e.target;
+                  const shareButton = target.closest('.share-button-container');
+                  if (shareButton) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                  }
+                }}
+                className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2 block cursor-pointer"
               >
                 {/* Image Container with Overlay */}
                 <div className="relative overflow-hidden">
@@ -453,27 +482,27 @@ const AlertSystemGuidePage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
+                  {/* <div className="absolute top-4 left-4">
                     <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
                       {relatedPost.category}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Date Badge */}
-                  <div className="absolute top-4 right-4">
+                  {/* <div className="absolute top-4 right-4">
                     <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
                       <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
                       <span className="text-[#DCE2E2] text-xs font-poppins font-medium">
                         {relatedPost.date}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content Container */}
                 <div className="p-6 md:p-8">
                   {/* Title */}
-                  <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
+                  <h2 className="text-xl text-[#DCE2E2] mb-4 font-poppins font-bold leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
                     {relatedPost.title}
                   </h2>
 
@@ -485,14 +514,9 @@ const AlertSystemGuidePage = () => {
                   {/* Action Buttons */}
                   <div className="flex items-center justify-between">
                     {/* Read More Button */}
-                    <button
-                      onClick={() => {
-                        if (relatedPost.slug) {
-                          window.location.href = `/blog/${relatedPost.slug}`;
-                        } else {
-                          console.error('No slug found for post:', relatedPost.id);
-                        }
-                      }}
+                    <a
+                      href={relatedPost.slug ? `/alert-system-guide/${relatedPost.slug}` : '#'}
+                      onClick={(e) => e.stopPropagation()}
                       className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
                     >
                       {/* Enhanced Circular Icon */}
@@ -500,13 +524,13 @@ const AlertSystemGuidePage = () => {
                         <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
                       </div>
                       <span className="font-semibold tracking-wide">Read Article</span>
-                    </button>
+                    </a>
 
                     {/* Share Button */}
                     <ShareButton post={relatedPost} />
                   </div>
                 </div>
-              </div>
+              </a>
               ))}
             </div>
             

@@ -15,21 +15,116 @@ import CustomImage from "@/app/CustomImage";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
-  ArrowLeft,
   ArrowRight,
-  Bookmark,
   CalendarDays,
-  ClipboardList,
-  HardHat,
-  User,
+  Share2,
   Mail,
+  Copy,
   Check,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { fetchPostBySlug, transformPost } from "@/lib/wordpress";
-import { WORDPRESS_CONFIG } from "@/lib/config";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
+import { getGuideBySlug, getRelatedGuides } from "../data";
+import { 
+  FirstGuide, 
+  SecondGuide, 
+  ThirdGuide, 
+  FourthGuide, 
+} from "../layouts";
+
+// Share Button Component
+const ShareButton = ({ post }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (action) => {
+    if (action === 'copy') {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      setIsOpen(false);
+    } else if (action === 'email') {
+      const emailUrl = `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Check out this guide: ${post.title}\n\n${window.location.href}`)}`;
+      window.location.href = emailUrl;
+      setIsOpen(false);
+    }
+  };
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+  };
+
+  const handleShareClick = (e, action) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleShare(action);
+  };
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  return (
+    <div 
+      className="relative share-button-container" 
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+      onMouseDown={handleMouseDown}
+    >
+      <button
+        type="button"
+        onClick={handleButtonClick}
+        onMouseDown={handleMouseDown}
+        className="flex items-center gap-2 text-[#89A096] hover:text-[#8AD5B7] transition-colors font-poppins text-sm md:text-base"
+      >
+        <Share2 className="w-3 h-3 md:w-4 md:h-4" />
+        Share
+      </button>
+
+      {isOpen && (
+        <div 
+          className="absolute bottom-full right-0 mb-2 bg-[#2E3734] border border-[#8AD5B7]/30 rounded-lg shadow-xl z-50 min-w-[200px]"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          onMouseDown={handleMouseDown}
+        >
+          <div className="p-2">
+            <button
+              type="button"
+              onClick={(e) => handleShareClick(e, 'email')}
+              className="w-full flex items-center gap-3 px-3 py-2 text-[#DCE2E2] hover:bg-[#8AD5B7]/10 rounded-md transition-colors"
+            >
+              <Mail className="w-4 h-4 text-gray-400" />
+              <span className="text-sm font-poppins">Email</span>
+            </button>
+            <button
+              type="button"
+              onClick={(e) => handleShareClick(e, 'copy')}
+              className="w-full flex items-center gap-3 px-3 py-2 text-[#DCE2E2] hover:bg-[#8AD5B7]/10 rounded-md transition-colors"
+            >
+              {copied ? (
+                <Check className="w-4 h-4 text-green-400" />
+              ) : (
+                <Copy className="w-4 h-4 text-gray-400" />
+              )}
+              <span className="text-sm font-poppins">
+                {copied ? 'Copied!' : 'Copy Link'}
+              </span>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 /**
  * Alert System Guide Post Page Component
@@ -242,73 +337,71 @@ const AlertSystemGuidePostPage = () => {
   };
 
   /**
-   * Fetch related posts from Alert System Guide category (latest 3)
+   * Load related posts from custom data (latest 3)
    */
-  const fetchRelatedPosts = async () => {
+  const loadRelatedPosts = () => {
     try {
       setRelatedLoading(true);
       
-      // Fetch posts directly from WordPress API with _embed to get category information
-      const response = await fetch(`${WORDPRESS_CONFIG.API_URL}/posts?_embed&per_page=100`);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const wpPosts = await response.json();
-      
-      // Transform WordPress posts using the main transformPost function
-      const allPosts = wpPosts.map(transformPost);
-      
-      
-      // Filter posts by Alert System Guide category and exclude current post
+      // Get related guides from custom data
       const currentPostId = post?.id;
-      const alertSystemPosts = allPosts.filter(post => {
-        const category = post.category?.toLowerCase() || '';
-        const isAlertSystem = (
-          category.includes('alert system guide') || 
-          category.includes('alert-system-guide') ||
-          category.includes('alert system') ||
-          category.includes('alert')
-        );
-        
-        
-        return isAlertSystem && post.id !== currentPostId;
-      });
+      const relatedGuides = getRelatedGuides(currentPostId, 3);
       
+      // Transform guides to match the expected post format
+      const transformedPosts = relatedGuides.map(guide => ({
+        id: guide.id,
+        title: guide.title,
+        excerpt: guide.excerpt,
+        content: guide.content,
+        slug: guide.slug,
+        date: guide.date,
+        category: guide.category,
+        image: guide.image,
+        author: guide.author,
+        modified: guide.modified
+      }));
       
-      // Get the latest 3 posts
-      const filteredPosts = alertSystemPosts.slice(0, 3);
-      setRelatedPosts(filteredPosts);
+      setRelatedPosts(transformedPosts);
     } catch (error) {
-      console.error('Error fetching related posts:', error);
+      console.error('Error loading related posts:', error);
     } finally {
       setRelatedLoading(false);
     }
   };
 
   /**
-   * Fetch post data from WordPress API
+   * Load post data from custom data
    */
   useEffect(() => {
-    const loadPost = async () => {
+    const loadPost = () => {
       try {
         setLoading(true);
         setError(null);
         
         const slug = params.slug;
-        const fetchedPost = await fetchPostBySlug(slug);
+        const fetchedPost = getGuideBySlug(slug);
         
         if (!fetchedPost) {
           notFound();
         }
         
-        setPost(fetchedPost);
+        // Transform guide to match the expected post format
+        const transformedPost = {
+          id: fetchedPost.id,
+          title: fetchedPost.title,
+          excerpt: fetchedPost.excerpt,
+          content: fetchedPost.content,
+          modules: fetchedPost.modules || null,
+          slug: fetchedPost.slug,
+          date: fetchedPost.date,
+          category: fetchedPost.category,
+          image: fetchedPost.image,
+          author: fetchedPost.author,
+          modified: fetchedPost.modified,
+          layout: fetchedPost.layout || 'first' // Include layout property
+        };
         
-        // Post data loaded successfully
-        
-        // Fetch related posts for the "More Blogs Related To This" section
-        fetchRelatedPosts();
+        setPost(transformedPost);
       } catch (err) {
         console.error('Error loading post:', err);
         setError('Failed to load post. Please try again later.');
@@ -321,6 +414,15 @@ const AlertSystemGuidePostPage = () => {
       loadPost();
     }
   }, [params.slug]);
+
+  /**
+   * Load related posts when post is loaded
+   */
+  useEffect(() => {
+    if (post) {
+      loadRelatedPosts();
+    }
+  }, [post]);
 
   /**
    * Register the GSAP ScrollTrigger plugin when component mounts
@@ -470,184 +572,43 @@ const AlertSystemGuidePostPage = () => {
     return null;
   }
 
+  // Function to render the appropriate layout based on post.layout
+  const renderLayout = () => {
+    const layout = post.layout || 'first';
+    const commonProps = {
+      post,
+      tableOfContents,
+      scrollToHeading,
+      newsletterEmail,
+      setNewsletterEmail,
+      newsletterSubmitting,
+      newsletterSubmitted,
+      handleNewsletterSubmit,
+      setNewsletterSubmitted,
+      relatedPosts,
+      relatedLoading
+    };
+
+    switch (layout) {
+      case 'second':
+        return <SecondGuide {...commonProps} />;
+      case 'third':
+        return <ThirdGuide {...commonProps} />;
+      case 'fourth':
+        return <FourthGuide {...commonProps} />;
+      // case 'timeline':
+      //   return <TimelineLayout {...commonProps} />;
+      case 'first':
+      default:
+        return <FirstGuide {...commonProps} />;
+    }
+  };
+
   return (
-    <section className="bg-[#37403D] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
-      {/* Article Header - Full Width Hero Section Above Three Columns */}
-      <div ref={articleHeaderRef} className="mb-16 text-center relative flex items-center justify-center rounded-xl overflow-hidden -mx-6 md:-mx-12 lg:-mx-24 mt-8 py-16">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/pics/local-law-hero.png')`
-          }}
-        />
-        
-        {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/50" />
-        
-        {/* Content */}
-        <div className="relative z-10 px-6 py-12">
-          {/* Back to Alert System Guide Button */}
-          <div className="pt-8 mb-6">
-            <a
-              href="/alert-system-guide"
-              className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 flex items-center gap-2 font-poppins transition-all justify-center"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              Back to Alert System Guide
-            </a>
-          </div>
-          
-          {/* Main Heading - Full width with top padding */}
-          <div className="pt-4 mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
-              {post.title}
-            </h1>
-          </div>
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-center text-[#89A096] font-poppins">
-            {/* <div className="flex items-center gap-3">
-              <User className="w-5 h-5" />
-              <span>{post.author}</span>
-            </div> */}
-            <div className="flex items-center gap-3">
-              <CalendarDays className="w-5 h-5" />
-              <span>{post.date}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Bookmark className="w-5 h-5" />
-              <span>{post.category}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto max-w-7xl">
-        {/* Three Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          
-          {/* Left Sidebar - Table of Contents */}
-          <div className="lg:col-span-3 order-2 lg:order-1">
-            <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
-              <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
-                <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
-                  <ClipboardList className="w-5 h-5 text-[#8AD5B7]" />
-                  Table of Contents
-                </h3>
-                <nav className="space-y-2 flex-1 overflow-y-auto overflow-x-hidden">
-                  {tableOfContents.length > 0 ? (
-                    tableOfContents.map((item, index) => (
-                      <button
-                        key={index}
-                        onClick={() => scrollToHeading(item.id)}
-                        className={`w-full text-left text-sm font-poppins transition-colors hover:text-[#8AD5B7] break-words ${
-                          item.level === 1 ? 'text-[#DCE2E2] font-semibold' :
-                          item.level === 2 ? 'text-[#DCE2E2] ml-2' :
-                          item.level === 3 ? 'text-[#89A096] ml-4' :
-                          'text-[#89A096] ml-6'
-                        }`}
-                      >
-                        • {item.text}
-                      </button>
-                    ))
-                  ) : (
-                    <div className="text-[#89A096] text-sm">
-                      <p className="italic">No headings found in this guide.</p>
-                    </div>
-                  )}
-                </nav>
-              </div>
-            </div>
-          </div>
-
-          {/* Center Column - Main Guide Content */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
-            {/* Featured Image - Main guide post image */}
-            <div
-              ref={featuredImageRef}
-              className="mb-12 rounded-xl overflow-hidden"
-            >
-              <CustomImage
-                src={post.image}
-                width={100}
-                height={100}
-                alt={post.title}
-                className="w-full h-96 object-cover"
-              />
-            </div>
-
-            {/* Main Content */}
-            <div className="w-full">
-              <div className="prose prose-invert max-w-none w-full">
-                <div ref={contentRef} className="mb-12 w-full">
-                  <div 
-                    className="wordpress-content w-full"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Sidebar - Newsletter Subscription */}
-          <div className="lg:col-span-3 order-3">
-            <div className="lg:sticky lg:top-[25vh] mb-10" style={{ position: 'sticky', top: '25vh' }}>
-              <div className="bg-[#2E3734] rounded-xl p-6 border border-[#8AD5B7]/20 h-[400px] flex flex-col">
-                <h3 className="text-lg font-bold text-[#DCE2E2] font-conthrax mb-4 flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-[#8AD5B7]" />
-                  Subscribe to Newsletter
-                </h3>
-                <div className="flex-1 flex flex-col">
-                  <p className="text-[#89A096] text-sm mb-4">
-                    Stay updated with our latest alert system insights, compliance updates, and industry news.
-                  </p>
-                  {!newsletterSubmitted ? (
-                    <form onSubmit={handleNewsletterSubmit} className="space-y-4 flex-1 flex flex-col">
-                      <div>
-                        <input
-                          type="email"
-                          placeholder="Enter your email"
-                          value={newsletterEmail}
-                          onChange={(e) => setNewsletterEmail(e.target.value)}
-                          className="w-full px-4 py-3 bg-[#37403D] border border-[#8AD5B7]/30 rounded-lg text-[#DCE2E2] placeholder-[#89A096] focus:outline-none focus:border-[#8AD5B7] focus:ring-1 focus:ring-[#8AD5B7] transition-all font-poppins text-sm"
-                          required
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        disabled={newsletterSubmitting}
-                        className="w-full bg-[#8AD5B7] text-[#1E2322] px-4 py-3 rounded-lg hover:bg-[#8AD5B7]/80 transition-all font-poppins font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {newsletterSubmitting ? 'Subscribing...' : 'Subscribe'}
-                      </button>
-                      <div className="flex-1"></div>
-                      <p className="text-[#89A096] text-xs">
-                        We respect your privacy. Unsubscribe at any time.
-                      </p>
-                    </form>
-                  ) : (
-                    <div className="text-center py-4 flex-1 flex flex-col">
-                      <div className="w-12 h-12 bg-[#8AD5B7] rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Check className="w-6 h-6 text-[#1E2322]" />
-                      </div>
-                      <p className="text-[#8AD5B7] font-semibold mb-2">Successfully Subscribed!</p>
-                      <p className="text-[#89A096] text-sm">Thank you for subscribing to our newsletter.</p>
-                      <div className="flex-1"></div>
-                      <button
-                        onClick={() => setNewsletterSubmitted(false)}
-                        className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 text-sm font-poppins transition-colors"
-                      >
-                        Subscribe Another Email
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section className="bg-[#2B3331] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
+      {renderLayout()}
       
-       {/* More Blogs Related To This Section */}
+      {/* More Blogs Related To This Section - Common for all layouts */}
        <div className="bg-[#1E2322] py-16 px-6 md:px-12 lg:px-24 -mx-6 md:-mx-12 lg:-mx-24">
          <div className="w-full">
            <div className="max-w-7xl mx-auto">
@@ -668,56 +629,82 @@ const AlertSystemGuidePostPage = () => {
              ) : relatedPosts.length > 0 ? (
                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
                  {relatedPosts.map((relatedPost) => (
-                   <div
+                   <a
                      key={relatedPost.id}
-                     className="blog-card"
+                     href={relatedPost.slug ? `/alert-system-guide/${relatedPost.slug}` : '#'}
+                     onClick={(e) => {
+                       // Prevent navigation if clicking on Share button or its dropdown
+                       const target = e.target;
+                       const shareButton = target.closest('.share-button-container');
+                       if (shareButton) {
+                         e.preventDefault();
+                         e.stopPropagation();
+                       }
+                     }}
+                     className="group relative bg-[#2E3734]/60 backdrop-blur-sm border border-[#8AD5B7]/20 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#8AD5B7]/40 hover:shadow-2xl hover:shadow-[#8AD5B7]/10 hover:-translate-y-2 block cursor-pointer"
                    >
-                     <CustomImage
-                       src={relatedPost.image}
-                       alt={relatedPost.title}
-                       width={100}
-                       height={100}
-                       className="w-full h-40 md:h-48 object-cover"
-                     />
-                     <div className="p-4 md:p-6">
-                       <div className="flex items-center gap-2 mb-3 md:mb-4 flex-wrap">
-                         <span className="text-[#8AD5B7] text-xs md:text-sm font-conthrax">
+                     {/* Image Container with Overlay */}
+                     <div className="relative overflow-hidden">
+                       <CustomImage
+                         src={relatedPost.image}
+                         alt={relatedPost.title}
+                         width={100}
+                         height={100}
+                         className="w-full h-48 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110"
+                       />
+                       {/* Gradient Overlay */}
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                       {/* Category Badge */}
+                       {/* <div className="absolute top-4 left-4">
+                         <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
                            {relatedPost.category}
                          </span>
-                         <span className="text-[#89A096] text-xs md:text-sm">•</span>
-                         <CalendarDays className="w-3 h-3 md:w-4 md:h-4 text-[#89A096]" />
-                         <span className="text-[#89A096] text-xs md:text-sm font-poppins">
-                           {relatedPost.date}
-                         </span>
-                       </div>
-                       <h3 className="text-lg md:text-xl font-bold text-[#DCE2E2] mb-2 md:mb-3 font-conthrax leading-tight">
+                       </div> */}
+
+                       {/* Date Badge */}
+                       {/* <div className="absolute top-4 right-4">
+                         <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
+                           <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
+                           <span className="text-[#DCE2E2] text-xs font-poppins font-medium">
+                             {relatedPost.date}
+                           </span>
+                         </div>
+                       </div> */}
+                     </div>
+
+                     {/* Content Container */}
+                     <div className="p-6 md:p-8">
+                       {/* Title */}
+                       <h2 className="text-xl text-[#DCE2E2] mb-4 font-poppins font-bold leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
                          {relatedPost.title}
-                       </h3>
-                       <p className="text-[#89A096] mb-3 md:mb-4 font-poppins text-sm md:text-base line-clamp-3">{relatedPost.excerpt}</p>
-                       
+                       </h2>
+
+                       {/* Excerpt */}
+                       <p className="text-[#89A096] mb-6 font-poppins text-sm md:text-base leading-relaxed line-clamp-3">
+                         {relatedPost.excerpt}
+                       </p>
+
                        {/* Action Buttons */}
-                       <div className="flex items-center justify-between gap-3">
-                         <button 
-                           onClick={() => {
-                             if (relatedPost.slug) {
-                               window.location.href = `/alert-system-guide/${relatedPost.slug}`;
-                             } else {
-                               console.error('No slug found for post:', relatedPost.id);
-                             }
-                           }}
-                           style={{ zIndex: 10, position: 'relative' }}
-                           className="flex items-center gap-3 text-[#89A096] hover:text-[#DCE2E2] transition-all font-poppins text-sm md:text-base cursor-pointer"
+                       <div className="flex items-center justify-between">
+                         {/* Read More Button */}
+                         <a
+                           href={relatedPost.slug ? `/alert-system-guide/${relatedPost.slug}` : '#'}
+                           onClick={(e) => e.stopPropagation()}
+                           className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
                          >
-                           {/* Circular Icon with Arrow */}
-                           <div className="w-10 h-10 bg-[#8AD5B7] rounded-full flex items-center justify-center border border-[#2E3734] group">
-                             <ArrowRight className="w-6 h-6 text-[#1E2322] transform -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0" />
+                           {/* Enhanced Circular Icon */}
+                           <div className="relative w-12 h-12 bg-gradient-to-r from-[#8AD5B7] to-[#7AC5A7] rounded-full flex items-center justify-center shadow-lg shadow-[#8AD5B7]/25 transition-all duration-300 group-hover/btn:scale-110 group-hover/btn:shadow-xl group-hover/btn:shadow-[#8AD5B7]/40">
+                             <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
                            </div>
-                           {/* Button Text */}
-                           <span className="font-semibold tracking-wide">READ FULL GUIDE.</span>
-                         </button>
+                           <span className="font-semibold tracking-wide">Read Article</span>
+                         </a>
+
+                         {/* Share Button */}
+                         <ShareButton post={relatedPost} />
                        </div>
                      </div>
-                   </div>
+                   </a>
                  ))}
                </div>
              ) : (

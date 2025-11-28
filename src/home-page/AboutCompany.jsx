@@ -201,7 +201,7 @@ const AboutCompany = () => {
                 </div>
                 <div className="w-24 sm:w-32 md:w-[140px] bg-[#8AD5B7] h-1 rounded-xl my-2 sm:my-0"></div>
                 {/* animated number */}
-                <div className="font-bold font-poppins text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[28px] 2xl:text-[32px] 3xl:text-[32px] count-up" data-target="5" data-suffix=" Million" data-duration="4.5">0</div>
+                <div className="font-bold font-poppins text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[28px] 2xl:text-[32px] 3xl:text-[32px] count-up" data-target="5" data-suffix=" Million" data-duration="6">0</div>
               </div>
             </div>
 

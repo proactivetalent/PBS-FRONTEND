@@ -8,6 +8,7 @@ const HorizontalMenu = () => {
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const lineRefs = useRef([]);
   const arrowRefs = useRef([]);
+  const mainMenuArrowRefs = useRef([]);
 
   const handleMouseEnter = (index, hasSubmenu) => {
     setOpenDropdown(index);
@@ -20,6 +21,13 @@ const HorizontalMenu = () => {
         ease: "power2.inOut",
         transformOrigin: "left",
       });
+    }
+    // Animate main menu arrow if it has submenu
+    if (hasSubmenu) {
+      const arrow = mainMenuArrowRefs.current[index];
+      if (arrow) {
+        gsap.to(arrow, { rotation: 180, duration: 0.3, ease: "power2.inOut" });
+      }
     }
   };
 
@@ -34,6 +42,11 @@ const HorizontalMenu = () => {
           ease: "power2.inOut",
           transformOrigin: "right",
         });
+      }
+      // Reset main menu arrow
+      const arrow = mainMenuArrowRefs.current[openDropdown];
+      if (arrow) {
+        gsap.to(arrow, { rotation: 0, duration: 0.3, ease: "power2.inOut" });
       }
     }
     setOpenDropdown(null);
@@ -72,7 +85,7 @@ const HorizontalMenu = () => {
               >
                 {item.name !== "Member Portal" && <Link
                   href={item.link || "#"}
-                  className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center h-full ${
+                  className={`px-3 py-2 text-base xl:text-lg font-poppins font-medium relative transition-all duration-300 ease-in-out flex items-center gap-2 h-full ${
                     item.submenu
                       ? openDropdown === index
                         ? "bg-[#37403D] text-[#8AD5B7]"
@@ -81,6 +94,23 @@ const HorizontalMenu = () => {
                   }`}
                 >
                   {item.name}
+                  {item.submenu && (
+                    <svg
+                      ref={(el) => (mainMenuArrowRefs.current[index] = el)}
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
                   <span
                     ref={(el) => (lineRefs.current[index] = el)}
                     className={`absolute ${
@@ -93,7 +123,7 @@ const HorizontalMenu = () => {
                 </Link>
 }
 
-                {item.name == "Member Portal" && <a href={item.link} className="px-6 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center justify-center rounded-full bg-[#8AD5B7] text-[#37403D] hover:bg-[#8AD5B7]/90 self-center">
+                {item.name == "Member Portal" && <a href={item.link} className="px-6 py-2 text-base xl:text-lg 2xl:text-xl font-poppins font-bold relative transition-all duration-300 ease-in-out flex items-center justify-center rounded-full bg-[#8AD5B7] text-[#37403D] hover:bg-[#8AD5B7]/90 self-center">
                    {item.name}
                 </a>}
 
@@ -108,7 +138,7 @@ const HorizontalMenu = () => {
                       >
                         <Link
                           href={subItem.link || "#"}
-                          className="flex items-center gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#37403D] hover:font-bold"
+                          className="flex items-center font-poppins gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#37403D] hover:font-bold"
                         >
                           {subItem.name}
                           {subItem.submenu && (
@@ -135,7 +165,7 @@ const HorizontalMenu = () => {
                               <Link
                                 key={nestedItem.name}
                                 href={nestedItem.link || "#"}
-                                className="block px-4 py-2 text-sm text-[#DCE2E2] hover:text-[#37403D] hover:font-bold hover:bg-gray-100"
+                                className="block px-4 py-2 text-sm font-poppins text-[#DCE2E2] hover:text-[#37403D] hover:font-bold hover:bg-gray-100"
                               >
                                 {nestedItem.name}
                               </Link>

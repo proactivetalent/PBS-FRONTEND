@@ -78,30 +78,33 @@ const Header = () => {
 
       {/* Header Container with GSAP Animation */}
       <motion.div
-        className="flex flex-row justify-between items-center w-full h-[70px] xl:h-[100px] bg-[#37403D]"
+        className="w-full h-[70px] xl:h-[100px] bg-[#37403D]"
       >
-        {/* Logo Container with Click Navigation */}
-        <div
-          className="cursor-pointer lg:p-4 pl-0"
-          onClick={() => {
-            setIsOpen(false);
-            router.push("/");
-          }}
-        >
-          {/* Animated Logo Container */}
-          <motion.div ref={imageRef} initial={{ scale: 1 }}>
-            <CustomImage
-              src="/pics/LOGO.png"
-              width={100}
-              height={100}
-              alt="Website Logo"
-              className="w-[50px] xl:w-[80px] object-contain h-auto relative xl:left-[50px] left-[25px]"
-            />
-          </motion.div>
-        </div>
+        {/* Content Container with width constraints */}
+        <div className="w-full lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto h-full flex flex-row justify-between items-center">
+          {/* Logo Container with Click Navigation */}
+          <div
+            className="cursor-pointer lg:p-4 pl-0"
+            onClick={() => {
+              setIsOpen(false);
+              router.push("/");
+            }}
+          >
+            {/* Animated Logo Container */}
+            <motion.div ref={imageRef} initial={{ scale: 1 }}>
+              <CustomImage
+                src="/pics/LOGO.png"
+                width={100}
+                height={100}
+                alt="Website Logo"
+                className="w-[50px] xl:w-[80px] object-contain h-auto relative xl:left-[50px] left-[25px]"
+              />
+            </motion.div>
+          </div>
 
-        {/* Mobile / Side Menu for small screens */}
-      <ResponsiveMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+          {/* Mobile / Side Menu for small screens */}
+          <ResponsiveMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
       </motion.div>
     </div>
   );
