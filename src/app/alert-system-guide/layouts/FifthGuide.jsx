@@ -2,6 +2,24 @@
 
 import CustomImage from "@/app/CustomImage";
 import { ArrowLeft, CalendarDays, Bookmark } from "lucide-react";
+import CTA2 from "@/components/CTA2";
+
+// Helper function to format text with bold before colon
+const formatTextWithBoldLabel = (text) => {
+  if (!text) return text;
+  const colonIndex = text.indexOf(':');
+  if (colonIndex !== -1) {
+    const beforeColon = text.substring(0, colonIndex + 1);
+    const afterColon = text.substring(colonIndex + 1);
+    return (
+      <>
+        <span className="font-semibold text-[#8AD5B7]">{beforeColon}</span>
+        {afterColon}
+      </>
+    );
+  }
+  return text;
+};
 
 const IntroductionModule = ({ module }) => {
   if (!module) return null;
@@ -16,7 +34,7 @@ const IntroductionModule = ({ module }) => {
           {module.paragraphs?.map((paragraph, index) => (
             <p
               key={index}
-              className="mt-6 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
+              className="my-20 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
             >
               {paragraph}
             </p>
@@ -24,9 +42,9 @@ const IntroductionModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide4/intro.png"
+            src="/PBS Assets/alertguide/guide5/intro.png"
             alt="Introduction"
-            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
+            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[500px] h-auto object-contain"
           />
         </div>
       </div>
@@ -34,66 +52,32 @@ const IntroductionModule = ({ module }) => {
   );
 };
 
-const AccesingPropertyProfileModule = ({ module }) => {
+const HowAlertsWorkModule = ({ module }) => {
   if (!module) return null;
 
   return (
     <section className="rounded-3xl">
-      <div className="flex flex-col">
-        <h3 className="text-2xl mb-[50px] md:text-3xl font-conthrax text-[#DCE2E2] bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide">
-          {module.heading}
-        </h3>
-
-        <div className="flex my-10 gap-8 flex-col lg:flex-row">
-          <div className="flex flex-col gap-4 w-full lg:w-1/2 justify-center items-center">
-            <div className="w-full rounded-3xl py-4 px-8">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={module.icon1}
-                  alt="Step icon"
-                  className="h-12 w-12 object-contain"
-                />
-                <h3 className="text-2xl font-poppins font-semibold text-[#8AD5B7]">
-                  {module.title1}
-                </h3>
-              </div>
-              {module.paragraph1?.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="mt-2 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            <div className="w-full rounded-3xl py-4 px-8">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={module.icon2}
-                  alt="Step icon"
-                  className="h-12 w-12 object-contain"
-                />
-                <h3 className="text-2xl font-poppins font-semibold text-[#8AD5B7]">
-                  {module.title2}
-                </h3>
-              </div>
-              {module.paragraph2?.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="mt-2 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <img src="/PBS Assets/alertguide/guide4/interface.png" alt="Accessing Property Profile" className="w-full h-auto object-contain" />
-          </div>
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <img
+            src="/PBS Assets/alertguide/guide5/howAlertsWork.png"
+            alt="Introduction"
+            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
+          />
         </div>
-        <p className="text-[#DCE2E2] mb-4 text-center text-base font-poppins">
-          {module.paragraphs}
-        </p>
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-2xl md:text-3xl font-conthrax text-white bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide leading-tight">
+            {module.heading}
+          </h2>
+          {module.paragraphs?.map((paragraph, index) => (
+            <p
+              key={index}
+              className="mt-6 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -128,7 +112,7 @@ const FunctionsModule = ({ module }) => {
     if (!Array.isArray(items) || items.length === 0) return null;
 
     return (
-      <ol className="my-4 mb-[50px] list-disc list-inside marker:text-[#8AD5B7] marker:font-semibold">
+      <ol className="my-4 list-disc list-inside marker:text-[#8AD5B7] marker:font-semibold">
         {items.map((rawItem, index) => {
           const itemData = typeof rawItem === "string" ? { text: rawItem } : rawItem || {};
           const itemText = itemData.text;
@@ -140,12 +124,13 @@ const FunctionsModule = ({ module }) => {
 
           return (
             <li key={index} className="text-base text-[#B3C1BD] font-poppins leading-relaxed">
-              {itemText}
+              {formatTextWithBoldLabel(itemText)}
               {subpoints.length > 0 && (
                 <ul className="ml-6 list-disc list-inside marker:text-[#8AD5B7] text-sm md:text-base">
                   {subpoints.map((subpoint, subIndex) => (
                     <li key={subIndex} className="text-[#B3C1BD] font-poppins leading-relaxed">
-                      {subpoint}
+                      {formatTextWithBoldLabel(subpoint)}
+
                     </li>
                   ))}
                 </ul>
@@ -169,6 +154,9 @@ const FunctionsModule = ({ module }) => {
         items2: step.items2 || [],
         title2: step.title2 || "",
         icon2: step.icon2 || "",
+        grid_img: step.grid_img || null,
+        grid_button: step.grid_button || null,
+        grid_button_link: step.grid_button_link || null,
         alignment: step.alignment || (index % 2 === 1 ? "reverse" : "default")
       }));
     }
@@ -242,7 +230,7 @@ const FunctionsModule = ({ module }) => {
                 className={`flex flex-col md:flex-row gap-6 ${isReversed ? "md:flex-row-reverse" : ""
                   }`}
               >
-                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                <div className="w-full md:w-1/2 flex flex-col justify-center p-4 rounded-[15px]">
                   <div className="flex items-center gap-3">
                     <img
                       src={iconSrc}
@@ -261,34 +249,38 @@ const FunctionsModule = ({ module }) => {
                   )}
 
                   {renderStepItems(step.items)}
-                  
-                  {/* Check if there's a second items array and render it with title2 and icon2 if provided */}
-                  {step.items2 && Array.isArray(step.items2) && step.items2.length > 0 && (
-                    <div className="mt-8">
-                      {(step.title2 || step.icon2) && (
-                        <div className="flex items-center gap-3 mb-4">
-                          {step.icon2 && (
-                            <img
-                              src={step.icon2}
-                              alt="Step icon 2"
-                              className="h-12 w-12 object-contain"
-                            />
-                          )}
-                          {step.title2 && (
-                            <h3 className="text-2xl font-poppins font-semibold text-[#8AD5B7]">
-                              {step.title2}
-                            </h3>
-                          )}
-                        </div>
-                      )}
-                      {renderStepItems(step.items2)}
+
+                  {/* Check if grid_img exists and display it with full width */}
+                  {step.grid_img && (
+                    <div className="w-full p-10 rounded-3xl bg-[#1E2322]">
+                      <img
+                        src={step.grid_img}
+                        alt="Grid image"
+                        className="w-full h-auto object-contain grayscale"
+                      />
                     </div>
                   )}
+
+
+
+
 
                   {step.footer && (
                     <p className="text-sm md:text-base font-poppins text-[#B3C1BD] leading-relaxed">
                       {step.footer}
                     </p>
+                  )}
+                  {/* Check if grid_button exists and display it */}
+                  {step.grid_button && step.grid_button_link && (
+                    <div className="w-full">
+                      {/* CTA Button */}
+                      <CTA2
+                        text={step.grid_button}
+                        href={step.grid_button_link}
+                        isArrow={false}
+                        styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-poppins px-8 py-4 transition-colors mt-2 lg:mt-3 w-auto"
+                      />
+                    </div>
                   )}
                 </div>
 
@@ -313,69 +305,148 @@ const FunctionsModule = ({ module }) => {
           );
         })}
       </div>
+
+
     </section>
   );
 };
 
-const CustomInspectionsModule = ({ module }) => {
+const ReceiveAlertsModule = ({ module }) => {
   if (!module) return null;
 
   return (
-      <section className="rounded-3xl">
-        <div className="flex flex-col text-[#C5D3CD]">
-          <h3 className="text-2xl mb-[50px] md:text-3xl font-conthrax bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide">
+    <section className="rounded-3xl">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-2xl md:text-3xl font-conthrax text-white bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide leading-tight">
             {module.heading}
-          </h3>
-          <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
-             <div className="w-full lg:w-1/2">
-             <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={module.icon}
-                  alt="Step icon"
-                  className="h-12 w-12 object-contain"
-                />
-                <h3 className="text-2xl font-poppins font-semibold text-[#8AD5B7]">
-                  {module.title}
-                </h3>
-              </div>
-               <ul className="list-decimal ml-4  text-base font-poppins leading-relaxed">
-                 {module.items?.map((item, index) => {
-                   const itemData = typeof item === "string" ? { text: item } : item || {};
-                   const itemText = itemData.text;
-                   const subpoints = Array.isArray(itemData.subpoints) ? itemData.subpoints : [];
-                   
-                   return (
-                     <li key={index} className="text-base text-[#B3C1BD] font-poppins leading-relaxed">
-                       {itemText}
-                       {subpoints.length > 0 && (
-                         <ul className="ml-4 list-disc list-inside marker:text-[#8AD5B7] text-sm md:text-base">
-                           {subpoints.map((subpoint, subIndex) => (
-                             <li key={subIndex} className="text-[#B3C1BD] font-poppins leading-relaxed">
-                               {subpoint}
-                             </li>
-                           ))}
-                         </ul>
-                       )}
-                     </li>
-                   );
-                 })}
-               </ul>
-               <p className="mb-4 text-base font-poppins">
-            {module.suffix}
-          </p>
-
-             </div>
-            <div className="w-full lg:w-1/2">
-              <img src="/PBS Assets/alertguide/guide4/custom_inspection.png" alt="Settings" className="w-full h-auto object-contain" />
-            </div>
-          </div>
-          
+          </h2>
+          {module.paragraphs?.map((paragraph, index) => (
+            <p
+              key={index}
+              className="my-16 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
-      </section>
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <img
+            src="/PBS Assets/alertguide/guide5/receiveAlerts.png"
+            alt="Receive Alerts"
+            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
-const NotificationsModule = ({ module }) => {
+const ViewAlertsModule = ({ module }) => {
+  if (!module) return null;
+
+  return (
+    <section className="rounded-3xl">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <img
+            src="/PBS Assets/alertguide/guide5/viewAlerts.png"
+            alt="Introduction"
+            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
+          />
+        </div>
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-2xl md:text-3xl font-conthrax text-white bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide leading-tight">
+            {module.heading}
+          </h2>
+          {module.paragraphs?.map((paragraph, index) => (
+            <p
+              key={index}
+              className="mt-6 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
+            >
+              {paragraph}
+            </p>
+          ))}
+
+          <p className="mt-4 text-base font-poppins font-semibold leading-relaxed text-[#8AD5B7]">{module.items_title}</p>
+          <p className="py-2 text-base font-poppins leading-tight text-[#B3C1BD]">{module.items_desc}</p>
+          {module.items && module.items.length > 0 && (
+            <ul className="list-disc ml-4 text-base font-poppins leading-tight text-[#B3C1BD]">
+              {module.items.map((item, index) => (
+                <li key={index}>{item.text}</li>
+              ))}
+            </ul>
+          )}
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const AdvantageModule = ({ module }) => {
+  if (!module) return null;
+
+  return (
+    <section className="rounded-3xl">
+      <div className="flex flex-col text-[#C5D3CD]">
+        <h3 className="text-2xl mb-[50px] md:text-3xl font-conthrax bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide">
+          {module.heading}
+        </h3>
+        <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
+          <div className="w-full">
+            <p className="text-base mb-8 font-poppins text-center leading-tight text-[#B3C1BD]">{module.description}</p>
+
+
+            <div className="w-full bg-[#252B2A] px-16 py-10 rounded-[15px]">
+              <h3 className="text-base mb-4 font-poppins font-semibold text-[#8AD5B7]">
+                {module.title}
+              </h3>
+              <ul className="list-decimal ml-4 text-base font-poppins leading-relaxed">
+                {module.items?.map((item, index) => {
+                  const itemData = typeof item === "string" ? { text: item } : item || {};
+                  const itemText = itemData.text;
+                  const subpoints = Array.isArray(itemData.subpoints) ? itemData.subpoints : [];
+
+                  return (
+                    <li key={index} className="text-base text-[#B3C1BD] marker:text-[#8AD5B7] marker:font-semibold font-poppins leading-relaxed">
+                      {formatTextWithBoldLabel(itemText)}
+                      {subpoints.length > 0 && (
+                        <ul className="ml-4 list-disc list-inside marker:text-[#8AD5B7] text-sm md:text-base">
+                          {subpoints.map((subpoint, subIndex) => (
+                            <li key={subIndex} className="text-[#B3C1BD] font-poppins leading-relaxed">
+                              {subpoint}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+              {/* Check if grid_button exists and display it */}
+        {module.grid_button && module.grid_button_link && (
+          <div className="w-full flex justify-center my-4">
+            {/* CTA Button */}
+            <CTA2
+              text={module.grid_button}
+              href={module.grid_button_link}
+              isArrow={false}
+              styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-poppins px-8 py-4 transition-colors mt-2 lg:mt-3 w-auto"
+            />
+          </div>
+        )}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+const BestPracticesModule = ({ module }) => {
   if (!module) return null;
 
   return (
@@ -384,14 +455,16 @@ const NotificationsModule = ({ module }) => {
         <h3 className="text-2xl md:text-3xl mb-10 font-conthrax bg-[#1E2322] text-center p-4 rounded-[15px] uppercase tracking-wide">
           {module.heading}
         </h3>
-        {module.paragraphs?.map((paragraph, index) => (
-          <p
-            key={index}
-            className="text-base text-center text-[#DCE2E2]/90 font-poppins leading-relaxed"
-          >
-            {paragraph}
-          </p>
-        ))}
+        {module.paragraphs && Array.isArray(module.paragraphs) && module.paragraphs.length > 0 && (
+          <ul className="mx-16 list-disc list-inside marker:text-[#8AD5B7] text-base text-[#C5D3CD]/90 font-poppins leading-tight">
+            {module.paragraphs.map((paragraph, index) => (
+              <li key={index} className="mb-2">
+                {formatTextWithBoldLabel(paragraph)}
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="mx-16 mt-8 text-base font-poppins leading-tight text-[#C5D3CD]">{module.description}</p>
       </div>
     </section>
   );
@@ -410,17 +483,22 @@ const ConclusionModule = ({ module }) => {
         {module.paragraphs?.map((paragraph, index) => (
           <p
             key={index}
-            className="mt-2 text-base text-center text-[#DCE2E2]/90 font-poppins leading-relaxed"
+            className="mx-16 mt-2 text-base text-[#DCE2E2]/90 font-poppins leading-relaxed"
           >
             {paragraph}
           </p>
         ))}
-        {module.items && module.items.length > 0 && (
-          <ul className="list-none ml-4 text-base text-center font-poppins leading-relaxed text-[#B3C1BD]">
-            {module.items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+        {/* Check if grid_button exists and display it */}
+        {module.grid_button && module.grid_button_link && (
+          <div className="w-full flex justify-center my-10">
+            {/* CTA Button */}
+            <CTA2
+              text={module.grid_button}
+              href={module.grid_button_link}
+              isArrow={false}
+              styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-poppins px-8 py-4 transition-colors mt-2 lg:mt-3 w-auto"
+            />
+          </div>
         )}
       </div>
     </section>
@@ -430,7 +508,7 @@ const ConclusionModule = ({ module }) => {
 /**
  * Fourth Guide - Clean, minimal design with focus on content
  */
-const FourthGuide = ({ post, tableOfContents, scrollToHeading }) => {
+const FifthGuide = ({ post, tableOfContents, scrollToHeading }) => {
   return (
     <>
       {/* Header Section */}
@@ -453,7 +531,7 @@ const FourthGuide = ({ post, tableOfContents, scrollToHeading }) => {
             </a>
           </div>
           <div>
-            <p className="text-2xl font-poppins font-semibold text-[#8AD5B7]">Guide # 4</p>
+            <p className="text-2xl font-poppins font-semibold text-[#8AD5B7]">Guide # 5</p>
           </div>
           <div className="my-4">
             <h1 className="uppercase text-4xl md:text-5xl lg:text-4xl lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
@@ -471,14 +549,16 @@ const FourthGuide = ({ post, tableOfContents, scrollToHeading }) => {
               {post.modules ? (
                 <div className="flex flex-col gap-10">
                   <IntroductionModule module={post.modules.introduction} />
-                  <AccesingPropertyProfileModule module={post.modules.accessingPropertyProfile} />
+                  <HowAlertsWorkModule module={post.modules.howAlertsWork} />
                   <FunctionsModule module={post.modules.functions} />
-                  <CustomInspectionsModule module={post.modules.customInspections} />
-                  <NotificationsModule module={post.modules.notifications} />
+                  <ReceiveAlertsModule module={post.modules.receiveAlerts} />
+                  <ViewAlertsModule module={post.modules.viewAlerts} />
+                  <AdvantageModule module={post.modules.advantages} />
+                  <BestPracticesModule module={post.modules.bestPractices} />
                   <ConclusionModule module={post.modules.conclusion} />
                 </div>
               ) : (
-                <div 
+                <div
                   className="wordpress-content w-full text-[#DCE2E2] leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
@@ -491,5 +571,5 @@ const FourthGuide = ({ post, tableOfContents, scrollToHeading }) => {
   );
 };
 
-export default FourthGuide;
+export default FifthGuide;
 

@@ -477,7 +477,7 @@ const SecondGuide = ({ post, tableOfContents, scrollToHeading }) => {
   return (
     <>
       {/* Large Hero Section */}
-      <div className="mb-16 text-center relative flex items-center justify-center rounded-xl overflow-hidden -mx-6 md:-mx-12 lg:-mx-24 mt-8 py-16">
+      <div className="mb-16 text-center relative flex items-center justify-center rounded-xl overflow-hidden -mx-6 md:-mx-12 lg:-mx-24 py-16">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -498,8 +498,8 @@ const SecondGuide = ({ post, tableOfContents, scrollToHeading }) => {
           <div>
             <p className="text-2xl font-poppins font-semibold text-[#8AD5B7]">Guide # 2</p>
           </div>
-          <div className="pt-2 mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
+          <div className="my-4">
+            <h1 className="uppercase text-4xl md:text-5xl lg:text-4xl lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] font-bold text-[#DCE2E2] font-conthrax w-full leading-tight">
               {post.title}
             </h1>
           </div>

@@ -345,7 +345,7 @@ const LocalLawGuidePostPage = () => {
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative;">
             <div style="padding-right: 2rem;">
               <h${firstHeading.level} style="color: #8AD5B7; font-family: 'Conthrax', sans-serif; text-align:center; font-weight: bold; font-size: 1rem;">${firstHeading.heading}</h${firstHeading.level}>
-              <div style="color: #DCE2E2; font-family: 'Poppins', sans-serif; font-size: 0.75rem; line-height: 1.6; text-align: center;">
+              <div style="color: #DCE2E2; font-family: 'Poppins', sans-serif; font-size: 0.75rem; line-height: 1.6;">
                 <div style="margin-bottom: 1rem;">
                   ${firstContent}
                 </div>
@@ -353,7 +353,7 @@ const LocalLawGuidePostPage = () => {
             </div>
             <div style="padding-left: 1rem;">
               <h${secondHeading.level} style="color: #8AD5B7; font-family: 'Conthrax', sans-serif; text-align:center; font-weight: bold; font-size: 1rem;">${secondHeading.heading}</h${secondHeading.level}>
-              <div style="color: #DCE2E2; font-family: 'Poppins', sans-serif; font-size: 0.75rem; line-height: 1.6; text-align: center;">
+              <div style="color: #DCE2E2; font-family: 'Poppins', sans-serif; font-size: 0.75rem; line-height: 1.6;">
                 <div style="margin-bottom: 1rem;">
                   ${secondContent}
                 </div>
@@ -714,7 +714,7 @@ const LocalLawGuidePostPage = () => {
   }
 
   return (
-    <section className="bg-[#37403D] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
+    <section className="bg-[#37403D] text-[#DCE2E2] py-2 px-6 md:px-12 lg:px-24">
       {/* Article Header - Full Width Hero Section Above Three Columns */}
       <div ref={articleHeaderRef} className="mb-16 text-center relative flex items-center justify-center rounded-xl overflow-hidden -mx-6 md:-mx-12 lg:-mx-24 mt-8 py-16">
         {/* Background Image */}

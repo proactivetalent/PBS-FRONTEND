@@ -472,7 +472,7 @@ const Page = () => {
   return (
     <div>
       {/* Main Blog Section */}
-      <section data-section="blog-articles" className="bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#37403D] text-[#DCE2E2] py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
+      <section data-section="blog-articles" className="bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#37403D] text-[#DCE2E2] py-16 md:py-24 lg:py-10 px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{

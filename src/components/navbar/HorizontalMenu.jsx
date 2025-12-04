@@ -6,102 +6,78 @@ import { gsap } from "gsap";
 const HorizontalMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
-  const lineRefs = useRef([]);
-  const arrowRefs = useRef([]);
-  const mainMenuArrowRefs = useRef([]);
+  const dropdownRef = useRef(null);
 
   const handleMouseEnter = (index, hasSubmenu) => {
     setOpenDropdown(index);
-    const line = lineRefs.current[index];
-    if (line) {
-      gsap.to(line, {
-        width: "100%",
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.inOut",
-        transformOrigin: "left",
-      });
-    }
-    // Animate main menu arrow if it has submenu
-    if (hasSubmenu) {
-      const arrow = mainMenuArrowRefs.current[index];
-      if (arrow) {
-        gsap.to(arrow, { rotation: 180, duration: 0.3, ease: "power2.inOut" });
-      }
+    
+    if (hasSubmenu && dropdownRef.current) {
+      gsap.fromTo(
+        dropdownRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+      );
     }
   };
 
   const handleMouseLeave = () => {
-    if (openDropdown !== null) {
-      const line = lineRefs.current[openDropdown];
-      if (line) {
-        gsap.to(line, {
-          width: 0,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.inOut",
-          transformOrigin: "right",
-        });
-      }
-      // Reset main menu arrow
-      const arrow = mainMenuArrowRefs.current[openDropdown];
-      if (arrow) {
-        gsap.to(arrow, { rotation: 0, duration: 0.3, ease: "power2.inOut" });
-      }
-    }
     setOpenDropdown(null);
     setOpenSubDropdown(null);
   };
 
   const handleSubMouseEnter = (subIndex) => {
     setOpenSubDropdown(subIndex);
-    const arrow = arrowRefs.current[subIndex];
-    if (arrow) {
-      gsap.to(arrow, { rotation: 180, duration: 0.3, ease: "power2.inOut" });
-    }
   };
 
   const handleSubMouseLeave = () => {
-    if (openSubDropdown !== null) {
-      const arrow = arrowRefs.current[openSubDropdown];
-      if (arrow) {
-        gsap.to(arrow, { rotation: 0, duration: 0.3, ease: "power2.inOut" });
-      }
-    }
-    setOpenSubDropdown(null);
+    // Don't close subdropdown immediately
   };
 
   return (
-    <nav className="inline-flex items-center text-[#DCE2E2] h-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-between items-center h-full">
-          <div className="flex items-center justify-evenly h-full">
-            {navItems.map((item, index) => (
-              <div
-                key={item.name}
-                className={`relative group ${item.name === "Member Portal" ? "flex items-center" : "h-full"}`}
-                onMouseEnter={() => handleMouseEnter(index, !!item.submenu)}
-                onMouseLeave={handleMouseLeave}
-              >
-                {item.name !== "Member Portal" && <Link
+    <nav className="flex items-center text-[#DCE2E2] h-full">
+      <div className="w-full h-full">
+        <div className="flex items-center justify-center gap-1 h-full">
+          {navItems.map((item, index) => (
+            <div
+              key={item.name}
+              className="relative h-full flex items-center"
+              onMouseEnter={() => handleMouseEnter(index, !!item.submenu)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {item.name !== "Member Portal" ? (
+                <Link
                   href={item.link || "#"}
-                  className={`px-3 py-2 text-base xl:text-lg font-poppins font-medium relative transition-all duration-300 ease-in-out flex items-center gap-2 h-full ${
-                    item.submenu
-                      ? openDropdown === index
-                        ? "bg-[#37403D] text-[#8AD5B7]"
-                        : "text-[#DCE2E2] hover:bg-[#37403D] hover:text-[#8AD5B7]"
+                  className={`
+                    px-5 py-2 h-full flex items-center gap-2
+                    text-sm xl:text-base font-medium font-poppins
+                    transition-all duration-300 ease-out
+                    relative group
+                    ${openDropdown === index 
+                      ? "text-[#8AD5B7]" 
                       : "text-[#DCE2E2] hover:text-[#8AD5B7]"
-                  }`}
+                    }
+                  `}
                 >
-                  {item.name}
+                  <span className="relative">
+                    {item.name}
+                    <span 
+                      className={`
+                        absolute -bottom-1 left-0 h-0.5 bg-[#8AD5B7]
+                        transition-all duration-300 ease-out
+                        ${openDropdown === index ? "w-full" : "w-0 group-hover:w-full"}
+                      `}
+                    />
+                  </span>
+                  
                   {item.submenu && (
                     <svg
-                      ref={(el) => (mainMenuArrowRefs.current[index] = el)}
-                      className="h-4 w-4"
+                      className={`
+                        h-4 w-4 transition-transform duration-300 ease-out
+                        ${openDropdown === index ? "rotate-180" : "rotate-0"}
+                      `}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         strokeLinecap="round"
@@ -111,74 +87,104 @@ const HorizontalMenu = () => {
                       />
                     </svg>
                   )}
-                  <span
-                    ref={(el) => (lineRefs.current[index] = el)}
-                    className={`absolute ${
-                      item.submenu ? "top-0" : "bottom-1"
-                    } left-0 h-1 bg-[#8AD5B7] ${
-                      openDropdown === index ? "opacity-100" : "opacity-0"
-                    }`}
-                    style={{ width: 0 }}
-                  />
                 </Link>
-}
+              ) : (
+                <a 
+                  href={item.link}
+                  className="
+                    ml-4 px-6 py-2.5 
+                    text-sm xl:text-base font-semibold font-poppins
+                    rounded-full bg-[#8AD5B7] text-[#37403D]
+                    transition-all duration-300 ease-out
+                    hover:bg-[#7BC4A6] hover:shadow-lg hover:scale-105
+                    active:scale-95
+                  "
+                >
+                  {item.name}
+                </a>
+              )}
 
-                {item.name == "Member Portal" && <a href={item.link} className="px-6 py-2 text-base xl:text-lg 2xl:text-xl font-poppins font-bold relative transition-all duration-300 ease-in-out flex items-center justify-center rounded-full bg-[#8AD5B7] text-[#37403D] hover:bg-[#8AD5B7]/90 self-center">
-                   {item.name}
-                </a>}
-
-                {item.submenu && openDropdown === index && (
-                  <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10 p-3">
-                    {item.submenu.map((subItem, subIndex) => (
-                      <div
-                        key={subItem.name}
-                        className="relative"
-                        onMouseEnter={() => handleSubMouseEnter(subIndex)}
-                        onMouseLeave={handleSubMouseLeave}
+              {/* Dropdown Menu */}
+              {item.submenu && openDropdown === index && (
+                <div 
+                  ref={dropdownRef}
+                  className="
+                    absolute top-full left-1/2 -translate-x-1/2 mt-1
+                    w-64 bg-[#37403D]/100 backdrop-blur-sm
+                    rounded-xl shadow-2xl 
+                    border border-[#37403D]
+                    py-2 z-50
+                  "
+                >
+                  {item.submenu.map((subItem, subIndex) => (
+                    <div
+                      key={subItem.name}
+                      className="relative"
+                      onMouseEnter={() => handleSubMouseEnter(subIndex)}
+                    >
+                      <Link
+                        href={subItem.link || "#"}
+                        className="
+                          flex items-center justify-between
+                          px-4 py-2.5 mx-2 rounded-lg
+                          text-sm font-medium font-poppins text-[#DCE2E2]
+                          transition-all duration-200
+                          hover:bg-[#8AD5B7] hover:text-[#37403D]
+                          group
+                        "
                       >
-                        <Link
-                          href={subItem.link || "#"}
-                          className="flex items-center font-poppins gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#37403D] hover:font-bold"
-                        >
-                          {subItem.name}
-                          {subItem.submenu && (
-                            <svg
-                              ref={(el) => (arrowRefs.current[subIndex] = el)}
-                              className="h-4 w-4 mr-1"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          )}
-                        </Link>
-                        {subItem.submenu && openSubDropdown === subIndex && (
-                          <div className="mt-0 pl-4 w-full shadow-lg z-10">
-                            {subItem.submenu.map((nestedItem) => (
-                              <Link
-                                key={nestedItem.name}
-                                href={nestedItem.link || "#"}
-                                className="block px-4 py-2 text-sm font-poppins text-[#DCE2E2] hover:text-[#37403D] hover:font-bold hover:bg-gray-100"
-                              >
-                                {nestedItem.name}
-                              </Link>
-                            ))}
-                          </div>
+                        <span>{subItem.name}</span>
+                        {subItem.submenu && (
+                          <svg
+                            className={`
+                              h-4 w-4 transition-transform duration-200
+                              ${openSubDropdown === subIndex ? "-rotate-90" : "rotate-0"}
+                            `}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
                         )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                      </Link>
+
+                      {/* Nested Dropdown - Now appears on the right */}
+                      {subItem.submenu && openSubDropdown === subIndex && (
+                        <div className="
+                          absolute left-full top-0 ml-1
+                          w-56 bg-[#37403D]/100 backdrop-blur-sm
+                          rounded-xl shadow-2xl 
+                          border border-[#37403D]
+                          py-2 z-50
+                        ">
+                          {subItem.submenu.map((nestedItem) => (
+                            <Link
+                              key={nestedItem.name}
+                              href={nestedItem.link || "#"}
+                              className="
+                                block px-4 py-2.5 mx-2 rounded-lg
+                                text-sm font-medium font-poppins text-[#DCE2E2]
+                                transition-all duration-200
+                                hover:bg-[#8AD5B7] hover:text-[#37403D]
+                              "
+                            >
+                              {nestedItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </nav>

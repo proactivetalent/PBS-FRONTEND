@@ -17,20 +17,12 @@ const Header = () => {
   const router = useRouter();
   const ref = useRef(null);
   const imageRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(true);
-  const lastScrollY = useRef(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY.current) {
-        setIsVisible(false); // Hide on scroll down
-      } else {
-        setIsVisible(true); // Show on scroll up
-      }
-      lastScrollY.current = currentScrollY;
-      console.log("DEBUG ENV:", process.env.NEXT_PUBLIC_API_URL);
-
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50); // Trigger after 50px scroll
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -70,15 +62,17 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 right-0 z-50 w-full ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } transition-transform duration-500`}
+      className="sticky top-0 right-0 z-50 w-full"
       ref={ref}
     >
 
       {/* Header Container with GSAP Animation */}
       <motion.div
-        className="w-full h-[70px] xl:h-[100px] bg-[#37403D]"
+        className={`w-full transition-all duration-300 ease-in-out ${
+          isScrolled 
+            ? "h-[53px] xl:h-[75px] backdrop-blur-md bg-[#37403D]/50" 
+            : "h-[70px] xl:h-[100px] bg-[#37403D]"
+        }`}
       >
         {/* Content Container with width constraints */}
         <div className="w-full lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto h-full flex flex-row justify-between items-center">
@@ -97,7 +91,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 alt="Website Logo"
-                className="w-[50px] xl:w-[80px] object-contain h-auto relative xl:left-[50px] left-[25px]"
+                className="w-[50px] xl:w-[60px] object-contain h-auto relative"
               />
             </motion.div>
           </div>

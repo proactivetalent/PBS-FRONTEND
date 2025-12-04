@@ -31,6 +31,9 @@ import {
   SecondGuide, 
   ThirdGuide, 
   FourthGuide, 
+  FifthGuide,
+  SixthGuide,
+  SeventhGuide,
 } from "../layouts";
 
 // Share Button Component
@@ -596,7 +599,13 @@ const AlertSystemGuidePostPage = () => {
         return <ThirdGuide {...commonProps} />;
       case 'fourth':
         return <FourthGuide {...commonProps} />;
-      // case 'timeline':
+      case 'fifth':
+        return <FifthGuide {...commonProps} />;
+      case 'sixth':
+        return <SixthGuide {...commonProps} />;
+      case 'seventh':
+        return <SeventhGuide {...commonProps} />;
+        // case 'timeline':
       //   return <TimelineLayout {...commonProps} />;
       case 'first':
       default:
@@ -605,7 +614,7 @@ const AlertSystemGuidePostPage = () => {
   };
 
   return (
-    <section className="bg-[#2B3331] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
+    <section className="bg-[#2B3331] text-[#DCE2E2] px-6 md:px-12 lg:px-24">
       {renderLayout()}
       
       {/* More Blogs Related To This Section - Common for all layouts */}

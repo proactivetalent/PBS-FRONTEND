@@ -295,7 +295,7 @@ const LocalLawGuidePage = () => {
   return (
     <div>
       {/* Main Local Law Guide Section */}
-      <section data-section="local-law-guide" className="bg-[#2B3331] text-[#DCE2E2] py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 xl:px-24">
+      <section data-section="local-law-guide" className="bg-[#2B3331] text-[#DCE2E2] py-16 md:py-24 lg:py-10 px-4 md:px-6 lg:px-12 xl:px-24">
         <div className="container mx-auto max-w-7xl">
           
           {/* Header Section with Title and Search */}
