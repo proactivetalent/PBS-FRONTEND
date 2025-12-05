@@ -423,7 +423,7 @@ const SprinklerModule = ({ module }) => {
                                 );
                             })}
                         </ol>
-                        <img src="/PBS Assets/alertguide/guide6/create_ticket.png" alt="Dashboard" className="w-full h-auto object-contain" />
+                        <img src="/PBS Assets/alertguide/guide7/sprinkler.png" alt="Dashboard" className="w-full h-auto object-contain" />
                     </div>
                 </div>
             </div>
