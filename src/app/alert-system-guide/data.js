@@ -10,8 +10,8 @@ export const alertSystemGuides = [
     slug: "understanding-pbs-alert-system",
     date: "January 15, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide1/thumbnail.png",
-    image1: "/PBS Assets/alertguide/guide1/intro.png",
+    image: "/PBS Assets/alertguide/guide1/thumbnail.webp",
+    image1: "/PBS Assets/alertguide/guide1/intro.webp",
     author: "PBS Team",
     modified: "2025-01-15",
     layout: "first", // Layout type: default, minimal, hero-focus, split-view, timeline
@@ -41,7 +41,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide1/step1.png",
+              src: "/PBS Assets/alertguide/guide1/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -88,7 +88,7 @@ export const alertSystemGuides = [
             //   imageClass: "w-[255px] h-[275px] object-contain opacity-0"
             // },
             banner: {
-              src: "/PBS Assets/alertguide/guide1/step2.png",
+              src: "/PBS Assets/alertguide/guide1/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -126,7 +126,7 @@ export const alertSystemGuides = [
             //   imageClass: "w-[345px] h-[175px] object-contain"
             // },
             banner: {
-              src: "/PBS Assets/alertguide/guide1/step3.png",
+              src: "/PBS Assets/alertguide/guide1/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -151,7 +151,7 @@ export const alertSystemGuides = [
             description:
               "The final step to activating the PBS Alert System for your assets is to populate your portfolio.",
             banner: {
-              src: "/PBS Assets/alertguide/guide1/step4.png",
+              src: "/PBS Assets/alertguide/guide1/step4.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -211,7 +211,7 @@ export const alertSystemGuides = [
     slug: "add-manage-properties",
     date: "January 20, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide2/thumbnail.png",
+    image: "/PBS Assets/alertguide/guide2/thumbnail.webp",
     author: "PBS Team",
     modified: "2025-01-20",
     layout: "second", // Different layout for this guide
@@ -250,7 +250,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide2/step1.png",
+              src: "/PBS Assets/alertguide/guide2/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -272,7 +272,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide2/step2.png",
+              src: "/PBS Assets/alertguide/guide2/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -294,7 +294,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide2/step3.png",
+              src: "/PBS Assets/alertguide/guide2/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -316,7 +316,7 @@ export const alertSystemGuides = [
             description:
               "The final step to activating the PBS Alert System for your assets is to populate your portfolio.",
             banner: {
-              src: "/PBS Assets/alertguide/guide2/step4.png",
+              src: "/PBS Assets/alertguide/guide2/step4.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -387,7 +387,7 @@ export const alertSystemGuides = [
     slug: "manage-your-property-profile",
     date: "January 25, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide3/thumbnail.png",
+    image: "/PBS Assets/alertguide/guide3/thumbnail.webp",
     author: "PBS Team",
     modified: "2025-01-25",
     layout: "third", // Different layout for this guide
@@ -426,7 +426,7 @@ export const alertSystemGuides = [
             description:
               "The main content area displays a live, auto-updating summary of all property data, including:",
             banner: {
-              src: "/PBS Assets/alertguide/guide3/step1.png",
+              src: "/PBS Assets/alertguide/guide3/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -457,7 +457,7 @@ export const alertSystemGuides = [
             description:
               "To specify who should be contacted for issues related to this property:",
             banner: {
-              src: "/PBS Assets/alertguide/guide3/step2.png",
+              src: "/PBS Assets/alertguide/guide3/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -491,7 +491,7 @@ export const alertSystemGuides = [
             description:
               "The notes feature allows for unlimited, persistent internal memos.",
             banner: {
-              src: "/PBS Assets/alertguide/guide3/step3.png",
+              src: "/PBS Assets/alertguide/guide3/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -520,7 +520,7 @@ export const alertSystemGuides = [
             description:
               "The document vault provides secure, centralized storage for all property-related files.",
             banner: {
-              src: "/PBS Assets/alertguide/guide3/step4.png",
+              src: "/PBS Assets/alertguide/guide3/step4.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -612,7 +612,7 @@ export const alertSystemGuides = [
     slug: "managing-property-profile",
     date: "January 25, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide4/thumbnail.png",
+    image: "/PBS Assets/alertguide/guide4/thumbnail.webp",
     author: "PBS Team",
     modified: "2025-01-25",
     layout: "fourth", // Different layout for this guide
@@ -651,7 +651,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide4/step1.png",
+              src: "/PBS Assets/alertguide/guide4/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -673,7 +673,7 @@ export const alertSystemGuides = [
             description:
               "Complete these core fields to define the inspection parameters:",
             banner: {
-              src: "/PBS Assets/alertguide/guide4/step2.png",
+              src: "/PBS Assets/alertguide/guide4/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -704,7 +704,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide4/step3.png",
+              src: "/PBS Assets/alertguide/guide4/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -830,7 +830,7 @@ export const alertSystemGuides = [
     slug: "understanding-and-managing-your-pbs-alerts",
     date: "January 25, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide5/thumbnail.png",
+    image: "/PBS Assets/alertguide/guide5/thumbnail.webp",
     author: "PBS Team",
     modified: "2025-01-25",
     layout: "fifth", // Different layout for this guide
@@ -858,7 +858,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide5/step1.png",
+              src: "/PBS Assets/alertguide/guide5/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -881,7 +881,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide5/step2.png",
+              src: "/PBS Assets/alertguide/guide5/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -909,7 +909,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide5/step3.png",
+              src: "/PBS Assets/alertguide/guide5/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -934,7 +934,7 @@ export const alertSystemGuides = [
             description:
               "This category encompasses the formal legal and financial consequences that follow a violation. While the initial violation is critical, missing a hearing or penalty deadline has severe, immediate financial repercussions.",
             banner: {
-              src: "/PBS Assets/alertguide/guide5/step4.png",
+              src: "/PBS Assets/alertguide/guide5/step4.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1079,7 +1079,7 @@ export const alertSystemGuides = [
     slug: "ticket-system-and-support",
     date: "January 25, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide6/thumbnail.png",
+    image: "/PBS Assets/alertguide/guide6/thumbnail.webp",
     author: "PBS Team",
     modified: "2025-01-25",
     layout: "sixth", // Different layout for this guide
@@ -1158,8 +1158,8 @@ export const alertSystemGuides = [
     slug: "hpd-mailing-guide",
     date: "January 15, 2025",
     category: "Alert System Guide",
-    image: "/PBS Assets/alertguide/guide7/thumbnail.png",
-    image1: "/PBS Assets/alertguide/guide1/intro.png",
+    image: "/PBS Assets/alertguide/guide7/thumbnail.webp",
+    image1: "/PBS Assets/alertguide/guide1/intro.webp",
     author: "PBS Team",
     modified: "2025-01-15",
     layout: "seventh", // Layout type: default, minimal, hero-focus, split-view, timeline
@@ -1185,7 +1185,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step1.png",
+              src: "/PBS Assets/alertguide/guide7/step1.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1215,7 +1215,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step2.png",
+              src: "/PBS Assets/alertguide/guide7/step2.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1245,7 +1245,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step3.png",
+              src: "/PBS Assets/alertguide/guide7/step3.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1316,7 +1316,7 @@ export const alertSystemGuides = [
             description:
               "",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step1_fire.png",
+              src: "/PBS Assets/alertguide/guide7/step1_fire.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1340,7 +1340,7 @@ export const alertSystemGuides = [
             description:
               "A Manual Pull Station is the red box, usually with a handle, located near building exits. It allows a person to manually trigger the entire building's fire alarm system in case they see a fire before the smoke or heat detectors activate. You must indicate if your building's fire alarm system includes these manual pull stations.",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step2_fire.png",
+              src: "/PBS Assets/alertguide/guide7/step2_fire.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1361,7 +1361,7 @@ export const alertSystemGuides = [
             description:
               "A Public Address (PA) system allows building management or emergency responders to broadcast voice announcements throughout the building during an emergency (like a fire) or for important instructions.",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step3_fire.png",
+              src: "/PBS Assets/alertguide/guide7/step3_fire.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1385,7 +1385,7 @@ export const alertSystemGuides = [
             description:
               "A \"Means of Egress\" is a continuous and unobstructed path of travel from any point in a building to a public way (like a street). It consists of three parts: the exit access (hallway), the exit (stairwell), and the exit discharge (final door to outside).",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step4_fire.png",
+              src: "/PBS Assets/alertguide/guide7/step4_fire.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },
@@ -1411,7 +1411,7 @@ export const alertSystemGuides = [
             title: "Final Details",
             description: "",
             banner: {
-              src: "/PBS Assets/alertguide/guide7/step5_fire.png",
+              src: "/PBS Assets/alertguide/guide7/step5_fire.webp",
               containerClass: "flex flex-col items-center justify-center my-auto rounded-3xl",
               imageClass: " object-contain"
             },

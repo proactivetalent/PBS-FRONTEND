@@ -42,7 +42,7 @@ const IntroductionModule = ({ module }) => {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img
-                        src="/PBS Assets/alertguide/guide6/intro.png"
+                        src="/PBS Assets/alertguide/guide6/intro.webp"
                         alt="Introduction"
                         className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[500px] h-auto object-contain"
                     />
@@ -97,7 +97,7 @@ const TicketCenterModule = ({ module }) => {
                 </h3>
                 <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
                     <div className="w-full lg:w-2/5 rounded-3xl py-4">
-                        <img src="/PBS Assets/alertguide/guide6/banner.png" alt="Dashboard" className="w-full h-auto object-contain" />
+                        <img src="/PBS Assets/alertguide/guide6/banner.webp" alt="Dashboard" className="w-full h-auto object-contain" />
                     </div>
                     <div className="w-full lg:w-3/5 rounded-3xl py-4">
                         <div className="flex flex-col  gap-1 mb-4">
@@ -166,7 +166,7 @@ const TicketCreationModule = ({ module }) => {
                         </ol>
                     </div>
                     <div className="w-full lg:w-1/2 rounded-3xl py-4">
-                        <img src="/PBS Assets/alertguide/guide6/create_ticket.png" alt="Dashboard" className="w-full h-auto object-contain" />
+                        <img src="/PBS Assets/alertguide/guide6/create_ticket.webp" alt="Dashboard" className="w-full h-auto object-contain" />
                     </div>
                 </div>
             </div>
@@ -219,7 +219,7 @@ const ManageTicketsModule = ({ module }) => {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center items-center lg:justify-end">
                     <img
-                        src="/PBS Assets/alertguide/guide6/manage_tickets.png"
+                        src="/PBS Assets/alertguide/guide6/manage_tickets.webp"
                         alt="Receive Alerts"
                         className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
                     />

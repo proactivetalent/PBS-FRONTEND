@@ -24,7 +24,7 @@ const IntroductionModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide4/intro.png"
+            src="/PBS Assets/alertguide/guide4/intro.webp"
             alt="Introduction"
             className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
           />
@@ -88,7 +88,7 @@ const AccesingPropertyProfileModule = ({ module }) => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <img src="/PBS Assets/alertguide/guide4/interface.png" alt="Accessing Property Profile" className="w-full h-auto object-contain" />
+            <img src="/PBS Assets/alertguide/guide4/interface.webp" alt="Accessing Property Profile" className="w-full h-auto object-contain" />
           </div>
         </div>
         <p className="text-[#DCE2E2] mb-4 text-center text-base font-poppins">
@@ -366,7 +366,7 @@ const CustomInspectionsModule = ({ module }) => {
 
              </div>
             <div className="w-full lg:w-1/2">
-              <img src="/PBS Assets/alertguide/guide4/custom_inspection.png" alt="Settings" className="w-full h-auto object-contain" />
+              <img src="/PBS Assets/alertguide/guide4/custom_inspection.webp" alt="Settings" className="w-full h-auto object-contain" />
             </div>
           </div>
           

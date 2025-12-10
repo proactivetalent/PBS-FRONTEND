@@ -42,7 +42,7 @@ const IntroductionModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide5/intro.png"
+            src="/PBS Assets/alertguide/guide5/intro.webp"
             alt="Introduction"
             className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[500px] h-auto object-contain"
           />
@@ -332,7 +332,7 @@ const ReceiveAlertsModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide5/receiveAlerts.png"
+            src="/PBS Assets/alertguide/guide5/receiveAlerts.webp"
             alt="Receive Alerts"
             className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
           />
@@ -350,7 +350,7 @@ const ViewAlertsModule = ({ module }) => {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide5/viewAlerts.png"
+            src="/PBS Assets/alertguide/guide5/viewAlerts.webp"
             alt="Introduction"
             className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
           />

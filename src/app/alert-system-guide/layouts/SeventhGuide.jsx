@@ -44,7 +44,7 @@ const IntroductionModule = ({ module }) => {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img
-                        src="/PBS Assets/alertguide/guide7/intro.png"
+                        src="/PBS Assets/alertguide/guide7/intro.webp"
                         alt="Introduction"
                         className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
                     />
@@ -62,7 +62,7 @@ const MailingModule = ({ module }) => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center lg:items-start">
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img
-                        src="/PBS Assets/alertguide/guide7/mailing.png"
+                        src="/PBS Assets/alertguide/guide7/mailing.webp"
                         alt="Introduction"
                         className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
                     />
@@ -96,7 +96,7 @@ const FormsModule = ({ module }) => {
                 </h3>
                 <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
                     <div className="w-full lg:w-1/2">
-                        <img src="/PBS Assets/alertguide/guide7/forms.png" alt="Settings" className="w-full h-auto object-contain" />
+                        <img src="/PBS Assets/alertguide/guide7/forms.webp" alt="Settings" className="w-full h-auto object-contain" />
                     </div>
                     <div className="w-full lg:w-1/2">
 
@@ -423,7 +423,7 @@ const SprinklerModule = ({ module }) => {
                                 );
                             })}
                         </ol>
-                        <img src="/PBS Assets/alertguide/guide7/sprinkler.png" alt="Dashboard" className="w-full h-auto object-contain" />
+                        <img src="/PBS Assets/alertguide/guide7/sprinkler.webp" alt="Dashboard" className="w-full h-auto object-contain" />
                     </div>
                 </div>
             </div>

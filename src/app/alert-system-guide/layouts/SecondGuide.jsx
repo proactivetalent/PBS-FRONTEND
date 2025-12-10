@@ -27,9 +27,9 @@ const IntroductionModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide2/intro.png"
+            src="/PBS Assets/alertguide/guide2/intro.webp"
             alt="Introduction"
-            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
+            className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[450px] h-auto object-contain"
           />
         </div>
       </div>
@@ -111,7 +111,7 @@ const PrerequisitesModule = ({ module }) => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 rounded-3xl py-4 px-8">
-            <img src="/PBS Assets/alertguide/guide2/dashboard.png" alt="Dashboard" className="w-full h-auto object-contain" />
+            <img src="/PBS Assets/alertguide/guide2/dashboard.webp" alt="Dashboard" className="w-full h-auto object-contain" />
           </div>
         </div>
         {/* <ul className="mb-[50px]">
@@ -415,7 +415,7 @@ const ConfiguringAlertsModule = ({ module }) => {
           </p>
           <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
             <div className="w-full lg:w-1/2">
-              <img src="/PBS Assets/alertguide/guide2/notification.png" alt="Settings" className="w-full h-auto object-contain" />
+              <img src="/PBS Assets/alertguide/guide2/notification.webp" alt="Settings" className="w-full h-auto object-contain" />
             </div>
             <div className="w-full lg:w-1/2">
               <ul className="list-decimal ml-4  text-base font-poppins leading-relaxed">

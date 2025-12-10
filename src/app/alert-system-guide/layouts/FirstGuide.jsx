@@ -24,7 +24,7 @@ const IntroductionModule = ({ module }) => {
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <img
-            src="/PBS Assets/alertguide/guide1/intro.png"
+            src="/PBS Assets/alertguide/guide1/intro.webp"
             alt="Introduction"
             className="w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none h-auto object-contain"
           />
