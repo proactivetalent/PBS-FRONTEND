@@ -417,17 +417,15 @@ const AlertSystemGuidePage = () => {
                 {/* Action Buttons */}
                 <div className="flex items-center justify-between">
                   {/* Read More Button */}
-                  <a
-                    href={post.slug ? `/alert-system-guide/${post.slug}` : '#'}
-                    onClick={(e) => e.stopPropagation()}
-                    className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
+                  <span
+                    className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold cursor-pointer"
                   >
                     {/* Enhanced Circular Icon */}
                     <div className="relative w-12 h-12 bg-gradient-to-r from-[#8AD5B7] to-[#7AC5A7] rounded-full flex items-center justify-center shadow-lg shadow-[#8AD5B7]/25 transition-all duration-300 group-hover/btn:scale-110 group-hover/btn:shadow-xl group-hover/btn:shadow-[#8AD5B7]/40">
                       <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
                     </div>
                     <span className="font-semibold tracking-wide">Read Article</span>
-                  </a>
+                  </span>
 
                   {/* Share Button */}
                   <ShareButton post={post} />
@@ -514,17 +512,15 @@ const AlertSystemGuidePage = () => {
                   {/* Action Buttons */}
                   <div className="flex items-center justify-between">
                     {/* Read More Button */}
-                    <a
-                      href={relatedPost.slug ? `/alert-system-guide/${relatedPost.slug}` : '#'}
-                      onClick={(e) => e.stopPropagation()}
-                      className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold"
+                    <span
+                      className="group/btn flex items-center gap-3 text-[#8AD5B7] hover:text-[#DCE2E2] transition-all duration-300 font-poppins font-semibold cursor-pointer"
                     >
                       {/* Enhanced Circular Icon */}
                       <div className="relative w-12 h-12 bg-gradient-to-r from-[#8AD5B7] to-[#7AC5A7] rounded-full flex items-center justify-center shadow-lg shadow-[#8AD5B7]/25 transition-all duration-300 group-hover/btn:scale-110 group-hover/btn:shadow-xl group-hover/btn:shadow-[#8AD5B7]/40">
                         <ArrowRight className="w-5 h-5 text-[#1E2322] transform -rotate-45 transition-transform duration-300 group-hover/btn:rotate-0" />
                       </div>
                       <span className="font-semibold tracking-wide">Read Article</span>
-                    </a>
+                    </span>
 
                     {/* Share Button */}
                     <ShareButton post={relatedPost} />
