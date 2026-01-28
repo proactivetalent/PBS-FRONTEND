@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pbs-nyc.vercel.app
+Host: https://pbs.nyc
 
 # Sitemaps
-Sitemap: https://pbs-nyc.vercel.app/sitemap.xml
+Sitemap: https://pbs.nyc/sitemap.xml
