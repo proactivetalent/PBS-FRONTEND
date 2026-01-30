@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Terms and Conditions of Use | Proactive Building Solutions",
-  description: "Review the Terms and Conditions governing your use of Proactive Building Solutions' website and services. Learn about use obligations, intellectual property, and liability."
+  title: "Terms of Service | PBS NYC",
+  description: "The official Terms of Service governing the use of the PBS NYC website, Alert System platform, and related professional services."
 
 }
 

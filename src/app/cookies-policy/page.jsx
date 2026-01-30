@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Cookie Policy | Proactive Building Solutions",
-  description: "Learn how Proactive Building Solutions uses cookies and similar tracking technologies to enhance your experience on our website."
+  title: "Cookies Policy | PBS NYC Website",
+  description: "PBS NYC uses cookies and similar technologies on our website to improve your browsing experience and service delivery."
 }
 
 const CookiePolicy = () => {

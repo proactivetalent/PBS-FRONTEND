@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Privacy Policy | Proactive Building Solutions",
-  description: "Your privacy is important to us. Read the Proactive Building Solutions Privacy Policy to understand how we collect, use, and protect your personal information."
+  title: "Privacy Policy | PBS NYC",
+  description: "The PBS NYC Privacy Policy outlines how we collect, use, and protect your personal information when you use our alert system and services."
 }
 
 const PrivacyPolicy = () => {

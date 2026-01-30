@@ -207,8 +207,7 @@ const Page = () => {
       {/* Hero Section */}
       <HeroSection
         heading="Contact us"
-        text="24/7 Support for Emergencies, Inspections, and Compliance Urgencies
-Contact PBS Compliance Solutions"
+        text="Reach out to PBS for all your NYC property needs. Real-time compliance monitoring (PBS Alert System), Local Law 11/126/152 inspections, expediting services, owner representation, and full property management. Our integrated approach ensures nothing falls through the cracks."
         className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#DCE2E2]"
         bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
         isLine={true}
