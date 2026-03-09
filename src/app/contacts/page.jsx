@@ -203,44 +203,38 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-[#37403D] overflow-x-hidden">
-      {/* Hero Section */}
+    <div className="bg-[#2B3331] overflow-x-hidden">
+      {/* Hero: Contact landing banner */}
       <HeroSection
-        heading="Contact us"
-        text="Reach out to PBS for all your NYC property needs. Real-time compliance monitoring (PBS Alert System), Local Law 11/126/152 inspections, expediting services, owner representation, and full property management. Our integrated approach ensures nothing falls through the cracks."
-        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#DCE2E2]"
-        bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
-        isLine={true}
-        textStyle="text-base sm:text-lg md:text-xl font-semibold text-[#DCE2E2]"
-        img="/pics/contact-hero.png"
+        heading="Contact PBS Compliance Solutions"
+        text="24/7 Support for Emergencies, Inspections, and Compliance Urgencies "
+        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl font-semibold text-[#DCE2E2]"
+        bgStyle="bg-cover mix-blend-luminosity"
+        isLine={false}
+        textStyle="text-base sm:text-lg font-semibold text-[#DCE2E2]"
+        img="/PBS Assets/homepage/herosection/hero-bg.png"
+        badge="Contact Us"
       />
 
-      {/* Custom 'About Us' Label Divider */}
-      <div className="w-[100vw] relative flex justify-center">
-        <div className="bg-[#8AD5B7] w-full h-2"></div>
-        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] lg:w-[50%] 2xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
-          How to Contact Us
-        </div>
-      </div>
-
-      <h1 className="w-full text-center text-[#8AD5B7] font-conthrax text-3xl xl:text-4xl font-semibold px-6 md:px-10 xl:px-16 py-16 lg:py-20">
-        Choose Your Convenience
+      <h1 className="lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto section-heading-pill my-20">
+      How to Contact Us 
       </h1>
 
-      {/* Section 1*/}
-      <section className="w-full px-6 md:px-10 xl:px-16 pb-16 text-[#DCE2E2]">
-        <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 xl:gap-16 h-full w-full 2xl:w-[85%]">
+      {/* Section 01: Contact details, inquiry form, and office map */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 xl:gap-16 h-full w-full">
           <div
             className="mx-auto flex flex-col items-center justify-center gap-16 h-full w-full lg:w-1/2"
             ref={leftColumnRef}
           >
+            {/* Contact details card */}
             <div className="bg-[#1E2322] w-full h-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
                 Contact Us
               </div>
 
               <div className="w-[90%] flex flex-col items-start justify-center gap-10 pt-16 pb-6 mx-auto">
-                <p className="w-full text-center font-conthrax font-semibold text-[#89A096] text-lg lg:text-xl">
+                <p className="w-full text-center font-poppins font-semibold text-[#89A096] text-lg lg:text-xl">
                   Hours: Mon - Fri | 8 AM – 6 PM
                 </p>
                 <div className="flex items-center gap-2">
@@ -248,18 +242,24 @@ const Page = () => {
                   <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
                     Call:
                   </span>
-                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">
+                  <a
+                    href="tel:+12122716837"
+                    className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium hover:text-[#8AD5B7] transition-colors"
+                  >
                     212-271-6837
-                  </p>
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail color="#8ad5b7" size={32} />
                   <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
                     Email:
                   </span>
-                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">
+                  <a
+                    href="mailto:info@pbs.nyc"
+                    className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium hover:text-[#8AD5B7] transition-colors"
+                  >
                     info@pbs.nyc
-                  </p>
+                  </a>
                 </div>
                 <div className="flex items-start gap-2 2xl:max-w-[90%]">
                   <House color="#8ad5b7" size={32} className="flex-shrink-0" />
@@ -273,8 +273,9 @@ const Page = () => {
               </div>
             </div>
 
+            {/* Multi-step inquiry form card */}
             <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[85%] 2xl:w-[75%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[85%] 2xl:w-[75%] 3xl:w-[60%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
                 Send us a message
               </div>
 
@@ -313,14 +314,16 @@ const Page = () => {
             ref={rightColumnRef}
             className="w-full lg:w-1/2 h-auto relative flex flex-col gap-10"
           >
-            <div className="w-full bg-[#1E2322] rounded-full p-3 2xl:p-6 flex items-center justify-center">
+            {/* Office visit heading card */}
+            <div className="w-full bg-[#1E2322] rounded-[16px] p-3 2xl:p-6 flex items-center justify-center">
               <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center">
                 <span className="text-[#DCE2E2] block">Visit our Office</span>
                 Meet Compliance Experts In-Person
               </p>
             </div>
 
-            <div className="bg-[#1E2322] rounded-xl p-6 h-[50vh] lg:h-full">
+            {/* Lazy-loaded office map container */}
+            <div className="glass-morphism-glow rounded-xl p-6 h-[50vh] lg:h-full">
               <div
                 id="map-container"
                 className="w-full h-full filter invert-[90%] hue-rotate-180 grayscale-[20%] contrast-90"
@@ -342,33 +345,38 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Section 2*/}
-      <section className="w-full px-6 md:px-10 xl:px-16 pb-16 lg:pb-24 text-[#DCE2E2]">
-        <div className="w-full flex flex-col justify-center items-center px-16">
-          <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
+      {/* Section 02: NYC service areas */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <div className="w-full flex flex-col justify-center items-center">
+          <h2 className="section-heading-pill">
             Service Areas
           </h2>
-          <p className="text-[#89A096] font-semibold text-sm mb-4 text-center">
+          <p className="text-[#DFDFDF] font-semibold text-base my-6 text-center">
             Serving All NYC Boroughs with Local Expertise
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 my-4 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 my-4 w-full">
             {service?.locations.map((location, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-2 my-4"
+                  className="w-full"
                 >
-                  <div className="rounded-full border-2 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
+                  <div className="w-full max-w-[210px] sm:max-w-[250px] mx-auto rounded-2xl p-3 glass-morphism-glow">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <div className="absolute inset-0 z-10" />
                     <Image
                       src={location.cityImage}
                       alt={location.cityName}
-                      width={150}
-                      height={150}
-                      className="filter grayscale hover:grayscale-0 transition duration-300"
+                      width={320}
+                      height={240}
+                      className="w-full h-[200px] sm:h-[200px] object-cover grayscale"
                     />
+                      <p className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-[#DCE2E2] text-lg sm:text-xl font-semibold font-conthrax uppercase tracking-wide whitespace-nowrap">
+                        {location.cityName}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[#DCE2E2]">{location.cityName}</p>
                 </div>
               );
             })}

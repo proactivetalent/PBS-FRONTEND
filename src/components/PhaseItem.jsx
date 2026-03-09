@@ -7,9 +7,9 @@ const formatDescription = (description) => {
     return (
       <p
         key={index}
-        className="text-[#89A096] text-base sm:text-lg lg:text-xl font-semibold text-balance text-center lg:text-left"
+        className="text-[#DFDFDF] text-base text-balance text-center lg:text-left mx-8"
       >
-        <span className="text-[#DCE2E2] italic">{label + ": "}</span>
+        <span className="text-[#DFDFDF] font-semibold">{label + ": "}</span>
         <span>{value}</span>
       </p>
     );
@@ -20,7 +20,7 @@ const formatDescription = (description) => {
 const PhaseItem = ({ title, description, titleWidth, isFormatted = false }) => (
   <div className="flex flex-col gap-3 w-full py-2">
     <p
-      className={`bg-[#1E2322] ${titleWidth} text-xl sm:text-2xl lg:text-3xl font-semibold rounded-2xl p-2 sm:p-3 lg:p-4 text-center lg:text-left mx-auto lg:mx-0`}
+      className={`glass-morphism-glow ${titleWidth} text-xl sm:text-2xl lg:text-3xl font-semibold rounded-2xl py-4 px-8 text-center lg:text-left mx-auto lg:mx-0`}
     >
       {title}
     </p>
@@ -28,7 +28,7 @@ const PhaseItem = ({ title, description, titleWidth, isFormatted = false }) => (
     {isFormatted ? (
       formatDescription(description)
     ) : (
-      <p className="text-[#89A096] text-base sm:text-lg lg:text-xl font-semibold text-center lg:text-left">
+      <p className="text-[#DFDFDF] text-base text-center lg:text-left mx-8">
         {description}
       </p>
     )}

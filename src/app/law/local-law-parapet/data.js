@@ -1,5 +1,5 @@
  export const section01 = {
-    title: "3- Parapet Inspection (Local Law 126)",
+    title: "Parapet Inspection (Local Law 126)",
     heading: "The Wall you never Notices, Falls",
     text: "Parapets Protect, PBS Perfects",
     items: [

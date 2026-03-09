@@ -14,9 +14,9 @@ export const services = [
     description:
       "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization. From liaising with contractors to resolving violations, we simplify complexity.",
     sections: [
-      "Local Law Compliance: Manage deadlines for LL11, LL126, and LL152",
-      "\nCost-Saving Strategies: Negotiate contractor rates and avoid fines",
-      "\nTransparent Reporting: Real-time updates via client portal.",
+      "Key Features:Local Law Compliance",
+      "\nCost-Saving Strategies",
+      "\nTransparent Reporting"
     ],
     cta: "/owner-representative",
   },
@@ -27,13 +27,26 @@ export const services = [
     description:
       "Stay ahead of NYC’s stringent building codes with our certified inspections for facades, elevators, gas lines, and fire safety systems.",
     sections: [
-      ":PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
-      ":PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
+      "PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
+      "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
     ],
     cta: "/inspection-services",
   },
   {
     id: 3,
+    title: "Property Management",
+    icon: "/pics/service4.png",
+    description:
+    "End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
+    sections: [
+      "Financial Oversight: Rent collection, budgeting, and reporting.",
+      "\nMaintenance: 24/7 emergency repairs and preventive care.",
+      "\nLegal Compliance: Lease agreements and safety audits.",
+    ],
+    cta: "/property-management",
+  },
+  {
+    id: 4,
     title: "Expediting Services",
     icon: "/pics/service3.png",
     description:
@@ -44,19 +57,6 @@ export const services = [
       "\nFull-Service: DOB, FDNY, DOT, and zoning filings.",
     ],
     cta: "/expediting-services",
-  },
-  {
-    id: 4,
-    title: "Property Management",
-    icon: "/pics/service4.png",
-    description:
-      "End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
-    sections: [
-      "Financial Oversight: Rent collection, budgeting, and reporting.",
-      "\nMaintenance: 24/7 emergency repairs and preventive care.",
-      "\nLegal Compliance: Lease agreements and safety audits.",
-    ],
-    cta: "/property-management",
   },
 ];
 

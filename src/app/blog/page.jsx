@@ -472,7 +472,7 @@ const Page = () => {
   return (
     <div>
       {/* Main Blog Section */}
-      <section data-section="blog-articles" className="bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#37403D] text-[#DCE2E2] py-16 md:py-24 lg:py-10 px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
+      <section data-section="blog-articles" className="bg-[#2B3331] text-[#DCE2E2] py-16 md:py-24 lg:py-10 px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -761,7 +761,7 @@ const Page = () => {
       </section>
 
       {/* Inspection Services Section */}
-      <section data-section="inspection-services" className="bg-gradient-to-br from-[#2A2F2D] via-[#37403D] to-[#2A2F2D] text-[#DCE2E2] px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
+      <section data-section="inspection-services" className="bg-[#2B3331] text-[#DCE2E2] px-4 md:px-6 lg:px-12 xl:px-24 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{

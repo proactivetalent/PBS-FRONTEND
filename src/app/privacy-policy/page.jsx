@@ -7,7 +7,7 @@ export const metadata = {
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#37403D] via-[#2A2F2D] to-[#1F2321]">
+    <div className="min-h-screen bg-[#2B3331]">
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

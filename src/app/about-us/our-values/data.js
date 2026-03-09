@@ -46,7 +46,7 @@ export const features = [
     id: 1,
     title: "Preventative Solutions",
     tagline: "Proactive Protection for your project",
-    img: "/pics/Isolation_Mode.png",
+    img: "/pics/icon1.svg",
     description: [
       `Anticipate Risks: We Identify potential compliance hurdles (Permits, regulations) before they derail timelines.`,
       `Streamline Processes: We optimize workflows through pre-emptive planning to eliminate bottlenecks.`,
@@ -72,7 +72,7 @@ export const features = [
     id: 2,
     title: "Dependability",
     tagline: "Your Project, Our Obsession",
-    img: "/pics/Isolation_Mode (1).png",
+    img: "/pics/icon2.svg",
     description: [
       `Meticulous Inspections:Routine checks + hidden risk assessments to catch issues early.`,
       `Emergency Response:24/7 support for unexpected challenges.`,
@@ -100,7 +100,7 @@ Consider it done as we handle the obvious and the Over-Looked through our compre
     id: 3,
     title: "Smarter Connection",
     tagline: 'Tailored to You, Controlled by You.',
-    img: "/pics/Group 30.png",
+    img: "/pics/icon3.svg",
     description: [
       `Priority Alerts:Choose updates for inspections, approvals, or emergencies. Customize your updates based on your needs`,
       `Dedicated Liaison:Single point of contact for seamless coordination.`,
@@ -128,7 +128,7 @@ Informed, never overwhelmed as you will control the frequency and type of commun
   {
     id: 4,
     title: "Total Transparency",
-    img: "/pics/Isolation_Mode (2).png",
+    img: "/pics/icon4.svg",
     tagline: "Clarity you can trust, 24/7.",
     description: [
       `Real - Time Client Portal:Instant access to project updates, documents, and compliance milestones.`,
@@ -158,7 +158,7 @@ Informed, never overwhelmed as you will control the frequency and type of commun
     id: 5,
     title: "No-Excuse Accountability",
     tagline: 'Your Project, Our Obsession',
-    img: "/pics/Isolation_Mode (3).png",
+    img: "/pics/icon5.svg",
     description: [
       `On-Time Guarantee: Late delivery? We cover penalties.`,
       `Rigorous Quality Checks: Triple-verified compliance to avoid rework`,
@@ -185,7 +185,7 @@ Informed, never overwhelmed as you will control the frequency and type of commun
     id: 6,
     title: "Precision",
     tagline: 'Accuracy Meets Efficiency',
-    img: "/pics/Layer_1 (1).png",
+    img: "/pics/icon6.svg",
     description: [
       `Focused Expertise: Cut through complexity with ASME/DOB-certified professionals.`,
       `Proactive Streamlining: We solve issues at their root to accelerate timelines.`,

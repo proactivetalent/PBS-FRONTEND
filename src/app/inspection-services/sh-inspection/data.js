@@ -34,7 +34,25 @@ export const section01 = {
       "PBS Made FDNY Compliance easy in just 4 steps to Help our Clients understand NYC Complex rulebooks.",
     text2:
       "Once you receive a violation notice or deadline notice, no need to request a test date, our licensed master plumbers will request an FDNY appointment on your behalf, below is our complete process of inspection",
-  };
+  
+    items: [
+      {
+        number: "1",
+        title: "Pre-Test Inspection",
+        description: "Where we find hidden leaks. Rust, or weak joints before FDNY arrives",
+      },
+      {
+        number: "2",
+        title: "FDNY Appointment request",
+        description: "As FDNY requires Master Contractors for thai job so this is where PBS Holds distinction, We handle Fax submissions + We secure your Test ID",
+      },
+      {
+        number: "3",
+        title: "FDNY Approves",
+        description: "Once we are done with the appointment request submission, we wait until FDNY approves the inspection",
+      }
+    ]
+    };
 
   export const SprinklerInspection = {
     title: "Sprinkler Inspection Services",
@@ -44,18 +62,18 @@ export const section01 = {
     inspectionPhases: {
       firstRow: [
         {
-          title: "1- Phase Specific Inspections",
+          title: "1. Phase Specific Inspections",
           description:
             "Underground Piping: Bedding, pitch, materials, protection flushing; Roughing Work: Piping, valves, components, size, location, materials, hangers; Test. Hydrostatic: flow, alarm, Dry Pipe Valve, Booster Pump; Finishes: Painting, escutcheons, signage, labeling, chaining of valves, central station monitor assigned; FINAL INSPECTION: Sign-off",
         },
         {
-          title: "2- Contractor Self-Certification",
+          title: "2. Contractor Self-Certification",
           description:
             "After the inspection is done, we submit notices & Results of the Inspections via DOB NOW and a complete documentation of Audit-proof. The Sprinkler Enforcement Unit conducts a random audit of all self-certified notices to ensure compliance of the inspected work with Code and regulations.",
         },
       ],
       secondRow: {
-        title: "3- Repairs",
+        title: "3. Repairs",
         description:
           "Through our network of Vetted Contractors we make the repair get easily done",
       },

@@ -44,6 +44,7 @@ export const section2 = {
       "Zoning Changes: Upcoming rezoning proposals or approved modifications",
       "Violations: Newly issued DOB, HPD. ECB, FDNY violations.",
       "Inspections: LL11 (Facade Inspection, LL126 (Parking Inspection), LL126 (Parapet Inspection), LL152, Boiler Inspection, Sprinkler Hydrostatic Test, Elevator Inspection Deadlines.",
+      "Permit Expirations or renewals: Scaffolding, plumbing, electrical or any type of permits nearing approval."
     ],
     text: "Permit Expirations or renewals: Scaffolding, plumbing, electrical or any type of permits nearing approval.",
   },
@@ -56,24 +57,24 @@ export const section2 = {
     items: [
       {
         text: "Address Search: Enter an address for instant results.",
-        img: "/pics/alert-pic12-b.png",
+        img: "/pics/alert-ways-1.png",
       },
       {
         text: "BIN Lookup: Search by building Identification Number (Pull full property histories from DOB records)",
-        img: "/pics/alert-pic12-b.png",
+        img: "/pics/alert-ways-2.png",
       },
       {
         text: "Agent Assistance: Request help from our PBS team",
-        img: "/pics/alert-pic12-b.png",
+        img: "/pics/alert-ways-3.png",
       },
       {
         text: "Bulk Upload: Add multiple properties via CSV for large portfolios.",
-        img: "/pics/alert-pic15-b.png",
+        img: "/pics/alert-ways-4.png",
       },
-      {
-        text: "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
-        img: "/pics/alert-pic15-b.png",
-      },
+      // {
+      //   text: "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
+      //   img: "/pics/alert-pic15-b.png",
+      // },
     ],
   },
   div3: {
@@ -169,8 +170,9 @@ export const section4 = {
     right: {
       heading: "Post-Trial Plan",
       text: "($9 /Building /Month)",
+      text2: "This includes",
       items: [
-        "All Free Features, Plus",
+        "All Free Features",
         "Priority Alerts: Urgency-ranked notifications",
         "Historical Data Access: Full violation/Inspection history",
       ],
@@ -178,7 +180,7 @@ export const section4 = {
   },
 
   div2: {
-    heading: "Why Register Today:",
+    heading: "Register Today",
     items: [
       "Free for 3 Months: $0 upfront, pay only $9/Building/Month after your trial ends",
       "Instant Portal Access: Track Violations, deadlines, and PBS’s progress in real time",

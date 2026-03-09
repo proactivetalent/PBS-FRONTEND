@@ -48,6 +48,26 @@ const Page = () => {
         },
       ],
     },
+    table1: {
+      headers: ["Expertise", "Speed", "Technology"],
+      rows: [
+        {
+          Expertise: "DOB-licensed inspectors",
+          Speed: "24/7 emergency repairs",
+          Technology: "Real-time compliance app",
+        },
+        {
+          Expertise: "15+ years in NYC",
+          Speed: "Same-week inspections",
+          Technology: "Deadline tracker",
+        },
+        {
+          Expertise: "100% pass rate on CAT5, CAT1 tests",
+          Speed: "90% repairs in <30 days",
+          Technology: "Digital maintenance logs",
+        },
+      ],
+    },
     text2:
       "These above fines are just a few numbers, there are a lot of hidden costs in terms of tenant lawsuits from injuries or outages, Lost revenue during shutdowns, DOB escalations for repeat violations. Don’t risk it - Proactive compliance saves fines & penalties",
   };
@@ -115,6 +135,46 @@ const Page = () => {
         ],
       },
     ],
+    ourProcess: [
+      {
+        title: "Detailed Inspections",
+        description: "Our licensed professionals conduct thorough evaluations of your elevator systems, identifying any issues that may compromise satefy or efficiency.",
+      },
+      {
+        title: "Timely Reporting",
+        description: "We prepare and submit all required inspection reports through the DOB NOW: Safety portal, ensuring adherence to filing deadlines and avoiding late penalties.",
+      },
+      {
+        title: "Violation Resolution",
+        description: "If violations are identified, we provide guidance on corrective actions and assist in resolving issues promptly to restore compliance.",
+      },
+      {
+        title: "Ongoing Compliance Support",
+        description: "We offer continuous monitoring and reminders for upcoming inspections, helping you maintain compliance year after year.",
+      },
+    ],
+    howItWorks: [
+      {
+        number: "1",
+        title: "Book Online in 60 Seconds",
+        description: "Choose day/night slots. No tenant disruption.",
+      },
+      {
+        number: "2",
+        title: "Inspect & Test",
+        description: "DOB-approved experts conduct checks.",
+      },
+      {
+        number: "3",
+        title: "Repair & File",
+        description: "Fix defects fast. We submit to DOB NOW.",
+      },
+      {
+        number: "4",
+        title: "Rest Easy",
+        description: "Get auto-reminders for next year.",
+      },
+    ],
     footer: "Stay Operational. Protect Tenants. Sleep Soundly.",
   };
 
@@ -146,60 +206,48 @@ const Page = () => {
 
   return (
     <div
-      className="bg-[#37403D]"
-      style={{
-        backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-      }}
+      className="bg-[#2B3331]"
     >
-      {/* Hero Section */}
+      {/* Hero: Elevator compliance overview */}
       <HeroSection
         heading="NYC Elevator Compliance Inspection made simple"
         text="Annual inspections, same-day filings, and guaranteed violation dismissal - so you avoid fines, tenants lawsuits, and operational shutdowns."
-        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
-        bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
+        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl font-semibold"
+        bgStyle="bg-cover mix-blend-luminosity"
         isLine={false}
-        textStyle="text-base sm:text-lg md:text-xl font-semibold text-[#89A096]"
-        img="/pics/elevator-inspection-hero.png"
+        textStyle="text-base font-semibold text-[#DFDFDF]"
+        img="/PBS Assets/homepage/herosection/hero-bg.png"
+        badge="Elevator Inspection"
       />
 
-      {/* Custom 'About Us' Label Divider */}
-      <div className="w-[100vw] relative flex justify-center">
-        <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
-        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[60%] lg:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-3xl z-20">
-          Elevator Inspection
-        </div>
-      </div>
-
-      {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
+      {/* Section 01: Risk context, compliance rules, and process overview */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 sm:gap-6 lg:gap-8 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
           <Image
             src="/pics/elevator-inspection-pic1.png"
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
+            className="w-[88%] sm:w-full max-w-[360px] sm:max-w-[500px] lg:max-w-none lg:w-[40%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
-          <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
+          <div className="w-full lg:w-[55%] bg-[#1E2322] flex flex-col gap-3 sm:gap-4 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-[16px]">
+            <span className="bg-[#8AD5B7] w-fit font-poppins max-w-full rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-[11px] sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
-            <h2 className="text-2xl lg:text-[40px] 2xl:text-[48px] text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax lg:leading-tight xl:max-w-[95%] 2xl:max-w-[75%] mx-auto lg:mx-0">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl text-center lg:text-left font-semibold text-[#E4E4E4] font-conthrax lg:leading-tight mx-auto lg:mx-0">
               {section01.heading}
             </h2>
-            <p className="text-base font-semibold text-[#89A096]">
+            <p className="text-sm sm:text-base text-[#DFDFDF] text-center lg:text-left">
               {section01.text}
             </p>
 
-            <div className="flex items-stretch justify-start gap-6">
-              <div className="space-y-2 w-[90%] lg:w-[70%] 2xl:w[60%] mx-auto lg:mx-0">
+            <div className="w-full flex items-stretch justify-start gap-6">
+              <div className="space-y-2 w-full sm:w-[90%] lg:w-[70%] 2xl:w-[60%] mx-auto lg:mx-0">
                 {section01.items.map((item, index) => {
                   return (
                     <p
                       key={index}
-                      className="text-base text-center lg:text-left font-normal text-[#89A096]"
+                      className="text-base text-center lg:text-left font-normal text-[#DFDFDF]"
                     >
                       {item}
                     </p>
@@ -207,131 +255,217 @@ const Page = () => {
                 })}
               </div>
             </div>
-            <div className="flex items-stretch justify-start gap-3">
+            <div className="w-full flex items-stretch justify-start gap-3">
               <div className="bg-[#8AD5B7] w-2 h-auto hidden lg:block"></div>
-              <p className="text-[#89A096] text-base font-semibold text-center lg:text-left w-full">
+              <p className="text-[#DFDFDF] text-sm sm:text-base font-semibold text-center lg:text-left w-full">
                 {section01.additionalText}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 mb-10"></div>
-
-        <div className="w-full lg:w-[90%] 2xl:w-[85%] mx-auto flex flex-col justify-between items-center lg:justify-center gap-8 2xl:gap-66 box-border">
-          <h2 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center">
+        <div className="w-full mx-auto flex flex-col justify-between items-center lg:justify-center gap-8 box-border">
+          <h2 className="section-heading-pill">
             {Div2_Sec1.title}
           </h2>
-          <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center w-[90%] mx-auto">
+          <p className="text-[#DFDFDF] text-base text-center w-[90%] mx-auto">
             {Div2_Sec1.description}
           </p>
 
           <div className="w-[90%] 2xl:w-[80%] mx-auto flex flex-col items-center justify-center gap-8 2xl:gap-16 box-border pb-6 lg:pb-10">
             <div className="w-full flex flex-col items-center justify-center gap-2 lg:gap-4">
-              <h3 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center">
+              <h3 className="text-3xl lg:text-4xl uppercase text-[#8AD5B7] font-semibold font-conthrax text-center">
                 {Div2_Sec1.subheading}
               </h3>
-              <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center">
+              <p className="text-[#DFDFDF] text-base font-semibold text-center">
                 {Div2_Sec1.text1}
               </p>
             </div>
 
-            <table className="border-collapse border border-[#8AD5B7] w-full">
-              <thead className="text-[#DCE2E2]">
-                <tr>
-                  {Div2_Sec1.table.headers.map((header, index) => (
-                    <th
-                      key={index}
-                      className="border-2 border-[#8AD5B7] lg:p-4 text-center text-base lg:text-xl font-semibold"
-                    >
-                      {header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="text-[#89A096]">
-                {Div2_Sec1.table.rows.map((row, index) => (
-                  <tr key={index} className="border-2 border-[#8AD5B7]">
-                    {Object.values(row).map((cell, cellIndex) => (
-                      <td
-                        key={cellIndex}
-                        className="border-2 border-[#8AD5B7] lg:p-4 text-sm lg:text-base font-semibold text-center lg:text-left"
-                      >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="w-full">
+              <div className="md:hidden flex flex-col gap-3">
+                {Div2_Sec1.table.rows.map((row, rowIndex) => {
+                  const values = Object.values(row);
+                  return (
+                    <div key={rowIndex} className="glass-morphism-glow rounded-xl px-4 py-3">
+                      {Div2_Sec1.table.headers.map((header, cellIndex) => (
+                        <div
+                          key={`${rowIndex}-${cellIndex}`}
+                          className={`py-2 ${cellIndex !== Div2_Sec1.table.headers.length - 1 ? "border-b border-[#8AD5B7]/30" : ""}`}
+                        >
+                          <p className="text-xs uppercase tracking-wide text-[#8AD5B7] font-semibold">
+                            {header}
+                          </p>
+                          <p className="mt-1 text-sm text-[#DFDFDF] font-normal leading-relaxed">
+                            {values[cellIndex]}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
 
-            <p className="w-full text-[#89A096] text-base lg:text-xl font-semibold text-center">
+              <div className="hidden md:block relative w-full">
+                <table className="w-full border-collapse table-fixed">
+                  <thead>
+                    <tr>
+                      {Div2_Sec1.table.headers.map((header, index) => (
+                        <th
+                          key={index}
+                          className="p-3 sm:p-4 md:p-5 text-center text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7] whitespace-nowrap"
+                        >
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Div2_Sec1.table.rows.map((row, index) => (
+                      <tr key={index}>
+                        {Object.values(row).map((cell, cellIndex) => (
+                          <td
+                            key={cellIndex}
+                            className="p-3 sm:p-4 md:p-5 text-center text-xs sm:text-sm md:text-base font-normal text-[#DFDFDF] whitespace-nowrap"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="pointer-events-none absolute inset-0">
+                  {Array.from({ length: Div2_Sec1.table.headers.length - 1 }).map((_, idx) => (
+                    <div
+                      key={`v-${idx}`}
+                      className="absolute top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#8AD5B7]/60 to-transparent"
+                      style={{ left: `${((idx + 1) / Div2_Sec1.table.headers.length) * 100}%` }}
+                    />
+                  ))}
+                  {Array.from({ length: Div2_Sec1.table.rows.length }).map((_, idx) => (
+                    <div
+                      key={`h-${idx}`}
+                      className="absolute left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#8AD5B7]/60 to-transparent"
+                      style={{ top: `${((idx + 1) / (Div2_Sec1.table.rows.length + 1)) * 100}%` }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+
+            <p className="w-full text-[#DFDFDF] text-base text-center">
               {Div2_Sec1.text2}
             </p>
           </div>
 
           <div className="w-full flex flex-col justify-center gap-8">
-            <h2 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax max-w-2xl">
+            <h2 className="section-heading-pill">
               Our Process to make you complaint
             </h2>
-            <img
-              src="/pics/elevator-inspection-pic2.png"
-              alt="Inspection Services"
-              width={500}
-              height={500}
-              className="w-full md:w-[80%] h-auto object-contain object-right-top mb-6 lg:mb-0 mx-auto"
-            />
+
+            <div className="w-full sm:w-[95%] lg:w-[80%] mx-auto">
+              {/* Desktop and tablet process timeline with connector rails */}
+              <div className="hidden md:block relative py-6 lg:py-8">
+                <div className="pointer-events-none absolute inset-0">
+                  {/* top row connector */}
+                  <div className="absolute left-6 right-6 top-[15%] h-[3px] bg-[#8AD5B7]" />
+                  {/* right drop connector */}
+                  <div className="absolute right-6 top-[15%] h-[48%] w-[3px] bg-[#8AD5B7]" />
+                  {/* bottom row connector */}
+                  <div className="absolute left-20 right-6 top-[63%] h-[3px] bg-[#8AD5B7]" />
+                  {/* left rise connector */}
+                  <div className="absolute left-6 top-[2%] h-[13%] w-[3px] bg-[#8AD5B7]" />
+                </div>
+
+                <div className="relative z-10 grid grid-cols-2 gap-x-8 lg:gap-x-10 gap-y-10 lg:gap-y-12 px-14">
+                  {Section2.ourProcess.map((process, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center gap-3 justify-start text-center"
+                    >
+                      <p className="relative z-10 glass-morphism-glow rounded-2xl p-3 sm:p-4 w-full text-base lg:text-xl font-semibold text-[#DFDFDF] leading-relaxed">
+                        {process.title}
+                      </p>
+                      <p className="relative z-10 text-sm font-normal text-center text-[#DFDFDF] leading-relaxed">
+                        {process.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile stacked process cards */}
+              <div className="md:hidden grid grid-cols-1 gap-4">
+                {Section2.ourProcess.map((process, index) => (
+                  <div
+                    key={index}
+                    className="p-3 flex flex-col items-center gap-3 justify-center text-center w-full"
+                  >
+                    <p className="glass-morphism-glow rounded-2xl p-3 w-full text-base font-semibold text-[#DFDFDF] leading-relaxed">
+                      {process.title}
+                    </p>
+                    <p className="text-sm font-normal text-center text-[#DFDFDF] leading-relaxed">
+                      {process.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-10 lg:pt-20 text-[#DCE2E2] w-full">
-        <h2 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center w-[85%] xl:w-[80%] 2xl:w-[70%] mx-auto pb-6 lg:pb-10">
+      {/* Section 02: End-to-end elevator compliance services */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <h2 className="section-heading-pill">
           {Section2.heading}
         </h2>
 
-        <div className="w-full mx-auto flex flex-col justify-center items-center gap-3 2xl:gap-6 box-border pb-6 lg:pb-10">
+        <div className="w-full sm:w-[95%] lg:w-[90%] mx-auto flex flex-col justify-center items-center gap-3 sm:gap-4 2xl:gap-6 box-border pb-6 lg:py-10">
           {Section2.services.map((service, index) => {
             return (
               <div
                 key={index}
-                className="w-full flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-6 lg:gap-16 2xl:gap-0 rounded-2xl"
+                className="relative w-full glass-morphism-glow p-4 sm:p-6 rounded-2xl flex flex-col lg:flex-row items-start lg:items-stretch justify-between gap-5 sm:gap-6 lg:gap-8"
               >
-                <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-center gap-6 2xl:gap-8">
-                  <h3 className="text-xl lg:text-3xl font-semibold font-conthrax text-center lg:text-left">
+                <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-center gap-6 2xl:gap-8 lg:pr-8">
+                  <h3 className="text-lg sm:text-xl lg:text-3xl font-semibold uppercase font-conthrax text-center lg:text-left">
                     {service.title}
                   </h3>
-                  <div>
-                    <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left">
+                  <div className="w-full">
+                    <p className="text-[#DFDFDF] text-sm sm:text-base font-semibold text-center lg:text-left">
                       {service.subHeading}
                     </p>
-                    <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left 2xl:max-w-2xl">
+                    <p className="text-[#DFDFDF] text-sm sm:text-base text-center lg:text-left 2xl:max-w-2xl">
                       {service.description}
                     </p>
                     {service?.items?.map((item, itemIndex) => {
                       return (
                         <div key={itemIndex} className="flex flex-col">
-                          <span className="text-[#89A096] text-base lg:text-xl font-semibold flex gap-2">
-                            <DotIcon size={32} /> {item}
+                          <span className="text-[#DFDFDF] text-sm sm:text-base flex items-start gap-2 text-left">
+                            <DotIcon className="w-4 h-4 sm:w-5 sm:h-5 mt-1 shrink-0" />
+                            <span>{item}</span>
                           </span>
                         </div>
                       );
                     })}
                   </div>
                 </div>
-                <div className="w-full lg:w-[45%] bg-[#2E3734] rounded-2xl flex flex-col justify-center items-start 2xl:gap-3 p-6">
+                <div className="hidden lg:block absolute top-6 bottom-6 left-[55%] w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[#8AD5B7]/80 to-transparent" />
+                <div className="w-full lg:w-[45%] rounded-2xl flex flex-col justify-center items-start gap-3 2xl:gap-3 p-4 sm:p-6 lg:pl-8">
                   {service?.additionalInfo?.map((info, infoIndex) => {
                     return (
                       <div
                         key={infoIndex}
-                        className="flex flex-col justify-between items-center lg:items-start 2xl:justify-center gap-1"
+                        className="w-full flex flex-col justify-between items-start 2xl:justify-center gap-1"
                       >
-                        <p className="text-base lg:text-xl italic font-semibold text-center lg:text-left">
+                        <p className="text-sm sm:text-base font-semibold text-left">
                           {info.title}
                         </p>
 
-                        <p className="text-base lg:text-xl text-[#89A096] font-semibold text-center lg:text-left">
+                        <p className="text-sm sm:text-base text-[#DFDFDF] font-semibold text-left">
                           {info.desc}
                         </p>
 
@@ -339,19 +473,16 @@ const Page = () => {
                           return (
                             <div
                               key={itemIndex}
-                              className="w-full text-[#89A096] text-base lg:text-xl font-semibold "
+                              className="w-full text-[#DFDFDF] text-sm sm:text-base"
                             >
-                              <span className="flex gap-2 2xl:gap-0">
-                                <DotIcon
-                                  size={32}
-                                  className="w-[10%] 2xl:w-auto"
-                                />
-                                <span className="w-[90%] 2xl:w-auto">
+                              <span className="flex items-start gap-2 2xl:gap-0">
+                                <DotIcon className="w-4 h-4 sm:w-5 sm:h-5 mt-1 shrink-0" />
+                                <span className="w-full">
                                   {item.split("|")[0]}
                                 </span>
                               </span>
                               {item.split("|").length > 1 && (
-                                <span>{item.split("|")[1]}</span>
+                                <span className="block pl-6 sm:pl-7 text-left">{item.split("|")[1]}</span>
                               )}
                             </div>
                           );
@@ -365,92 +496,153 @@ const Page = () => {
           })}
         </div>
 
-        <p className="w-full text-[#89A096] text-base lg:text-xl font-semibold text-center">
+        <p className="w-full text-[#DFDFDF] text-sm sm:text-base lg:text-xl font-semibold text-center">
           {Section2.footer}
         </p>
       </section>
 
-      {/* Section 3 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-10 lg:pt-20 text-[#DCE2E2] w-full">
-        <div className="w-full lg:w-[80%] mx-auto flex flex-col justify-center items-center gap-6 2xl:gap-10 box-border pb-10 lg:pb-16">
-          <h2 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center w-[85%] xl:w-[80%] 2xl:w-[70%] mx-auto">
+      {/* Section 03: Why PBS, workflow, and final CTA */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <div className="w-full mx-auto flex flex-col justify-center items-center gap-5 sm:gap-6 2xl:gap-10 box-border pb-8 sm:pb-10 lg:pb-16">
+          <h2 className="section-heading-pill">
             {WhyPBS.title}
           </h2>
-          <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center w-[90%] mx-auto">
+          <p className="text-[#DFDFDF] text-sm sm:text-base lg:text-xl font-semibold text-center w-[95%] sm:w-[90%] mx-auto">
             {WhyPBS.description}
           </p>
 
-          <table className="border-collapse border border-[#8AD5B7] w-full">
-            <thead className="text-[#DCE2E2]">
-              <tr>
-                {Div2_Sec1.table.headers.map((header, index) => (
-                  <th
-                    key={index}
-                    className="border-2 border-[#8AD5B7] lg:p-4 text-center text-base lg:text-xl font-semibold"
+          <div className="md:hidden w-full flex flex-col gap-3">
+            {Div2_Sec1.table1.rows.map((row, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="glass-morphism-glow rounded-xl px-4 py-3"
+              >
+                {Div2_Sec1.table1.headers.map((header, cellIndex) => (
+                  <div
+                    key={`${rowIndex}-${cellIndex}`}
+                    className={`py-2 ${cellIndex !== Div2_Sec1.table1.headers.length - 1 ? "border-b border-[#8AD5B7]/30" : ""}`}
                   >
-                    {header}
-                  </th>
+                    <p className="text-xs uppercase tracking-wide text-[#8AD5B7] font-semibold">
+                      {header}
+                    </p>
+                    <p className="mt-1 text-sm text-[#DFDFDF] font-normal leading-relaxed">
+                      {Object.values(row)[cellIndex]}
+                    </p>
+                  </div>
                 ))}
-              </tr>
-            </thead>
-            <tbody className="text-[#89A096]">
-              {Div2_Sec1.table.rows.map((row, index) => (
-                <tr key={index} className="border-2 border-[#8AD5B7]">
-                  {Object.values(row).map((cell, cellIndex) => (
-                    <td
-                      key={cellIndex}
-                      className="border-2 border-[#8AD5B7] lg:p-4 text-sm lg:text-base font-semibold text-center lg:text-left"
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden md:block relative w-full">
+            <table className="w-full border-collapse table-fixed">
+              <thead>
+                <tr>
+                  {Div2_Sec1.table1.headers.map((header, index) => (
+                    <th
+                      key={index}
+                      className="p-3 sm:p-4 md:p-5 text-center text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7] whitespace-nowrap"
                     >
-                      {cell}
-                    </td>
+                      {header}
+                    </th>
                   ))}
                 </tr>
+              </thead>
+              <tbody>
+                {Div2_Sec1.table1.rows.map((row, index) => (
+                  <tr key={index}>
+                    {Object.values(row).map((cell, cellIndex) => (
+                      <td
+                        key={cellIndex}
+                        className="p-3 sm:p-4 md:p-5 text-center text-xs sm:text-sm md:text-base font-normal text-[#DFDFDF] whitespace-nowrap"
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="pointer-events-none absolute inset-0">
+              {Array.from({ length: Div2_Sec1.table1.headers.length - 1 }).map((_, idx) => (
+                <div
+                  key={`v-${idx}`}
+                  className="absolute top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#8AD5B7]/60 to-transparent"
+                  style={{ left: `${((idx + 1) / Div2_Sec1.table1.headers.length) * 100}%` }}
+                />
               ))}
-            </tbody>
-          </table>
+              {Array.from({ length: Div2_Sec1.table1.rows.length }).map((_, idx) => (
+                <div
+                  key={`h-${idx}`}
+                  className="absolute left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#8AD5B7]/60 to-transparent"
+                  style={{ top: `${((idx + 1) / (Div2_Sec1.table1.rows.length + 1)) * 100}%` }}
+                />
+              ))}
+            </div>
+          </div>
 
-          <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center w-[90%] lg:w-[65%] 2xl:w-[50%] mx-auto">
+          <p className="text-[#DFDFDF] text-sm sm:text-base font-semibold text-center w-[95%] sm:w-[90%] lg:w-[65%] 2xl:w-[50%] mx-auto">
             {WhyPBS.text}
           </p>
         </div>
-
+        {/* How it works steps */}
+        <h2 className="section-heading-pill">How It Works</h2>
+        <p className="text-base sm:text-lg lg:text-xl font-semibold text-center text-[#DFDFDF]">Compliance Without Chaos</p>
         <div className="w-full lg:w-[90%] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch pb-6 lg:pb-10" >
-           <div className="w-full lg:w-[45%] 2xl:w-[35%] flex flex-col items-center justify-center gap-6 2xl:gap-8">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center">How It Works</h2>
-            <p className="text-lg lg:text-xl font-semibold text-[#89A096]">Compliance Without Chaos</p>
-           </div>
-           <img
-            src="/pics/elevator-inspection-pic3.png"
-            alt="Inspection Services"
-            width={500}
-            height={500}
-            className="w-full md:w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto"
-          /> 
-        </div>            
 
-        <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col justify-center items-center gap-3 lg:gap-6 box-border pb-10 lg:pb-16">
-          <div className="w-full flex flex-col items-center justify-center gap-3">
-          <p className="text-[#89A096] text-lg lg:text-xl font-semibold">Final Call to Action</p>  
-          <p className="text-[#89A096] text-lg lg:text-xl font-semibold">Act Now or Risk $5k Fines: </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch w-full gap-4 sm:gap-6">
+            {Section2.howItWorks.map((item, index) => (
+              <div
+                key={index}
+                className="relative w-full mx-auto flex items-center gap-2 sm:gap-3 glass-morphism-glow rounded-[16px]"
+              >
+                {/* Step card shell */}
+                <div
+                  className={`relative md:rounded-full w-full flex items-center p-3 sm:p-4 bg-transparent overflow-hidden`}
+                >
+                  {/* Step content */}
+                  <div className="flex flex-col md:flex-row items-center gap-6 md:gap-3 w-full">
+                    <div className="rounded-full border-2 border-[#8AD5B7] w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 aspect-square flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-semibold text-[#DCE2E2]">
+                      {item.number}
+                    </div>
+                    <p className="flex flex-col items-center md:items-start max-w-full">
+                      <span className="text-sm sm:text-base lg:text-xl font-semibold text-[#DCE2E2] text-center md:text-left">
+                        {item.title}
+                      </span>
+                      <span className="text-xs sm:text-sm md:text-base text-center md:text-left font-normal leading-relaxed text-[#DFDFDF] pt-2">
+                        {item.description}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-[95%] sm:w-[90%] lg:w-[80%] mx-auto flex flex-col justify-center items-center gap-3 lg:gap-6 box-border pb-10 lg:pb-16">
+          <div className="w-full flex flex-col items-center justify-center">
+            <p className="text-[#DFDFDF] text-base sm:text-lg lg:text-xl font-semibold text-center">Final Call to Action</p>
+            <p className="text-[#DFDFDF] text-base sm:text-lg lg:text-xl font-semibold text-center">Act Now or Risk $5k Fines: </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 2xl:gap-10">
-            <CTA2
-              text="Book Your Slot Today"
-              isArrow={false}
-              href="/contacts"
-              styling={`w-full md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
-            />
-
-            <CTA2
-              text="Call Our Inspectors (914-316-6956)"
-              isArrow={false}
-              href="/contacts"
-              styling={`w-full text-wrap md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
-            />
-          </div>
-        </div> 
-      </section>       
+          <div className="w-full flex flex-col sm:flex-row xl:flex-row gap-3 sm:gap-4 my-6 items-stretch sm:items-center lg:items-start justify-center">
+              <CTA2
+                text="GET STARTED NOW"
+                isArrow={false}
+                href="/alert"
+                styling={`w-full sm:w-auto mt-0 rounded-full h-12 bg-[#FF4B4E] text-white px-6 py-2 text-sm font-semibold sm:whitespace-nowrap hover:brightness-105 hover:text-black transition lg:text-base font-conthrax `}
+              />
+              <CTA2
+                text="CALL OUR INSPECTORS"
+                isArrow={false}
+                href="/contacts"
+                styling={`w-full sm:w-auto mt-0 rounded-full h-12 bg-[#8AD5B7] text-[#1E2322] px-4 lg:px-6 py-2 text-sm font-semibold sm:whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+              />
+            </div>
+        </div>
+      </section>
       <ImageCarousel />
     </div>
   );

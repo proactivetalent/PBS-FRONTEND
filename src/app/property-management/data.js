@@ -1,7 +1,7 @@
 export const section01 = {
     heading: "Welcome to PBS Property Management",
     items: [
-      "your premier solution for seamless property management in the heart of New York City. Whoever you are, whether you own a brownstone in Brooklyn, a high-rise in Manhattan, or a multifamily dwelling in Queens, we’re here to maximize your ROI, minimize stress, and ensure compliance with NYC’s ever-evolving regulations.",
+      "Your premier solution for seamless property management in the heart of New York City. Whoever you are, whether you own a brownstone in Brooklyn, a high-rise in Manhattan, or a multifamily dwelling in Queens, we’re here to maximize your ROI, minimize stress, and ensure compliance with NYC’s ever-evolving regulations.",
     ],
   };
 
@@ -43,20 +43,19 @@ export const section01 = {
         cityName: "Bronx",
         cityImage: "/pics/Bronx.png",
       },
-      {
-        cityName: "Staten Island",
-        cityImage: "/pics/Staten-Island.png",
-      },
+      // {
+      //   cityName: "Staten Island",
+      //   cityImage: "/pics/Staten-Island.png",
+      // },
     ],
   };
 
   export const whyPBS = {
-    heading: "Why NYC Owners Choose PBS",
-    items: [
-      "1. Local Expertise: We know NYC’s Boroughs, Laws, and challenges inside out",
-      "2. Proactive, Not Reactive: From inspections to Compliance, we prevent issues before they escalate",
-      "3. Transparency: Real-time updates, detailed reports, and 24/7 owner portal access",
-    ],
-    text1: "Don’t let evolving laws, tenant disputes, or emergency repairs derail your success. Partner with PBS for a property management strategy as dynamic as New York City itself",
-    text2: "The Longer you delay, the higher the risks",
+    heading: "Ready to Reclaim your Time?",
+    // items: [
+    //   "1. Local Expertise: We know NYC’s Boroughs, Laws, and challenges inside out",
+    //   "2. Proactive, Not Reactive: From inspections to Compliance, we prevent issues before they escalate",
+    //   "3. Transparency: Real-time updates, detailed reports, and 24/7 owner portal access",
+    // ],
+    text1: "Stop juggling spreadsheets, midnight repair calls, and bureaucratic red tape, and contractors. Let PBS protect your investment and peace of mind",
   };

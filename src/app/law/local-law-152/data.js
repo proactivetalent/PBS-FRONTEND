@@ -54,7 +54,7 @@ export const section01 = {
   };
 
   export const LocalLaw152 = {
-    title: "Local Law 152",
+    title: "Local Law 152 - Your Legal Obligation",
     subtitle:"Your Legal Obligation",
     text1: "New York City Requires all building owners to inspect gas piping systems every 36 months. Certain Failures to Comply Risks are",
     items:[
@@ -121,6 +121,31 @@ export const section01 = {
       position: "right",
     },
   ];
+
+  export const CommonInspectionFailures = [
+
+    {
+      number: "1",
+      title: "Gas Leaks ",
+      description: "Immediate hazard requiring urgent repairs",
+    },
+    {
+      number: "2",
+      title: "Corrosion/Rust",
+      description: "Weakens pipes; often due to aging systems",
+    },
+    {
+      number: "3",
+      title: "Faulty Shutoff Valves",
+      description: "Non-compliant installations.",
+    },
+    {
+      number: "4",
+      title: "Unauthorized Modifications",
+      description: "Work done without Permits"
+    }
+    
+  ]
 
   export const whyPBS = {
     img: "/pics/local-law-152-pic4.png",

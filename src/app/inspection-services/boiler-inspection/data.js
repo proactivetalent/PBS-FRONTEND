@@ -1,5 +1,5 @@
  export const section01 = {
-    title: "5- Boiler Compliance Inspection",
+    title: "Boiler Compliance Inspection",
     heading: "Water Pressure Your Fire’s First Responder",
     text: "Weak Pressure = Weak Protection",
     items: [
@@ -69,6 +69,12 @@
     subHeading: "Exemptions",
     subHeading2: "Who needs it",
     img: "/pics/boiler-inspection-pic2.png",
+    items: [
+      "Residential buildings with 6+ units",
+      "Single Room Occupancy ( SRO ) dwellings",
+      "Commercial & Mixed-Used Building ( Any BTU capacity )",
+      "H-Stamped/E-Stamped boilers ( excluding HLW water heaters )",
+    ],
   };
 
   export const CriticalRequirements = {
@@ -80,7 +86,51 @@
       "We are partnered with authorized insurance inspectors for legal compliance",
       "We submit 10-Day advance notices to DOB for Internal inspections",
     ],
+    title1: "Our Process",
+    items1: [
+      "Inspect: Our DOB-Licensec Professional & Authorized insurance inspectors check for leaks, corrosion, and ASME H/E-Stamp Compliance",
+      "We file the report in DOB NOW within 14 days to avoid fines",
+      "Through our Vetted Contractors we get your boiler repaired within 90 days and if required we request for extensions from DOB on your behalf",
+    ],
+    subtext: "We inspect, we report and we connect you with contractors for repairs"
   };
+
+  export const ComplianceRoadmap = {
+    items: [
+      {
+        title: "1. Documentation Review",
+        Description: "In the very first stage we verify Logbooks, maintenance records, and past reports"
+      },
+      {
+        title: "2. Exterior Inspection",
+        Description: "Initial Inspection phase starts from checking for leaks, corrosion, or damange to the boiler shell/piping"
+      },
+      {
+        title: "3. Safety Device Testing",
+        Description: "We validate pressure relief valves, low-water cutoffs, and flame sensors"
+      },
+      {
+        title: "4. Burner & Combustion Analysis",
+        Description: "We inspect for wear, combustion efficiency, and flame patterns"
+      },
+      {
+        title: "5. Control System Checks",
+        Description: "We test limit switches, temperature controls, and pressure gauges"
+      },
+      {
+        title: "6. Code Compliance Verification",
+        Description: "We ensure adherence to NYC Building Code and national standards"
+      },
+      {
+        title: "7. Piping & Component Inspection",
+        Description: "We assess valves, pumps, and associated systems for proper function"
+      },
+      {
+        title: "8. Detailed Reporting & Repair",
+        Description: "We will provide you with actionable findings and deadlines for corrections and if repairs are needed our network of contractors will help you"
+      },
+    ]
+  }
 
   export const whyPBS = {
     img: "/pics/boiler-inspection-pic3.png",
@@ -88,5 +138,5 @@
     text1:
       "With over 30+ years of expertise in boiler inspections, PBS is your trusted partner for seamless compliance with NYC’s stringent regulations. Our licensed inspectors combine technical precision with in-depth knowledge of local codes to deliver thorough, efficient inspections that prioritize safety and prevent costly penalties. We go beyond basic checks",
     text2:
-      "Your safety is our mission, your trust is our reward-Don’t Gamble with Compliance or Safety",
+      "Act before deadlines bury you, your next inspection could save $10,000",
   };

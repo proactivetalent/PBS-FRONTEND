@@ -23,31 +23,31 @@ export const section01 = {
     {
       id: 1,
       heading: "FACADE INSPECTIONS",
-      text: "YOUR BUILDING’S HEALTH CHECKUP",
+      text: "Your Building's Health Checkup",
       items: [
-        "QEWI-CERTIFIED EXPERTS: Our inspectors blend decades of experience with cutting-edge tools.",
-        "360° ASSESSMENT: We cover every single aspect of your building for facade Code compliance",
-        "VISUAL & PHYSICAL EXAMS: We uncover cracks, spalling, and corrosion",
+        "QEWI-Certified Experts: Our inspectors blend decades of experience with cutting-edge tools.",
+        "360° Assessment: We cover every single aspect of your building for facade Code compliance",
+        "Visual & Physical Exams: We uncover cracks, spalling, and corrosion",
       ],
       img: "/pics/local-law-11-pic5.png", // Placeholder image name
     },
     {
       id: 2,
       heading: "REPAIR & MAINTENANCE PLANNING",
-      text: "WE FIX IT ONCE & FIX IT RIGHT THROUGH OUR",
+      text: "We Fix it Once & Fix it Right Through Our",
       items: [
-        "TAILORED STRATEGIES where we prioritize repairs by urgency and budget",
-        "NETWORK OF VETTED TRUSTED CONTRACTORS & SPECIALISTS for Seamless Execution",
+        "Tailored Strategies: where we prioritize repairs by urgency and budget",
+        "Network of Vetted Trusted Contractors & Specialists: for Seamless Execution",
       ],
       img: "/pics/local-law-11-pic3.png", // Placeholder image name
     },
     {
       id: 3,
       heading: "COMPLIANCE REPORTING",
-      text: "WE MAKE YOUR PAPERWORK, PAINLESS",
+      text: "We make your Paperwork, Painless",
       items: [
-        "DOB-READY FILINGS: We submit error-free reports electronically, no last minute scrambles",
-        "TRANSPARENT TRACKING: We Monitor your Compliance status in real-time via our Client Portal",
+        "DOB-Ready Filings: We submit error-free reports electronically, no last minute scrambles",
+        "Transparent Tracking: We Monitor your Compliance status in real-time via our Client Portal",
       ],
       img: "/pics/local-law-11-pic4.png", // Placeholder image name
     },
