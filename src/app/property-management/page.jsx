@@ -219,23 +219,28 @@ const Page = () => {
             {compliance_alert.text}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 my-4 w-full">
             {compliance_alert.locations.map((location, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-2 my-2 sm:my-4 glass-morphism-glow p-3 sm:p-4 rounded-[16px]"
+                  className="w-full"
                 >
-                  <div className="rounded-full border-2 border-[#8AD5B7] w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px] flex items-center justify-center">
+                  <div className="w-full max-w-[210px] sm:max-w-[250px] mx-auto rounded-2xl p-3 glass-morphism-glow">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <div className="absolute inset-0 z-10" />
                     <Image
                       src={location.cityImage}
                       alt={location.cityName}
-                      width={200}
-                      height={200}
-                      className="w-[120px] h-[120px] sm:w-[145px] sm:h-[145px] md:w-[165px] md:h-[165px] lg:w-[180px] lg:h-[180px] filter grayscale hover:grayscale-0 transition duration-300"
+                      width={320}
+                      height={240}
+                      className="w-full h-[200px] sm:h-[200px] object-cover grayscale"
                     />
+                      <p className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-[#DCE2E2] text-lg sm:text-xl font-semibold font-conthrax uppercase tracking-wide whitespace-nowrap">
+                        {location.cityName}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[#DCE2E2] text-sm sm:text-base">{location.cityName}</p>
                 </div>
               );
             })}

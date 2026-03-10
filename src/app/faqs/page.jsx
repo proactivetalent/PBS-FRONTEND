@@ -85,10 +85,10 @@ const FAQS = () => {
       <HeroSection
         heading="Frequently Asked Questions"
         text="Your journey is unique. Find answers, resources, and community support from our professional's insights"
-        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#DCE2E2]"
+        className="font-conthrax max-w-[92%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold text-[#DCE2E2]"
         bgStyle="bg-cover mix-blend-luminosity"
         isLine={false}
-        textStyle="text-base sm:text-lg md:text-xl font-semibold text-[#DFDFDF]"
+        textStyle="text-sm sm:text-base md:text-lg font-semibold text-[#DFDFDF] max-w-[92%] sm:max-w-3xl md:max-w-4xl mx-auto leading-relaxed"
         img="/PBS Assets/homepage/herosection/hero-bg.png"
         badge="Your Questions. Our Community. Shared Strength."
       />
@@ -97,12 +97,12 @@ const FAQS = () => {
       {/* FAQ Accordion Section */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-row gap-12 lg:gap-16 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-16 items-stretch">
 
             {/* Left Side - Heading */}
-            <div className="lg:sticky w-2/5 self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
                   About PBS
                 </h2>
 
@@ -110,7 +110,7 @@ const FAQS = () => {
             </div>
 
             {/* Right Side - Borderless Accordion */}
-            <div className="space-y-1 glass-morphism-glow w-3/5 rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="space-y-1 glass-morphism-glow w-full lg:w-3/5 rounded-2xl sm:rounded-[16px] p-3 sm:p-5 lg:p-8">
               {faqData.map((faq, index) => (
                 <div
                   key={index}
@@ -118,12 +118,12 @@ const FAQS = () => {
                 >
                   <button
                     onClick={() => toggleAccordion(index)}
-                    className="w-full text-left flex items-start justify-between py-6 rounded-lg px-6 transition-all duration-300 ease-out"
+                    className="w-full text-left flex items-start justify-between py-4 sm:py-5 lg:py-6 rounded-lg px-3 sm:px-4 lg:px-6 transition-all duration-300 ease-out"
                   >
-                    <h3 className="text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
+                    <h3 className="text-base sm:text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-3 sm:pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0 ml-4 mt-1">
+                    <div className="flex-shrink-0 ml-2 sm:ml-4 mt-1">
                       <div className="relative w-6 h-6">
                         {/* Plus Sign */}
                         <div
@@ -156,11 +156,11 @@ const FAQS = () => {
 
                   <div
                     className={`overflow-hidden transition-all duration-700 ease-out ${openAccordion === index
-                        ? 'max-h-96 opacity-100 translate-y-0'
+                        ? 'max-h-[1000px] opacity-100 translate-y-0'
                         : 'max-h-0 opacity-0 -translate-y-4'
                       }`}
                   >
-                    <div className="px-6 pb-6">
+                    <div className="px-3 sm:px-4 lg:px-6 pb-4 sm:pb-6">
                       <div className="pt-2">
                         <div
                           className="text-[#89A096] font-poppins leading-relaxed text-base"
@@ -184,19 +184,19 @@ const FAQS = () => {
       {/* Second FAQ Section - Inspection Services */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-row gap-12 lg:gap-16 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-16 items-stretch">
 
             {/* Left Side - Heading */}
-            <div className="lg:sticky w-2/5 self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center ">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center ">
                   Compliance Inspection
                 </h2>
               </div>
             </div>
 
             {/* Right Side - Inspection FAQ Accordion */}
-            <div className="space-y-1 glass-morphism-glow w-3/5 rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="space-y-1 glass-morphism-glow w-full lg:w-3/5 rounded-2xl sm:rounded-[16px] p-3 sm:p-5 lg:p-8">
               {inspectionFaqData.map((faq, index) => (
                 <div
                   key={index}
@@ -204,12 +204,12 @@ const FAQS = () => {
                 >
                   <button
                     onClick={() => toggleAccordion(`inspection-${index}`)}
-                    className="w-full text-left flex items-start justify-between py-6 rounded-lg px-6 transition-all duration-300 ease-out"
+                    className="w-full text-left flex items-start justify-between py-4 sm:py-5 lg:py-6 rounded-lg px-3 sm:px-4 lg:px-6 transition-all duration-300 ease-out"
                   >
-                    <h3 className="text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
+                    <h3 className="text-base sm:text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-3 sm:pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0 ml-4 mt-1">
+                    <div className="flex-shrink-0 ml-2 sm:ml-4 mt-1">
                       <div className="relative w-6 h-6">
                         {/* Plus Sign */}
                         <div
@@ -242,11 +242,11 @@ const FAQS = () => {
 
                   <div
                     className={`overflow-hidden transition-all duration-700 ease-out ${openAccordion === `inspection-${index}`
-                        ? 'max-h-96 opacity-100 translate-y-0'
+                        ? 'max-h-[1000px] opacity-100 translate-y-0'
                         : 'max-h-0 opacity-0 -translate-y-4'
                       }`}
                   >
-                    <div className="px-6 pb-6">
+                    <div className="px-3 sm:px-4 lg:px-6 pb-4 sm:pb-6">
                       <div className="pt-2">
                         <div
                           className="text-[#89A096] font-poppins leading-relaxed text-base"
@@ -270,19 +270,19 @@ const FAQS = () => {
       {/* Third FAQ Section - Compliance */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-row gap-12 lg:gap-16 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-16 items-stretch">
 
             {/* Left Side - Heading */}
-            <div className="lg:sticky w-2/5 self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
                   Alert System
                 </h2>
               </div>
             </div>
 
             {/* Right Side - Compliance FAQ Accordion */}
-            <div className="space-y-1 glass-morphism-glow w-3/5 rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="space-y-1 glass-morphism-glow w-full lg:w-3/5 rounded-2xl sm:rounded-[16px] p-3 sm:p-5 lg:p-8">
               {complianceFaqData.map((faq, index) => (
                 <div
                   key={index}
@@ -290,12 +290,12 @@ const FAQS = () => {
                 >
                   <button
                     onClick={() => toggleAccordion(`compliance-${index}`)}
-                    className="w-full text-left flex items-start justify-between py-6 rounded-lg px-6 transition-all duration-300 ease-out"
+                    className="w-full text-left flex items-start justify-between py-4 sm:py-5 lg:py-6 rounded-lg px-3 sm:px-4 lg:px-6 transition-all duration-300 ease-out"
                   >
-                    <h3 className="text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
+                    <h3 className="text-base sm:text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-3 sm:pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0 ml-4 mt-1">
+                    <div className="flex-shrink-0 ml-2 sm:ml-4 mt-1">
                       <div className="relative w-6 h-6">
                         {/* Plus Sign */}
                         <div
@@ -328,11 +328,11 @@ const FAQS = () => {
 
                   <div
                     className={`overflow-hidden transition-all duration-700 ease-out ${openAccordion === `compliance-${index}`
-                        ? 'max-h-96 opacity-100 translate-y-0'
+                        ? 'max-h-[1000px] opacity-100 translate-y-0'
                         : 'max-h-0 opacity-0 -translate-y-4'
                       }`}
                   >
-                    <div className="px-6 pb-6">
+                    <div className="px-3 sm:px-4 lg:px-6 pb-4 sm:pb-6">
                       <div className="pt-2">
                         <div
                           className="text-[#89A096] font-poppins leading-relaxed text-base"
@@ -356,19 +356,19 @@ const FAQS = () => {
       {/* Fourth FAQ Section - Services */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-row gap-12 lg:gap-16 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-16 items-stretch">
 
             {/* Left Side - Heading */}
-            <div className="lg:sticky w-2/5 self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
                   Expediting
                 </h2>
               </div>
             </div>
 
             {/* Right Side - Services FAQ Accordion */}
-            <div className="space-y-1 glass-morphism-glow w-3/5 rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
+            <div className="space-y-1 glass-morphism-glow w-full lg:w-3/5 rounded-2xl sm:rounded-[16px] p-3 sm:p-5 lg:p-8">
               {servicesFaqData.map((faq, index) => (
                 <div
                   key={index}
@@ -376,12 +376,12 @@ const FAQS = () => {
                 >
                   <button
                     onClick={() => toggleAccordion(`services-${index}`)}
-                    className="w-full text-left flex items-start justify-between py-6 rounded-lg px-6 transition-all duration-300 ease-out"
+                    className="w-full text-left flex items-start justify-between py-4 sm:py-5 lg:py-6 rounded-lg px-3 sm:px-4 lg:px-6 transition-all duration-300 ease-out"
                   >
-                    <h3 className="text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
+                    <h3 className="text-base sm:text-lg md:text-xl font-medium text-[#DCE2E2] font-poppins pr-3 sm:pr-6 leading-relaxed group-hover:text-[#8AD5B7] transition-all duration-300 ease-out">
                       {faq.question}
                     </h3>
-                    <div className="flex-shrink-0 ml-4 mt-1">
+                    <div className="flex-shrink-0 ml-2 sm:ml-4 mt-1">
                       <div className="relative w-6 h-6">
                         {/* Plus Sign */}
                         <div
@@ -414,11 +414,11 @@ const FAQS = () => {
 
                   <div
                     className={`overflow-hidden transition-all duration-700 ease-out ${openAccordion === `services-${index}`
-                        ? 'max-h-96 opacity-100 translate-y-0'
+                        ? 'max-h-[1000px] opacity-100 translate-y-0'
                         : 'max-h-0 opacity-0 -translate-y-4'
                       }`}
                   >
-                    <div className="px-6 pb-6">
+                    <div className="px-3 sm:px-4 lg:px-6 pb-4 sm:pb-6">
                       <div className="pt-2">
                         <div
                           className="text-[#89A096] font-poppins leading-relaxed text-base"
