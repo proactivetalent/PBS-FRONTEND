@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { navItems } from "./data";
 import { gsap } from "gsap";
@@ -7,8 +7,22 @@ const HorizontalMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const dropdownRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
+  const CLOSE_DELAY_MS = 300;
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    return () => clearCloseTimeout();
+  }, []);
 
   const handleMouseEnter = (index, hasSubmenu) => {
+    clearCloseTimeout();
     setOpenDropdown(index);
     
     if (hasSubmenu && dropdownRef.current) {
@@ -21,8 +35,11 @@ const HorizontalMenu = () => {
   };
 
   const handleMouseLeave = () => {
-    setOpenDropdown(null);
-    setOpenSubDropdown(null);
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      setOpenSubDropdown(null);
+    }, CLOSE_DELAY_MS);
   };
 
   const handleSubMouseEnter = (subIndex) => {

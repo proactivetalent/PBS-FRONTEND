@@ -55,7 +55,7 @@ const Page = () => {
           </div>
           {/* Intro content card */}
           
-          <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left bg-[#1E2322] p-6 sm:p-8 md:p-10 lg:p-20 rounded-[16px]">
+          <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left bg-[#1E2322] p-6 sm:p-8 md:p-10 lg:p-20 rounded-[16px]">
             <h1 className="text-[#E4E4E4] text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold font-conthrax mb-2 leading-tight uppercase">
               Owner Representative
             </h1>
@@ -173,10 +173,8 @@ const Page = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-start gap-8 sm:gap-12 w-full mt-8 sm:mt-10">
-
-
           <div className="flex flex-col justify-center items-start gap-3 sm:gap-4 w-full">
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center mx-auto gap-3 sm:gap-4 text-base text-[#DCE2E2]/90 font-normal rounded-[20px] p-2 sm:p-3 text-center relative glass-morphism-glow">
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center mx-auto mb-10 gap-3 sm:gap-4 text-base text-[#DCE2E2]/90 font-normal rounded-[20px] p-2 sm:p-3 text-center relative glass-morphism-glow">
               <h3 className="p-2 sm:p-3 rounded-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center w-full">
                 Strategic Advocacy
               </h3>

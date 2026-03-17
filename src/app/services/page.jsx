@@ -258,7 +258,7 @@ const Page = () => {
         {/* Section 03: Why PBS closing panel */}
 
         <div
-          className="flex flex-col lg:flex-row items-center lg:items-stretch mb-8 lg:mb-20 lg:mt-40 2xl:justify-center gap-5 sm:gap-8 rounded-[48px] px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-0 lg:gap-12 xl:gap-0 glass-morphism-glow bg-cover bg-center bg-no-repeat"
+          className="flex flex-col lg:flex-row items-center lg:items-stretch mb-8 lg:mb-20 lg:mt-40 2xl:justify-evenly gap-5 sm:gap-8 rounded-[48px] px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-0 lg:gap-12 xl:gap-0 glass-morphism-glow bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/pics/local-law-152-wcu.png')" }}
         >
           {/* Why PBS image block */}
@@ -277,7 +277,7 @@ const Page = () => {
           <div className="w-full lg:w-[50%] xl:w-[50%] flex flex-col justify-end 2xl:justify-center lg:pb-5 xl:pb-10 h-full">
             <div className="w-full h-auto flex items-start justify-start gap-2 xl:gap-0 xl:justify-between">
               <div className="w-2 h-full bg-[#8AD5B7] mr-2 xl:mr-6 hidden lg:block"></div>
-              <div className="w-full sm:w-[90%] h-auto flex flex-col lg:gap-3 xl:gap-6">
+              <div className="w-full h-auto flex flex-col lg:gap-3 xl:gap-6">
                 <h1 className="text-2xl sm:text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
                   WHY PBS?
                 </h1>

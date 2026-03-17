@@ -1,5 +1,6 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 import { DotIcon } from "lucide-react";
@@ -7,6 +8,8 @@ import CTA2 from "@/components/CTA2";
 import { section01, section2, section3, section4 } from "./data";
 
 const Page = () => {
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  const activeService = section3[activeServiceIndex] || section3[0];
 
   return (
     <div
@@ -47,7 +50,7 @@ const Page = () => {
             height={500}
             className="w-[88%] sm:w-[80%] lg:w-[45%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
-          <div className="w-full lg:w-[55%] flex flex-col justify-center items-center lg:items-start 2xl:justify-center gap-3 sm:gap-4 xl:gap-6 p-4 sm:p-6 lg:p-10 rounded-2xl bg-[#1E2322]">
+          <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-start gap-3 sm:gap-4 xl:gap-6 p-4 sm:p-6 lg:p-10 rounded-2xl bg-[#1E2322]">
             <h2 className="text-xl sm:text-2xl lg:text-4xl text-center lg:text-left font-semibold text-[#E4E4E4] font-conthrax uppercase leading-tight">
               {section01.heading}
             </h2>
@@ -90,60 +93,76 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Section 03: Flexible service models (step cards) */}
-      <section className="px-4 sm:px-0 pb-6 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-8 sm:py-10">
-        <h3 className="text-xl sm:text-2xl lg:text-4xl text-center font-semibold bg-[#1E2322] p-4 sm:p-6 rounded-[16px] text-[#E4E4E4] font-conthrax uppercase">
-          Flexible Services For Every Need
-        </h3>
-        <p className="text-sm sm:text-base max-w-[95%] 2xl:max-w-[65%] mx-auto text-center font-normal leading-relaxed text-[#DFDFDF] mb-4 sm:mb-6 lg:mb-10">
-          No matter the size, scope, or complexity of your NYC project, PBS provides tailored solutions to keep you compliant and on schedule, here's how we simplify permits and approvals for every situation.
-        </p>
-        {/* Two-column responsive card grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-x-6 lg:gap-x-8 gap-y-8 sm:gap-y-10 lg:gap-y-12 items-stretch">
-          {section3.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="rounded-2xl flex flex-col h-full"
-              >
-                <div className="relative w-full rounded-2xl glass-morphism-glow px-4 sm:px-6 pt-9 sm:pt-10 pb-4 sm:pb-5 h-full flex flex-col">
-                  <div className="absolute -top-4 left-3 sm:left-5 flex items-start gap-2 sm:gap-3 font-poppins max-w-[calc(100%-0.75rem)] sm:max-w-[calc(100%-1.25rem)]">
-                    <span className="w-8 h-8 rounded-full bg-[#8AD5B7] text-[#1E2322] text-lg font-semibold flex items-center justify-center">
-                      {item.step}
-                    </span>
-                    <h4 className="rounded-xl sm:rounded-full bg-[#8AD5B7] text-[#1E2322] text-[11px] sm:text-sm lg:text-lg font-semibold uppercase px-3 sm:px-4 py-1.5 leading-tight whitespace-normal break-words">
-                      {item.title}
-                    </h4>
-                  </div>
 
-                  <div className="flex flex-col gap-2">
-                    {item?.text && (
-                      <p className="text-sm sm:text-base text-left font-semibold italic text-[#DCE2E2]">
-                        {item.text}
+      {/* Section 03: Flexible service models (step cards) */}
+      <section className="px-4 sm:px-6 md:px-8 lg:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-4 sm:pb-8">
+        <h2 className="section-heading-pill">
+          {"Flexible Services For Every Need"}
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.46fr)_minmax(0,0.54fr)] gap-4 sm:gap-5 lg:gap-6 py-6 sm:py-8 lg:py-10">
+          <div className="flex flex-col gap-3">
+            {section3.map((item, index) => {
+              const isActive = index === activeServiceIndex;
+              const label = item.title.replace(/^\d+\s*-\s*/, "");
+              return (
+                <button
+                  key={item.step ?? index}
+                  type="button"
+                  onMouseEnter={() => setActiveServiceIndex(index)}
+                  onFocus={() => setActiveServiceIndex(index)}
+                  onClick={() => setActiveServiceIndex(index)}
+                  className={`w-full rounded-2xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 text-left text-sm sm:text-base font-poppins font-medium uppercase tracking-[0.01em] transition-[color,letter-spacing,font-weight] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive
+                    ? "bg-[#8AD5B7] text-[#1E2322] font-semibold tracking-[0.05em]"
+                    : "bg-[#1E2322] text-[#B9C3BF] hover:text-[#8AD5B7] hover:font-semibold hover:tracking-[0.05em] focus-visible:text-[#8AD5B7] focus-visible:font-semibold focus-visible:tracking-[0.05em]"
+                    }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="relative flex flex-col gap-3 sm:gap-4 justify-start rounded-2xl glass-morphism-glow px-4 sm:px-5 lg:px-6 pt-9 sm:pt-10 lg:pt-12 pb-4 sm:pb-5 lg:pb-6 ">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService?.step || activeServiceIndex}
+                initial={{ opacity: 0, y: 8, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="relative z-10 flex flex-col h-full"
+              >
+                <span className="absolute right-3 sm:right-4 lg:right-5 top-7 sm:top-8 text-[72px] sm:text-[100px] lg:text-[500px] leading-none font-poppins font-semibold text-[#252A2C]/35 select-none pointer-events-none">
+                  {activeService?.step || activeServiceIndex + 1}
+                </span>
+
+                <h2 className="relative z-10 text-2xl sm:text-3xl font-semibold text-[#8AD5B7] font-poppins uppercase leading-tight">
+                  {activeService?.title}
+                </h2>
+                <p className="relative z-10 text-sm sm:text-base text-[#DFDFDF] leading-relaxed my-8">
+                  {activeService?.description}
+                </p>
+
+                <div className="relative z-10 flex items-stretch justify-start gap-6">
+                  <div className="space-y-1 w-full">
+                    {activeService?.bullets?.map((item, index) => (
+                      <p
+                        key={index}
+                        className="text-sm sm:text-base font-normal text-[#DFDFDF] leading-relaxed flex items-start"
+                      >
+                        <span className="mr-2 text-[#DCE2E2]">•</span>
+                        <span>{item}</span>
                       </p>
-                    )}
-                    <p className="text-sm sm:text-base text-left font-normal text-[#DFDFDF] leading-relaxed">
-                      {item.description}
-                    </p>
-                    <ul className="list-disc pl-5 space-y-1">
-                      {item.bullets.map((bullet, bulletIndex) => (
-                        <li
-                          key={bulletIndex}
-                          className="text-sm sm:text-base text-[#DFDFDF] font-normal leading-relaxed"
-                        >
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
+                    ))}
                   </div>
                 </div>
-              </div>
-            );
-          })}
+
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </section>
-
-      {/* <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div> */}
 
       {/* Section 04: Why choose PBS + conversion CTAs */}
       <section className="px-4 sm:px-0 pb-6 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-8 sm:py-10">

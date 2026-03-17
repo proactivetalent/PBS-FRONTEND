@@ -55,11 +55,11 @@ export const section01 = {
 
   export const WhatThisMeans = {
     first: {
-      title: "1- Identify your Community District",
+      title: "1. Identify your Community District",
       text: "Use the NYC Community District Map to confirm your district number",
     },
     second: {
-      title: "2- Act before your window closes",
+      title: "2. Act before your window closes",
       items: [
         "Sub-Cycle A: Past Due _ Schedule repairs/re-inspections immediately if not compliant",
         "Sub-Cycle B: Deadlines approaching _ Inspections must be completed by 31st January 2025",

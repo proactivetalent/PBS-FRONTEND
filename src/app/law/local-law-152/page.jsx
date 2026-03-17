@@ -45,7 +45,7 @@ const Page = () => {
 
       {/* Section 01: LL152 fundamentals, obligations, and deadline penalties */}
 
-      <section className="px-4 sm:px-6 md:px-10 pt-8 sm:pt-10 md:pt-16 lg:pt-20 flex flex-col gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-8 sm:py-10">
+      <section className="px-4 sm:px-6 md:px-0 pt-8 sm:pt-10 md:pt-16 lg:pt-20 flex flex-col gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-8 sm:py-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 sm:gap-6 lg:gap-10 2xl:justify-center 2xl:gap-16 w-full pb-8 sm:pb-10">
           <Image
             src="/pics/local-law-152-pic1.png"
@@ -55,7 +55,7 @@ const Page = () => {
             className="w-[88%] sm:w-full max-w-[360px] sm:max-w-[500px] lg:max-w-none lg:w-[45%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] relative flex flex-col gap-4 sm:gap-5 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-4 sm:p-6 md:p-8 rounded-[24px] bg-[#1A2021] border border-[#89A096]/20">
-            <span className="bg-[#8AD5B7] w-fit max-w-full rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-[11px] sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
+            <span className="bg-[#8AD5B7] uppercase font-poppins w-fit max-w-full rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-[11px] sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
             <h2 className="text-lg sm:text-2xl lg:text-4xl leading-[1.05] text-center lg:text-left font-semibold text-[#E4E4E4] uppercase font-conthrax max-w-xl">
@@ -96,7 +96,7 @@ const Page = () => {
             <span>{"(" + Div2_Sec1.description.split("(")[1]}</span>
           </p>
 
-          <div className="w-full sm:w-[95%] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch gap-4 sm:gap-6 lg:gap-8 rounded-2xl p-0 sm:p-2 lg:p-6 lg:px-5 lg:py-10">
+          <div className="w-full md:w-[95%] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch gap-4 sm:gap-6 lg:gap-8 rounded-2xl p-0 lg:py-10">
             {Div2_Sec1.data.map((detail, idx) => {
               return (
                 <div
@@ -105,7 +105,7 @@ const Page = () => {
                 >
                   <div className="w-full flex flex-col lg:justify-start gap-4 glass-morphism-glow rounded-2xl p-4 sm:p-6">
                     <div className="space-y-4">
-                      <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2]">
+                      <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl uppercase font-conthrax font-semibold text-[#DCE2E2]">
                         {detail.heading}
                       </h2>
                       <div>
@@ -130,9 +130,9 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 lg:gap-10 w-[90%] mx-auto pb-10 glass-morphism-glow rounded-2xl p-6 lg:px-5 lg:py-10">
+        <div className="flex flex-col md:w-[95%] lg:flex-row items-center lg:items-stretch justify-center gap-6 lg:gap-10 mx-auto pb-10 glass-morphism-glow rounded-2xl lg:py-10">
           <div className="w-full lg:w-[40%] 2xl:w-[25%] flex flex-col gap-3 justify-between items-center lg:items-start lg:justify-center 2xl:gap-6 box-border">
-            <h2 className="text-3xl lg:text-[40px] font-semibold font-conthrax">
+            <h2 className="text-3xl lg:text-[40px] uppercase font-semibold font-conthrax">
               {Compliance_Deadlines.title}
             </h2>
             <p className="text-[#DFDFDF] text-base font-normal text-center lg:text-left">
@@ -141,7 +141,7 @@ const Page = () => {
           </div>
 
           <div className="w-full lg:w-[55%]">
-            <p className="text-[#ffff] text-base lg:text-xl font-semibold p-2 text-center">
+            <p className="text-[#ffff] text-base uppercase lg:text-xl font-semibold p-2 text-center">
               {Compliance_Deadlines.label}
             </p>
             <div className="relative w-full">
@@ -151,7 +151,7 @@ const Page = () => {
                     {Compliance_Deadlines.table.headers.map((header, index) => (
                       <th
                         key={index}
-                        className="p-3 sm:p-4 text-center text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7]"
+                        className="p-3 sm:p-4 text-center uppercase text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7]"
                       >
                         {header}
                       </th>
@@ -338,48 +338,49 @@ const Page = () => {
                 const cleanTitle = item.title.replace(/^\d+\s*-\s*/, "");
                 const isLeft = item.position === "left";
                 return (
-                <div
-                  key={index}
-                  className={`relative flex flex-col w-full md:w-1/2 items-center ${isLeft ? "md:items-start" : "md:items-end md:top-16"
-                    } mb-3 sm:mb-4 md:mb-8 rounded-2xl p-4 sm:p-5 md:p-0 glass-morphism-glow md:bg-none md:bg-transparent md:border-0 md:shadow-none md:backdrop-blur-none`}
-                >
                   <div
-                    className={`hidden md:block absolute top-1/2 -translate-y-1/2 text-[#8AD5B7] text-5xl lg:text-6xl font-poppins font-semibold leading-none z-20 ${isLeft ? "right-4 lg:right-6" : "left-4 lg:left-6"
-                      }`}
+                    key={index}
+                    className={`relative flex flex-col w-full md:w-1/2 items-center ${isLeft ? "md:items-start" : "md:items-end md:top-16"
+                      } mb-3 sm:mb-4 md:mb-8 rounded-2xl p-4 sm:p-5 md:p-0 glass-morphism-glow md:bg-none md:bg-transparent md:border-0 md:shadow-none md:backdrop-blur-none`}
                   >
-                    {index + 1}
-                  </div>
-                  {/* Step content */}
-                  <div
-                    className={`flex items-center w-full sm:px-6 lg:px-10`}
-                  >
-                    {/* Step text */}
                     <div
-                      className={`flex flex-col gap-1 sm:gap-1 lg:gap-2 w-full text-left ${isLeft ? "md:text-right md:pr-10 lg:pr-14" : "md:text-left md:pl-10 lg:pl-14"}`}
+                      className={`hidden md:block absolute top-1/2 -translate-y-1/2 text-[#8AD5B7] text-5xl lg:text-6xl font-poppins font-semibold leading-none z-20 ${isLeft ? "right-4 lg:right-6" : "left-4 lg:left-6"
+                        }`}
                     >
-                      <p className="md:hidden w-8 h-8 rounded-full border border-[#8AD5B7]/80 flex items-center justify-center text-[#8AD5B7] text-base font-semibold mb-2">
-                        {index + 1}
-                      </p>
-                      <h4 className="text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
-                        {cleanTitle}
-                      </h4>
-                      <p className="text-[#DFDFDF] text-sm sm:text-base">
-                        {item.description}
-                      </p>
+                      {index + 1}
+                    </div>
+                    {/* Step content */}
+                    <div
+                      className={`flex items-center w-full sm:px-6 lg:px-10`}
+                    >
+                      {/* Step text */}
+                      <div
+                        className={`flex flex-col gap-1 sm:gap-1 lg:gap-2 w-full text-left ${isLeft ? "md:text-right md:pr-10 lg:pr-14" : "md:text-left md:pl-10 lg:pl-14"}`}
+                      >
+                        <p className="md:hidden w-8 h-8 rounded-full border border-[#8AD5B7]/80 flex items-center justify-center text-[#8AD5B7] text-base font-semibold mb-2">
+                          {index + 1}
+                        </p>
+                        <h4 className="text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
+                          {cleanTitle}
+                        </h4>
+                        <p className="text-[#DFDFDF] text-sm sm:text-base">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Desktop row connector and endpoint marker */}
+                    <div
+                      className={`hidden md:flex relative w-full h-2 rounded-full bg-[#DCE2E2] justify-center mt-4 z-10`}
+                    >
+                      <div
+                        className={`w-6 h-6 rounded-full bg-[#8AD5B7] absolute -top-2 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:top-[-10px] ${isLeft ? "sm:left-0" : "sm:left-auto sm:right-0"
+                          }`}
+                      ></div>
                     </div>
                   </div>
-
-                  {/* Desktop row connector and endpoint marker */}
-                  <div
-                    className={`hidden md:flex relative w-full h-2 rounded-full bg-[#DCE2E2] justify-center mt-4 z-10`}
-                  >
-                    <div
-                      className={`w-6 h-6 rounded-full bg-[#8AD5B7] absolute -top-2 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:top-[-10px] ${isLeft ? "sm:left-0" : "sm:left-auto sm:right-0"
-                        }`}
-                    ></div>
-                  </div>
-                </div>
-              )})}
+                )
+              })}
             </div>
           </div>
         </div>
@@ -395,12 +396,12 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[92%] sm:w-[80%] h-auto object-cover object-right-top rounded-[16%] mx-auto"
+            className="w-[92%] sm:w-[80%] h-auto object-cover object-right-top mx-auto"
           />
         </div>
 
         {/* Why PBS highlight panel */}
-        
+
 
         <div
           className="flex flex-col lg:flex-row items-center lg:items-stretch mb-8 lg:mb-20 lg:mt-20 2xl:justify-center gap-4 sm:gap-8 lg:gap-12 rounded-[16px] px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-10 pb-6 sm:pb-8 lg:pb-0 xl:gap-0 glass-morphism-glow bg-cover bg-center bg-no-repeat"
@@ -428,17 +429,17 @@ const Page = () => {
               {whyPBS.text1}
             </p>
 
-              <p className="text-[#8AD5B7] italic text-sm lg:text-base 2xl:w-[80%] text-center lg:text-left font-semibold leading-relaxed flex flex-col">
-                <span>{whyPBS.text2.split("-")[0]}</span>
-                <span>{whyPBS.text2.split("-")[1]}</span>
-              </p>
+            <p className="text-[#8AD5B7] italic text-sm lg:text-base 2xl:w-[80%] text-center lg:text-left font-semibold leading-relaxed flex flex-col">
+              <span>{whyPBS.text2.split("-")[0]}</span>
+              <span>{whyPBS.text2.split("-")[1]}</span>
+            </p>
 
-              <p className="text-[#DFDFDF] text-sm lg:text-base 2xl:w-[80%] text-center lg:text-left font-semibold leading-relaxed">
-                {whyPBS.text3}
-              </p>
+            <p className="text-[#DFDFDF] text-sm lg:text-base 2xl:w-[80%] text-center lg:text-left font-semibold leading-relaxed">
+              {whyPBS.text3}
+            </p>
 
             <div className="w-full mt-0 flex flex-col sm:flex-row xl:flex-row gap-3 sm:gap-4 items-stretch sm:items-center lg:items-start justify-center lg:justify-start">
-            <CTA2
+              <CTA2
                 text="GET STARTED NOW"
                 isArrow={false}
                 href="/alert"

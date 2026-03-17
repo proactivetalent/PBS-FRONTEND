@@ -78,18 +78,17 @@ const Page = () => {
             className="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-none lg:w-[40%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] bg-[#1E2322] flex flex-col gap-3 sm:gap-4 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-4 sm:p-6 rounded-2xl sm:rounded-[16px]">
-            <span className="bg-[#1E2322] w-auto rounded-full py-1.5 sm:py-2 px-3 text-base sm:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
+          <span className="bg-[#8AD5B7] uppercase font-poppins w-fit max-w-full rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-[11px] sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#E4E4E4] font-conthrax text-center lg:text-left">
               {section01.heading}
             </h2>
-            <p className="text-sm sm:text-base font-semibold text-[#89A096] text-center lg:text-left">
+            <p className="text-sm sm:text-base text-[#DFDFDF] text-center lg:text-left">
               {section01.text}
             </p>
 
             <div className="flex items-stretch justify-start gap-3 sm:gap-6 w-full">
-              <div className="bg-[#8AD5B7] w-1.5 sm:w-2 h-auto"></div>
               <div className="space-y-2 w-full">
                 {section01.items.map((item, index) => {
                   // Count the number of colons in the item to identify multi-colon item
@@ -125,7 +124,7 @@ const Page = () => {
                         </ul>
                       ) : (
                         // Single-colon item: Render description as a paragraph
-                        <p className="text-xs sm:text-sm font-normal text-[#89A096]">
+                        <p className="text-xs sm:text-sm font-normal text-[#DFDFDF]">
                           {description.trim()}
                         </p>
                       )}
@@ -135,7 +134,7 @@ const Page = () => {
               </div>
             </div>
 
-            <p className="text-[#89A096] text-sm sm:text-base font-semibold text-center lg:text-left w-full lg:w-2/3">
+            <p className="text-[#DFDFDF] text-sm sm:text-base text-center lg:text-left w-full lg:w-2/3">
               {section01.additionalText}
             </p>
           </div>
@@ -171,7 +170,7 @@ const Page = () => {
               <div className="flex-1 flex flex-col gap-3">
                 {stakes.items.map((item, index) => (
                   <div key={index} className="space-y-1">
-                    <h3 className="text-lg lg:text-xl font-semibold text-[#DCE2E2] font-conthrax">
+                    <h3 className="text-lg lg:text-xl font-semibold text-[#DCE2E2] font-poppins">
                       {item.split(":")[0] + ":"}
                     </h3>
                     <p className="text-sm sm:text-base lg:text-base font-normal text-[#89A096]">
@@ -294,7 +293,7 @@ const Page = () => {
 
         {/* Why PBS highlight panel */}
         <div
-          className="flex flex-col lg:flex-row items-center lg:items-stretch mb-8 lg:mb-20 lg:mt-20 2xl:justify-center gap-6 sm:gap-10 rounded-[16px] px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-0 lg:gap-12 xl:gap-0 glass-morphism-glow bg-cover bg-center bg-no-repeat"
+          className="flex flex-col lg:flex-row items-center lg:items-stretch mb-8 lg:mb-20 lg:mt-20 2xl:justify-center gap-6 sm:gap-10 rounded-[16px] px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-0 lg:gap-12 glass-morphism-glow bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/pics/local-law-152-wcu.png')" }}
         >
           {/* Why PBS image block */}

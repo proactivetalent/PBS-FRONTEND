@@ -56,7 +56,7 @@ const Page = () => {
             className="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-none lg:w-[45%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] relative flex flex-col gap-4 sm:gap-5 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-4 sm:p-6 md:p-8 rounded-[24px] bg-[#1A2021] border border-[#89A096]/20">
-            <span className="bg-[#8AD5B7] w-auto rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-xs sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
+            <span className="bg-[#8AD5B7] uppercase font-poppins w-auto rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-xs sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-4xl leading-[1.05] text-center lg:text-left font-semibold text-[#E4E4E4] uppercase font-conthrax max-w-xl">
@@ -191,7 +191,7 @@ const Page = () => {
           </div>
 
           <Link href={"/alert"}
-            className="w-full sm:w-[85%] md:w-[60%] lg:w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-base sm:text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-center gap-[10%] lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
+            className="w-full sm:w-[85%] md:w-[60%] lg:w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-base sm:text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-center"
           >
             <span className="">Get Timely Alerts</span>
             <svg
@@ -204,7 +204,7 @@ const Page = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="ml-1"
+              className="ml-1 absolute right-4"
             >
               <line x1="-15" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -282,7 +282,7 @@ const Page = () => {
               <div
                 key={index}
                 className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } items-center md:items-stretch md:justify-evenly rounded-lg gap-4 md:gap-6 lg:gap-8 mb-10`}
+                  } items-center md:items-stretch md:justify-between rounded-lg gap-4 md:gap-6 lg:gap-8 mb-10`}
               >
                 {/* Feature image */}
                 <div className={`w-[80%] sm:w-[65%] md:w-[60%] lg:w-[30%] ${index == 0 ? "xl:w-[30%]" : "xl:w-[20%]"} h-auto flex-shrink-0 flex items-center`}>

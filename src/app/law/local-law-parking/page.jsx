@@ -56,7 +56,7 @@ const Page = () => {
             className="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-none lg:w-[45%] h-auto object-cover rounded-[16px] mb-2 sm:mb-4 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] relative flex flex-col gap-4 sm:gap-5 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-4 sm:p-6 md:p-8 rounded-[24px] bg-[#1A2021] border border-[#89A096]/20">
-            <span className="bg-[#8AD5B7] w-auto rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-xs sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
+            <span className="bg-[#8AD5B7] uppercase font-poppins w-auto rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-xs sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-4xl leading-[1.05] text-center lg:text-left font-semibold text-[#E4E4E4] uppercase font-conthrax max-w-xl">
@@ -174,7 +174,7 @@ const Page = () => {
                     {Compliance_Deadlines.table.headers.map((header, index) => (
                       <th
                         key={index}
-                        className="p-3 sm:p-4 md:p-5 text-center text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7] whitespace-nowrap"
+                        className="p-3 sm:p-4 md:p-5 text-center uppercase text-sm sm:text-base lg:text-xl font-semibold text-[#8AD5B7] whitespace-nowrap"
                       >
                         {header}
                       </th>
@@ -265,12 +265,12 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[75%] sm:w-[60%] lg:w-[40%] xl:w-[25%] 2xl:w-[25%] h-auto object-contain rounded-lg mb-2 sm:mb-4 lg:mb-0 mx-auto"
+            className="w-[75%] sm:w-[60%] lg:w-[40%] xl:w-[25%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-2 sm:mb-4 lg:mb-0 mx-auto"
           />
           <div className="text-left w-full lg:w-[60%] xl:w-[70%] 2xl:w-[70%] flex flex-col items-start justify-center gap-3 sm:gap-6 p-4 sm:p-6 lg:p-10 bg-[#1E2322] rounded-3xl">
             {/* Key takeaways heading */}
-            <h2 className="text-[#8AD5B7] text-xl sm:text-2xl lg:text-3xl font-semibold">
-              Key Take-aways
+            <h2 className="text-[#8AD5B7] uppercase text-xl sm:text-2xl lg:text-3xl font-semibold">
+              Key Takeaways
             </h2>
 
             {/* Key takeaways list */}
@@ -418,9 +418,9 @@ const Page = () => {
             return (
               <div
                 key={index}
-                className="flex items-start sm:items-center glass-morphism-glow justify-start gap-3 sm:gap-6 rounded-2xl p-4 sm:p-6 w-full sm:w-[92%] mx-auto"
+                className="flex items-start sm:items-center justify-center glass-morphism-glow gap-3 sm:gap-6 rounded-2xl p-4 sm:p-6 w-full sm:w-[92%] mx-auto"
               >
-                <img src="/pics/arrow.png" className="w-4 h-4 sm:w-5 sm:h-5 mt-1 sm:mt-0 flex-shrink-0" />
+                <img src="/pics/arrow.png" className="w-4 h-4 sm:w-10 sm:h-6 mt-1 sm:mt-0 flex-shrink-0" />
                 <p className="text-[#DFDFDF] text-sm sm:text-base lg:text-xl font-semibold leading-relaxed w-full">
                   {item}
                 </p>
@@ -431,7 +431,7 @@ const Page = () => {
 
         {/* Why PBS details and CTAs */}
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-5 sm:gap-6 lg:gap-10 2xl:justify-center 2xl:gap-16 w-full pb-8 lg:pb-16">
-          <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] 3xl:w-[35%] flex items-end">
+          <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] 3xl:w-[50%] flex items-end">
             <Image
               src={whyPBS.img}
               alt="building"
@@ -442,7 +442,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[50%] xl:w-[55%] 2xl:w-[50%] 3xl:w-[40%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
+          <div className="w-full lg:w-[50%] xl:w-[55%] 2xl:w-[50%] 3xl:w-[50%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
             <div className="w-full h-auto flex flex-col gap-3 sm:gap-4">
               <h1 className="text-2xl sm:text-3xl text-center xl:text-4xl lg:text-left font-semibold font-conthrax text-[#E4E4E4] tracking-wide uppercase">
                 {whyPBS.title}
@@ -452,7 +452,7 @@ const Page = () => {
                   {whyPBS.list1.map((item, index) => {
                     return (
                       <span key={index} className="flex items-start text-left text-sm sm:text-base leading-relaxed">
-                        <DotIcon className="text-[#DCE2E2] w-4 h-4 mt-1 mr-2 flex-shrink-0" />
+                        <DotIcon className="text-[#DCE2E2] w-4 h-4 mt-1  flex-shrink-0" />
                         {index == 0 ? (
                           <span>
                             <span className="text-[#DFDFDF]">
@@ -470,7 +470,7 @@ const Page = () => {
                 </div>
               </div>
 
-              <div className="flex justify-start items-stretch gap-3 px-0 sm:px-2 lg:px-3">
+              <div className="flex justify-start items-stretch gap-3 ">
                 <p className="w-full text-xl sm:text-2xl lg:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2]">
                   PA's
                 </p>
@@ -480,7 +480,7 @@ const Page = () => {
                 <div>
                   {whyPBS.list2.map((item, index) => {
                     return (
-                      <p key={index} className="w-full lg:w-[90%] 2xl:w-[70%] pl-0 sm:pl-[3%] leading-relaxed">
+                      <p key={index} className="w-full leading-relaxed">
                         {item}
                       </p>
                     );
@@ -502,7 +502,7 @@ const Page = () => {
 
               <div className="max-w-4xl w-full mx-auto flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-12 items-stretch sm:items-center justify-center">
             <CTA2
-              text="GET STARTED NOW"
+              text="BOOK YOUR SLOT NOW"
               isArrow={false}
               href="/alert"
               styling={`w-full sm:w-auto mt-0 rounded-full h-12 bg-[#FF4B4E] text-white px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 hover:text-black transition lg:text-base font-conthrax `}

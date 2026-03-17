@@ -50,9 +50,9 @@ const InspectionServices = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[88%] sm:w-[82%] md:w-[80%] relative left-0 lg:left-0 lg:w-[40%] h-auto glass-morphism-glow rounded-[16px] object-contain mb-2 sm:mb-6 md:mb-10 lg:mb-0 lg:mx-0 mx-auto"
+            className="w-[88%] sm:w-[82%] md:w-[80%] relative left-0 lg:left-0 lg:w-[40%] h-auto px-0 lg:px-12 glass-morphism-glow rounded-[16px] object-contain mb-2 sm:mb-6 md:mb-10 lg:mb-0 lg:mx-0 mx-auto"
           />
-          <div className="w-full lg:w-[55%] bg-[#1E2322] rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+          <div className="w-full lg:w-[55%] bg-[#1E2322] rounded-2xl p-4 sm:p-6 lg:p-12 flex flex-col justify-start items-center lg:items-start text-center lg:text-left">
             <h1 className="text-[#E4E4E4] text-2xl sm:text-3xl lg:text-4xl uppercase font-semibold font-conthrax mb-2 leading-tight">
               Why Compliance Matter
             </h1>
