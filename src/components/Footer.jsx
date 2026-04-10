@@ -1,268 +1,165 @@
 'use client'
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import CustomImage from "@/app/CustomImage";
-import { DotIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
-import {apiRequest } from "@/utils/csrfHandler";
+import { Linkedin, Youtube } from "lucide-react";
+import { API_URL } from "@/config";
 
 /**
- * Footer Component
- *
- * A responsive website footer that displays navigation links, a subscription form,
- * and copyright information. Features include:
- * - Responsive grid layout that adapts to different screen sizes
- * - Multiple menu sections organized in columns
- * - Email subscription form with validation
- * - Company branding with logo
- * - Copyright information that automatically updates with the current year
- * - Privacy and terms links
- *
- * The component is structured in three main sections:
- * 1. Top section with menu columns and subscription form
- * 2. Divider for visual separation
- * 3. Bottom section with logo, copyright, and privacy links
- *
- * @returns {JSX.Element} The rendered Footer component
+ * Site footer: outer dark band, inner rounded panel, nav columns, contact strip, copyright.
  */
 const Footer = () => {
   const [currentYear, setCurrentYear] = useState('');
 
   useEffect(() => {
-    // Set the year after component mounts to prevent hydration mismatch
     setCurrentYear(new Date().getFullYear().toString());
   }, []);
 
-  /**
-   * Menu data structure defining the sections and links in the footer
-   * Each section has a title and an array of link names
-   *
-   * @type {MenuSection[]}
-   */
-  const [email, setEmail] = useState('');
-  const [result, setResult] = useState('');
-  const Router = useRouter();
-  const menu = [
-    {
-      title: "Useful Links",
-      links: [
-        { name:"About Us", href: "/about-us" },
-        { name:"Contact Us", href: "/contacts" },
-        // { name:"FAQs", href: "/faqs" },
-        { name:"Terms & Conditions", href: "/terms-of-service" },
-        { name:"Privacy Policy", href: "/privacy-policy" },
-        { name:"Cookie Policy", href: "/cookies-policy"}
-      ],
-    },
-    // {
-    //   title: "Careers",
-    //   links: ["Blog", "Press", "Partnerships", "Support", "Help Center"],
-    // },
-    {
-      title: "Resources",
-      links: [
-        // {name: "Press",href:"/press"},
-        {name: "Blog",href:"/blog"},
-        {name: "Local Law guide",href:"/local-law-guide"},
-        {name: "FAQs",href:"/faqs"}
-        // {name: "Alert System guide",href:"/alert-system-guide"},
-        /*"Events", "Community", "Social Media"*/
-      ],
-    },
-    {
-      title: "Services & Solutions",
-      links: [
-        {name: "Property Management", href:"/property-management"},
-        {name: "Owner Representative", href:"/owner-representative"},
-        {name: "Inspection Services", href:"/inspection-services"},
-        {name: "Expediting Services", href:"/expediting-services"},
-        {name: "Alert Service", href:"/alert"},
-      ],
-      hrefs: [
-        "/property-management",
-        "/owner-representative",
-        "/inspection-services",
-        "/expediting-services",
-        "/alert",
-      ],
-    },
+  const linkColumns = [
+    [
+      { name: "Home", href: "/" },
+      { name: "Services", href: "/services" },
+      { name: "Our Team", href: "/about-us/our-team" },
+      { name: "Alert System", href: "/alert" },
+    ],
+    [
+      { name: "Blogs", href: "/blog" },
+      { name: "Local Law Guides", href: "/local-law-guide" },
+      { name: "FAQ's", href: "/faqs" },
+      { name: "About us", href: "/about-us" },
+      { name: "Contact Us", href: "/contacts" },
+    ],
+    [
+      { name: "Terms & Conditions", href: "/terms-of-service" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Cookies Policy", href: "/cookies-policy" },
+    ],
   ];
 
-  /**
-   * Commented out background image implementation
-   * Preserved for potential future use
-   *
-   * <div className="text-[#DCE2E2] py-16 relative bg-cover bg-center"
-   * style={{
-   *   backgroundImage: `url('/PBS Assets/Brand Language/sky-scraper-building-hong-kong-cityscape.jpg')`,
-   *   // Mobile image as default
-   * }}>
-   * Add overlay for better text contrast
-   * <div className="absolute inset-0 bg-black/50 z-0"></div>
-   * <div className="container mx-auto px-8 sm:px-0 relative z-10">
-   */
+  const sectionLabels = ["Explore", "Resources", "Legal"];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try{
-    const res = await apiRequest('post',`/subscribe`, {"widget-subscribe-form-email": email });
-    const data = await res.json();
-    setResult(data.message || 'Subscribed!');
-    setEmail(''); // Clear the input field after successful submission
-    } catch (error) {
-      setResult(error.message || 'Subscription failed');
-    }
-  };
+  /** Minimal text-first links; subtle emphasis with bottom rule. */
+  const footerLinkClass =
+    "font-poppins inline-block max-w-full border-b border-transparent py-2 text-sm font-medium text-[#DCE2E2]/95 transition-colors " +
+    "hover:text-[#8AD5B7] hover:border-white/20 " +
+    "focus-visible:outline-none focus-visible:text-[#8AD5B7] focus-visible:border-[#8AD5B7]/50 " +
+    "lg:py-1.5";
 
   return (
-    <div className="bg-brand-gray1 text-[#DCE2E2] py-10  lg:pb-0 lg:pt-10">
-      <div className="w-full lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto">
-        {/* Top Section - Menu Columns and Subscription Form */}
-        <div className="px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
-          {/* Menu Columns - Responsive Grid Layout */}
-          <div className="w-full lg:w-[70%] grid grid-cols-2 lg:grid-cols-3 gap-8">
-            {menu.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-lg font-bold mb-4">{section.title}</h3>
-                <ul className="space-y-2 text-[#b9c0bf]">
-                  {section.links.map((link, index) => (
-                    <li
-                      key={index}
-                      className="hover:text-[#DCE2E2] transition duration-300 flex gap-2 font-semibold items-center text-sm"
-                    >
-                      <DotIcon />
-                      <button
-                        onClick={() => {
-                          Router.push(link.href);
-                        }}
-                        className="cursor-pointer text-left md:text-center"
-                      >
-                        {link.name}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+    <footer className="bg-[#1E2322] text-[#E8EEEC]">
+      <div className="mx-auto w-full max-w-[100vw] px-4 pt-10 pb-6 sm:px-5 lg:w-[980px] lg:px-0 lg:pt-14 lg:pb-8 xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px]">
+        <div className="rounded-2xl bg-[#2E3734] px-4 py-8 shadow-lg shadow-black/20 sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-14">
+          <div className="flex flex-col gap-9 lg:flex-row lg:gap-12 lg:justify-between">
+            <div className="shrink-0 lg:max-w-[min(100%,380px)]">
+              <Link href="/" className="inline-block w-full sm:w-[74px]">
+                <CustomImage
+                  src="/pics/LOGO.png"
+                  alt="PBS Proactive Building Solutions"
+                  width={220}
+                  height={80}
+                  className="h-auto w-[min(100%,200px)] sm:w-[200px]"
+                />
+              </Link>
+              <p className="mt-5 max-w-prose text-sm leading-relaxed text-[#C5D0CC] font-poppins sm:mt-6">
+                Protect your investments with NYC&apos;s premier property management and alert service,
+                designed to keep you ahead of violations, deadlines, and zoning changes
+              </p>
+              <a
+                href={`${API_URL}/portal/login`}
+                className="mt-7 inline-flex w-full min-h-12 items-center justify-center rounded-full bg-[#8AD5B7] px-8 py-3 text-sm font-semibold uppercase tracking-wide text-[#1E2322] transition-colors hover:bg-[#7bc9a9] font-conthrax sm:mt-8 sm:w-auto sm:min-h-0"
+              >
+                Login portal
+              </a>
+            </div>
+
+            <div className="grid min-w-0 flex-1 grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-10">
+              {linkColumns.map((column, colIndex) => (
+                <nav
+                  key={colIndex}
+                  aria-label={`Footer ${sectionLabels[colIndex]}`}
+                  className={colIndex === 2 ? "md:col-span-2 lg:col-span-1" : undefined}
+                >
+                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#89A096] font-poppins">
+                    {sectionLabels[colIndex]}
+                  </p>
+                  <ul className="flex flex-col items-start gap-0.5 lg:gap-1">
+                    {column.map((item) => (
+                      <li key={item.href + item.name}>
+                        <Link href={item.href} className={footerLinkClass}>
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              ))}
+            </div>
           </div>
 
-          {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
-          <div className="w-full lg:w-[30%] flex flex-col items-center md:items-start mx-auto my-8 md:block">
-            <h3 className="text-2xl font-semibold mb-4 text-center">
-              Subscribe
-            </h3>
-            <p className="text-[#DCE2E2] mb-4 font-semibold text-sm text-center">
-              Join our community to receive updates
-            </p>
-            {/* Email Subscription Form */}
-            <form onSubmit = {(e)=>handleSubmit(e)} className="relative overflow-hidden flex justify-center items-center w-full  lg:max-w-md " suppressHydrationWarning>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) =>{ 
-                  setEmail(e.target.value)
-                  setResult('')
-                }}
-                placeholder="Enter your email"
-                className="flex text-base px-4 py-2 rounded-2xl bg-white text-[#7A8E85] focus:outline-none w-5/6 md:w-4/6 lg:w-full"
-                aria-label="Email address"
-                required
-                suppressHydrationWarning
-              />
-              <button
-                type="submit"
-                className="absolute right-6 md:right-16 lg:right-0 w-2/5 lg:w-[50%] xl:w-2/5 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-2xl hover:bg-[#8AD5B7] transition duration-300"
-                suppressHydrationWarning
-              >
-                Subscribe
-              </button>
-            </form>
-            {result && <div className="text-sm font-semibold text-[#8AD5B7] mt-2 text-center">{result}</div>}
-            <p className="text-sm font-semibold text-[#DCE2E2] mt-2 text-center">
-              By subscribing, you agree to our Privacy Policy
-            </p>
-          </div>
-        </div>
-
-        {/* Divider - Visual separator between top and bottom sections */}
-        <div className="border-t border-gray-700 my-4"></div>
-
-        {/* Bottom Section - Logo, Copyright, and Privacy Links */}
-        <div className="px-8 flex flex-col md:flex-row justify-between items-center">
-          {/* Logo - Hidden on mobile, visible on larger screens */}
-          <div className="flex items-center gap-4 mb-4 md:mb-0 md:block pb-4">
-            <CustomImage
-              src="/pics/LOGO.png"
-              alt="Logo"
-              width={100}
-              height={100}
-              className="w-[80px]"
-            />
-          </div>
-
-          {/* Copyright Notice - Automatically updates with current year */}
-          <p className="text-center text-sm text-[#b9c0bf] font-semibold">
-            © {currentYear} PBS NYC. All rights reserved
-          </p>
-
-          {/* Social Icons - Commented out but preserved for future use
-            <div className="flex items-center gap-4 text-[#b9c0bf]">
+          <div className="mt-9 grid grid-cols-1 gap-8 border-t border-white/10 pt-9 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6 lg:mt-12 lg:flex lg:flex-row lg:flex-wrap lg:items-start lg:justify-between lg:gap-x-6 lg:gap-y-4 lg:pt-10">
+            <div className="flex gap-3 sm:col-span-2 lg:col-auto">
               <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:text-[#DCE2E2] transition duration-300"
+                href="https://www.linkedin.com/company/pbsnycofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="PBS NYC on LinkedIn"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/25 text-[#DCE2E2] transition-colors hover:border-[#8AD5B7] hover:text-[#8AD5B7]"
               >
-                <i className="fab fa-facebook-f"></i>
+                <Linkedin className="h-[18px] w-[18px]" strokeWidth={1.75} />
               </a>
               <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:text-[#DCE2E2] transition duration-300"
+                href="https://www.youtube.com/@ProactiveBuildingSolutions"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="PBS NYC on YouTube"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/25 text-[#DCE2E2] transition-colors hover:border-[#8AD5B7] hover:text-[#8AD5B7]"
               >
-                <i className="fab fa-twitter"></i>
+                <Youtube className="h-[18px] w-[18px]" strokeWidth={1.75} />
               </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="hover:text-[#DCE2E2] transition duration-300"
-              >
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="hover:text-[#DCE2E2] transition duration-300"
-              >
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div> */}
+            </div>
 
-          {/* Privacy Links - Terms, Privacy, and Cookie policies */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[#7A8E85] mt-4 md:mt-0">
-            <a
-              href="/privacy-policy"
-              className="hover:text-[#DCE2E2] transition duration-300"
-              aria-label="View Privacy Policy"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/terms-of-service"
-              className="hover:text-[#DCE2E2] transition duration-300"
-              aria-label="View Terms of Service"
-            >
-              Terms & Conditions
-            </a>
-            <a
-              href="/cookies-policy"
-              className="hover:text-[#DCE2E2] transition duration-300"
-              aria-label="View Cookie Policy"
-            >
-              Cookie Policy
-            </a>
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#89A096] font-poppins">
+                Contact number
+              </p>
+              <a
+                href="tel:2122716837"
+                className="mt-1 block text-sm text-[#E8EEEC] transition-colors hover:text-[#8AD5B7] font-poppins"
+              >
+                212-271-6837
+              </a>
+            </div>
+
+            <div className="min-w-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#89A096] font-poppins">
+                Email
+              </p>
+              <a
+                href="mailto:info@pbs.nyc"
+                className="mt-1 block text-sm text-[#E8EEEC] transition-colors hover:text-[#8AD5B7] font-poppins break-all"
+              >
+                info@pbs.nyc
+              </a>
+            </div>
+
+            <div className="min-w-0 sm:col-span-2 lg:col-auto lg:max-w-[260px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#89A096] font-poppins">
+                Address
+              </p>
+              <p className="mt-1 text-sm leading-snug text-[#E8EEEC] font-poppins">
+                22 E 41st Street, Third Floor
+                <br />
+                New York, NY 10017
+              </p>
+            </div>
           </div>
         </div>
+
+        <p className="px-4 pb-6 pt-3 text-center text-xs text-[#7A8E85] font-poppins sm:pb-8 sm:text-sm lg:px-0">
+          © {currentYear} PBS NYC. All rights reserved
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
