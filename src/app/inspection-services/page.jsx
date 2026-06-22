@@ -80,7 +80,7 @@ const inspectionServicesSchema = {
       inLanguage: "en-US",
     },
     {
-      "@type": ["WebPage", "ServicePage"],
+      "@type": "WebPage",
       "@id": WEBPAGE_ID,
       url: PAGE_URL,
       name: "NYC Inspection Services | Local Law 11, 126, 152 Compliance | PBS",
@@ -98,6 +98,18 @@ const inspectionServicesSchema = {
       mainEntity: {
         "@id": MAIN_SERVICE_ID,
       },
+      mentions: [
+        {
+          "@type": "GovernmentOrganization",
+          name: "New York City Department of Buildings",
+          alternateName: "DOB",
+        },
+        {
+          "@type": "GovernmentOrganization",
+          name: "New York City Fire Department",
+          alternateName: "FDNY",
+        },
+      ],
       inLanguage: "en-US",
     },
     {
@@ -159,28 +171,17 @@ const inspectionServicesSchema = {
       },
       potentialAction: [
         {
-          "@type": "ContactAction",
+          "@type": "CommunicateAction",
           name: "Get Started Now",
           target: "https://pbs.nyc/contact-us",
         },
         {
-          "@type": "ContactAction",
+          "@type": "CommunicateAction",
           name: "Call Our Inspectors",
           target: "tel:+12122716837",
         },
       ],
-      mentions: [
-        {
-          "@type": "GovernmentOrganization",
-          name: "New York City Department of Buildings",
-          alternateName: "DOB",
-        },
-        {
-          "@type": "GovernmentOrganization",
-          name: "New York City Fire Department",
-          alternateName: "FDNY",
-        },
-      ],
+      
       url: PAGE_URL,
     },
     {
@@ -242,11 +243,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/law/local-law",
     },
     {
@@ -259,11 +256,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/law/local-law-parking",
     },
     {
@@ -276,11 +269,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/law/local-law-parapet",
     },
     {
@@ -293,11 +282,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/law/local-law-152",
     },
     {
@@ -310,11 +295,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Fire Department",
-        alternateName: "FDNY",
-      },
+      
       url: "https://pbs.nyc/inspection-services/sh-inspection",
     },
     {
@@ -327,11 +308,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/inspection-services/elevator-inspection",
     },
     {
@@ -344,11 +321,7 @@ const inspectionServicesSchema = {
         "@id": ORGANIZATION_ID,
       },
       areaServed,
-      mentions: {
-        "@type": "GovernmentOrganization",
-        name: "New York City Department of Buildings",
-        alternateName: "DOB",
-      },
+      
       url: "https://pbs.nyc/inspection-services/boiler-inspection",
     },
   ],
