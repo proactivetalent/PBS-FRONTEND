@@ -149,7 +149,7 @@ export default function OwnerRepresentativeClient() {
           </div>
 
           <div className="w-full flex flex-col items-center justify-center mx-auto gap-3 sm:gap-4 text-base text-[#DCE2E2]/90 font-normal rounded-[20px] p-2 sm:p-3 text-center relative glass-morphism-glow">
-            <h3 className="p-2 sm:p-3 rounded-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center lg:text-left">
+            <h3 className="p-2 sm:p-3 rounded-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl uppercase font-semibold text-[#8AD5B7] font-conthrax text-center lg:text-left">
               Financial Oversight & Savings
             </h3>
             <ul className="w-full self-start list-disc list-outside pl-6 sm:pl-10 space-y-2 text-sm sm:text-base text-[#89A096] font-normal text-left">
@@ -169,7 +169,7 @@ export default function OwnerRepresentativeClient() {
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-start gap-8 sm:gap-12 w-full mt-8 sm:mt-10">
           <div className="flex flex-col justify-center items-start gap-3 sm:gap-4 w-full">
             <div className="w-full lg:w-1/2 flex flex-col items-center justify-center mx-auto mb-10 gap-3 sm:gap-4 text-base text-[#DCE2E2]/90 font-normal rounded-[20px] p-2 sm:p-3 text-center relative glass-morphism-glow">
-              <h3 className="p-2 sm:p-3 rounded-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center w-full">
+              <h3 className="p-2 sm:p-3 rounded-lg text-xl sm:text-2xl md:text-3xl lg:text-4xl uppercase font-semibold text-[#8AD5B7] font-conthrax text-center w-full">
                 Strategic Advocacy
               </h3>
               <ul className="w-full self-start list-disc list-outside pl-6 sm:pl-10 space-y-2 text-sm sm:text-base text-[#89A096] font-normal text-left">
@@ -273,7 +273,7 @@ export default function OwnerRepresentativeClient() {
                 className="w-[120px] sm:w-[180px] lg:w-[220px] h-auto object-contain"
               />
               <div className="w-full text-center lg:text-left">
-                <h3 className="mb-2 sm:mb-3 text-2xl font-semibold text-[#8AD5B7] sm:text-4xl lg:text-5xl font-conthrax">
+                <h3 className="mb-2 sm:mb-3 text-2xl uppercase font-semibold text-[#8AD5B7] sm:text-4xl lg:text-5xl font-conthrax">
                   Our Promise
                 </h3>
                 <p className="text-sm font-normal leading-relaxed text-[#DCE2E2]/90 sm:text-base">

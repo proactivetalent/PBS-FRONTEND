@@ -112,7 +112,7 @@ const Page = () => {
                       />
                     </div>
                     <div className="absolute left-3 sm:left-4 right-3 sm:right-4 bottom-3 z-20 flex items-end justify-between gap-2 sm:gap-3">
-                      <h2 className="text-[#8AD5B7] text-xl sm:text-2xl md:text-3xl font-semibold font-conthrax leading-tight max-w-[70%] sm:max-w-[75%]">
+                      <h2 className="text-[#8AD5B7] text-xl sm:text-2xl md:text-3xl uppercase font-semibold font-conthrax leading-tight max-w-[70%] sm:max-w-[75%]">
                         {service.title}
                       </h2>
                       <CTA2

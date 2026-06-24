@@ -120,7 +120,7 @@ const AboutCompany = () => {
             <div className="relative z-10">
               <img src="/pics/Asset61.png" alt="green man" width={100} className="object-contain h-12 sm:h-16 md:h-20 lg:h-[80px] mb-2 sm:mb-3" />
 
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-2 sm:mb-3">
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase font-conthrax font-semibold text-[#DCE2E2] mb-2 sm:mb-3">
                 What we Specialize in
               </h2>
               <p className="box-border mb-2 sm:mb-3 text-sm sm:text-base font-bold font-poppins text-[#C5D3CD]">Precision Trust vision Transformation</p>
@@ -145,7 +145,7 @@ const AboutCompany = () => {
           <div className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 justify-around bg-[linear-gradient(180deg,rgba(31,31,31,0.4)_0%,rgba(44,44,44,0.4)_20%,rgba(43,43,43,0.4)_24%,rgba(14,14,14,0.4)_62%)] rounded-2xl min-h-[40vh] lg:min-h-[100%] py-6 sm:py-8 lg:py-0">
             <div className="mb-4 sm:mb-6 lg:mb-0">
               <img src="/PBS Assets/homepage/numbers/numbers.png" alt="" className="w-12 sm:w-16 md:w-20 lg:w-[75px] mb-3 sm:mb-4 lg:mb-6" />
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-2 sm:mb-3">
+              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase font-conthrax font-semibold text-[#DCE2E2] mb-2 sm:mb-3">
                 Numbers that matter
               </h2>
             </div>
@@ -212,7 +212,7 @@ const AboutCompany = () => {
 
       {/* Why NYC Trusts PBS? */}
       <div className="px-4 lg:px-0 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-10 sm:py-16 lg:py-20">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center font-conthrax font-semibold text-[#DCE2E2] mb-3">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center uppercase font-conthrax font-semibold text-[#DCE2E2] mb-3">
           Why NYC Trusts PBS?
         </h2>
         {/* Underline heading line */}

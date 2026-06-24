@@ -541,7 +541,7 @@ const Page = () => {
           {!searchQuery && (
             <div className="mb-8 md:mb-12">
               <div className="text-left mb-4">
-                <h3 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-3 font-conthrax">
+                <h3 className="text-xl md:text-2xl uppercase font-bold text-[#DCE2E2] mb-3 font-conthrax">
                   Explore Categories
                 </h3>
                 <p className="text-[#89A096] text-base md:text-lg font-poppins">
@@ -647,13 +647,13 @@ const Page = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2E3734]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
+                  <div className="absolute top-4 right-4">
+                    <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax uppercase rounded-full shadow-lg">
                       {post.category}
                     </span>
                   </div>
 
-                  {/* Date Badge */}
+                  {/* Date Badge
                   <div className="absolute top-4 right-4">
                     <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
                       <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
@@ -661,13 +661,13 @@ const Page = () => {
                         {post.date}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content Container */}
                 <div className="p-6 md:p-8">
                   {/* Title */}
-                  <h2 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
+                  <h2 className="text-xl font-bold text-[#DCE2E2] mb-4 font-poppins leading-tight line-clamp-3 group-hover:text-[#8AD5B7] transition-colors duration-300">
                     {decodeHtmlEntities(post.title)}
                   </h2>
 
@@ -774,7 +774,7 @@ const Page = () => {
           {/* Header Section */}
           <div className="my-8 md:mb-12">
             <div className="mb-6 lg:mb-8">
-              <h2 ref={inspectionHeadingRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#DCE2E2] font-conthrax">
+              <h2 ref={inspectionHeadingRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#DCE2E2] font-conthrax uppercase">
                 INSPECTION SERVICES
               </h2>
               <p className="text-[#89A096] text-lg md:text-xl mt-2 font-poppins">
@@ -786,7 +786,7 @@ const Page = () => {
           {/* Inspection Subcategory Filter Buttons */}
           <div className="mb-12 md:mb-16">
             <div className="text-left mb-8">
-              <h3 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-3 font-conthrax">
+              <h3 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-3 font-conthrax uppercase">
                 Filter by Service Type
               </h3>
               <p className="text-[#89A096] text-base md:text-lg font-poppins">
@@ -872,12 +872,12 @@ const Page = () => {
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax rounded-full shadow-lg">
+                    <span className="inline-block px-3 py-1.5 bg-[#8AD5B7] text-[#1E2322] text-xs font-bold font-conthrax uppercase rounded-full shadow-lg">
                       {post.category}
                     </span>
                   </div>
 
-                  {/* Date Badge */}
+                  {/* Date Badge
                   <div className="absolute top-4 right-4">
                     <div className="flex items-center gap-2 px-3 py-1.5 bg-[#2E3734]/90 backdrop-blur-sm border border-[#8AD5B7]/30 rounded-full">
                       <CalendarDays className="w-3 h-3 text-[#8AD5B7]" />
@@ -885,13 +885,13 @@ const Page = () => {
                         {post.date}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content Container */}
                 <div className="p-6 md:p-8">
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-bold text-[#DCE2E2] mb-4 font-conthrax leading-tight line-clamp-2 group-hover:text-[#8AD5B7] transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-[#DCE2E2] mb-4 font-poppins leading-tight line-clamp-3 group-hover:text-[#8AD5B7] transition-colors duration-300">
                     {decodeHtmlEntities(post.title)}
                   </h3>
 

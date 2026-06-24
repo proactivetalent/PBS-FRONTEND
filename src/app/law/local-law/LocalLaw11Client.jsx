@@ -81,7 +81,7 @@ const Page = () => {
           <span className="bg-[#8AD5B7] uppercase font-poppins w-fit max-w-full rounded-full py-1.5 px-4 sm:px-5 mx-auto -mt-7 sm:-mt-10 relative text-[11px] sm:text-sm md:text-base text-center font-semibold text-[#1E2322]">
               {section01.title}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-[#E4E4E4] font-conthrax text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl uppercase font-semibold text-[#E4E4E4] font-conthrax text-center lg:text-left">
               {section01.heading}
             </h2>
             <p className="text-sm sm:text-base text-[#DFDFDF] text-center lg:text-left">

@@ -41,7 +41,7 @@ const Solutions = () => {
         <div className="w-full mx-auto px-6 md:px-8 lg:px-12 bg-[#1E2322] rounded-[20px] p-10 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] ">
           {/* Heading and Subheading */}
           <div className="text-center mb-12 lg:mb-16">
-            <h1 className="text-3xl lg:text-5xl font-conthrax font-bold text-[#8AD5B7] mb-4">
+            <h1 className="text-3xl lg:text-5xl font-conthrax uppercase font-bold text-[#8AD5B7] mb-4">
               Solutions
             </h1>
             <div className="w-[25%] mx-auto bg-[#8AD5B7] rounded-full h-1 my-3"></div>
@@ -71,7 +71,7 @@ const Solutions = () => {
                     height={100}
                     className="w-[50px] object-cover rounded-xl mb-6"
                   />
-                  <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#DCE2E2] mb-4">
+                  <h3 className="text-xl xl:text-2xl uppercase font-conthrax font-semibold text-[#DCE2E2] mb-4">
                     {item.title}
                   </h3>
                 </div>

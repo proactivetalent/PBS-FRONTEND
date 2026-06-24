@@ -8,14 +8,14 @@ const SERVICE_ID = "https://pbs.nyc/owner-representative#service";
 const BREADCRUMB_ID = "https://pbs.nyc/owner-representative#breadcrumb";
 
 export const metadata = {
-  title: "NYC Owner's Representative | Construction & Capital Project Management | PBS",
+  title: "NYC Owner's Representative | Construction & Capital Management | PBS",
   description:
     "Your advocate for NYC construction projects. PBS acts as your owner's rep, managing budgets, timelines, contractors, and agency approvals to protect your investment.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "NYC Owner's Representative | Construction & Capital Project Management | PBS",
+    title: "NYC Owner's Representative | Construction & Capital Management | PBS",
     description:
       "Your advocate for NYC construction projects. PBS acts as your owner's rep, managing budgets, timelines, contractors, and agency approvals to protect your investment.",
     url: PAGE_URL,
@@ -24,7 +24,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NYC Owner's Representative | Construction & Capital Project Management | PBS",
+    title: "NYC Owner's Representative | Construction & Capital Management | PBS",
     description:
       "Your advocate for NYC construction projects. PBS acts as your owner's rep, managing budgets, timelines, contractors, and agency approvals to protect your investment.",
   },

@@ -30,7 +30,7 @@ const Page = () => {
             <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3 flex flex-col">
               <span className="">The PBS Promise: Six Pillars of Excellence</span>
             </h3>
-            <h1 className="lg:text-4xl text-3xl font-conthrax px-10 text-[#f3f4f6]">
+            <h1 className="lg:text-4xl text-3xl font-conthrax uppercase px-10 text-[#f3f4f6]">
               Principles we hold are Built on Integrity, Driven by Excellence
             </h1>
           </div>
@@ -65,7 +65,7 @@ const Page = () => {
                 {/* Main pillar content card */}
                 <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-[35px] bg-[#1E2322] py-4 px-6 box-border shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="w-full lg:w-[35%] xl:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
-                    <h2 className="text-xl sm:text-2xl xl:text-4xl 2xl:text-5xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
+                    <h2 className="text-xl sm:text-2xl xl:text-4xl 2xl:text-3xl w-full text-center lg:text-left font-semibold font-conthrax uppercase text-[#8AD5B7]">
                       {feature.title}
                     </h2>
                     <p className="w-full text-center lg:text-left text-sm sm:text-base font-semibold text-[#DCE2E2]">

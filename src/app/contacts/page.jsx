@@ -229,7 +229,7 @@ const Page = () => {
           >
             {/* Contact details card */}
             <div className="bg-[#1E2322] w-full h-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax uppercase text-center text-base sm:text-xl md:text-2xl z-20">
                 Contact Us
               </div>
 
@@ -275,7 +275,7 @@ const Page = () => {
 
             {/* Multi-step inquiry form card */}
             <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[85%] 2xl:w-[75%] 3xl:w-[60%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="glass-morphism-glow absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[85%] 2xl:w-[75%] 3xl:w-[60%] rounded-full text-[#DCE2E2] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax uppercase text-center text-base sm:text-xl md:text-2xl z-20">
                 Send us a message
               </div>
 
@@ -316,7 +316,7 @@ const Page = () => {
           >
             {/* Office visit heading card */}
             <div className="w-full bg-[#1E2322] rounded-[16px] p-3 2xl:p-6 flex items-center justify-center">
-              <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center">
+              <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center uppercase">
                 <span className="text-[#DCE2E2] block">Visit our Office</span>
                 Meet Compliance Experts In-Person
               </p>

@@ -60,7 +60,7 @@ const Page = () => {
               <div className="flex justify-center items-center">
                 <img className="w-14 sm:w-16 md:w-20 lg:w-20 h-auto" src="/PBS Assets/About Us/Our Team/CEO.png" alt="CEO" />
               </div>
-              <h2 className="font-conthrax text-base sm:text-lg md:text-xl 3xl:text-2xl font-semibold text-white text-left leading-tight flex-1">Message From Executive Director</h2>
+              <h2 className="font-conthrax uppercase text-base sm:text-lg md:text-xl 3xl:text-2xl font-semibold text-white text-left leading-tight flex-1">Message From Executive Director</h2>
             </div>
 
             {/* CEO Info Section */}
@@ -115,7 +115,7 @@ const Page = () => {
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px]">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/leadership.png" alt="Leadership" />
-                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
+                    <h2 className="font-conthrax uppercase text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Leadership Team</h2>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ const Page = () => {
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px]">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/manager.png" alt="Leadership" />
-                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
+                    <h2 className="font-conthrax uppercase text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Project Managers</h2>
                   </div>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const Page = () => {
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px]">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/admin.png" alt="Leadership" />
-                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
+                    <h2 className="font-conthrax uppercase text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Admin Team</h2>
                   </div>
                 </div>
               </div>
@@ -342,7 +342,7 @@ const Page = () => {
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px]">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/expediting.png" alt="Leadership" />
-                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
+                    <h2 className="font-conthrax uppercase text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Expediting & Compliance</h2>
                   </div>
                 </div>
               </div>
@@ -494,7 +494,7 @@ const Page = () => {
                 <div className="h-[20vh] md:h-[260px] 3xl:h-[275px] w-full max-w-sm lg:max-w-[280px] xl:max-w-[280px] 2xl:max-w-[280px] 3xl:max-w-[310px] 4xl:max-w-[400px] 5xl:max-w-[480px]">
                   <div className="w-full h-full flex flex-col justify-center items-center">
                     <img className="w-[30%] h-auto" src="/PBS Assets/About Us/Our Team/marketing.png" alt="Leadership" />
-                    <h2 className="font-conthrax  text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
+                    <h2 className="font-conthrax uppercase text-xl lg:text-fluid-h3 4xl:leading-tight font-semibold text-white text-center mt-4 mx-6">Marketing Team</h2>
                   </div>
                 </div>
               </div>

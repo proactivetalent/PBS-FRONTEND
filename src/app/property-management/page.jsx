@@ -9,7 +9,7 @@ const BREADCRUMB_ID = "https://pbs.nyc/property-management#breadcrumb";
 
 export const metadata = {
   title:
-    "NYC Property Management Services | Compliance-Focused Portfolio Oversight | PBS",
+    "NYC Property Management Services | Compliance-Focused Portfolio | PBS",
   description:
     "Full-service NYC property management that prioritizes proactive compliance. We handle operations, maintenance, tenant relations, and all agency filings for seamless ownership.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "NYC Property Management Services | Compliance-Focused Portfolio Oversight | PBS",
+      "NYC Property Management Services | Compliance-Focused Portfolio | PBS",
     description:
       "Full-service NYC property management that prioritizes proactive compliance. We handle operations, maintenance, tenant relations, and all agency filings for seamless ownership.",
     url: PAGE_URL,
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "NYC Property Management Services | Compliance-Focused Portfolio Oversight | PBS",
+      "NYC Property Management Services | Compliance-Focused Portfolio | PBS",
     description:
       "Full-service NYC property management that prioritizes proactive compliance. We handle operations, maintenance, tenant relations, and all agency filings for seamless ownership.",
   },

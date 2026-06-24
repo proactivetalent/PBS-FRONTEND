@@ -93,7 +93,7 @@ const AboutPage = () => {
 
           {/* Story text content */}
           <div className="w-full lg:w-[60%] xl:w-[50%] space-y-4 sm:space-y-5 lg:space-y-6 h-auto flex flex-col justify-center">
-            <h2 className="text-2xl sm:text-3xl xl:text-4xl text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2 sm:mb-3 lg:mb-6">
+            <h2 className="text-2xl sm:text-3xl xl:text-4xl uppercase text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2 sm:mb-3 lg:mb-6">
               {story.headline}
             </h2>
             <span className="text-[#DCE2E2] text-sm sm:text-base font-semibold block lg:inline text-center lg:text-left">
@@ -117,7 +117,7 @@ const AboutPage = () => {
         <div className="glass-morphism-glow rounded-[16px] lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left p-4 sm:p-6 lg:p-8 box-border">
           <div className="flex items-start justify-start gap-3">
             <div className="mb-3">
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2 text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold font-conthrax uppercase text-[#8AD5B7] mb-2 text-left">
                 Our Vision
               </h2>
               <p className="text-[#7A8E85] text-sm sm:text-base font-semibold mb-3 text-left">{vision?.tagline}</p>
@@ -148,7 +148,7 @@ const AboutPage = () => {
         <div className="glass-morphism-glow rounded-[16px] lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left p-4 sm:p-6 lg:p-8 box-border">
           <div className="flex items-start justify-start gap-3">
             <div className="mb-3">
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2 text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold font-conthrax uppercase text-[#8AD5B7] mb-2 text-left">
                 Our Mission
               </h2>
               <p className="text-[#7A8E85] font-semibold text-sm sm:text-base text-left">

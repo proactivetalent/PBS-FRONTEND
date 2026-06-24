@@ -442,7 +442,7 @@ const AlertSystemGuidePage = () => {
         <div className="w-full">
           <div className="max-w-7xl mx-auto">
             <div className="text-left mb-12">
-              <h2 ref={moreBlogsHeadingRef} className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax mb-4">
+              <h2 ref={moreBlogsHeadingRef} className="text-3xl md:text-4xl font-bold text-[#DCE2E2] font-conthrax uppercase mb-4">
                 More Blogs Related To This
               </h2>
               <p className="text-[#89A096] font-poppins">

@@ -102,7 +102,7 @@ const FAQS = () => {
             {/* Left Side - Heading */}
             <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax uppercase mb-0 leading-tight text-center lg:text-left">
                   About PBS
                 </h2>
 
@@ -189,7 +189,7 @@ const FAQS = () => {
             {/* Left Side - Heading */}
             <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center ">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax uppercase mb-0 leading-tight text-center ">
                   Compliance Inspection
                 </h2>
               </div>
@@ -275,7 +275,7 @@ const FAQS = () => {
             {/* Left Side - Heading */}
             <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax uppercase mb-0 leading-tight text-center">
                   Alert System
                 </h2>
               </div>
@@ -361,7 +361,7 @@ const FAQS = () => {
             {/* Left Side - Heading */}
             <div className="lg:sticky w-full lg:w-2/5 self-auto lg:self-stretch bg-[#1E2322] rounded-2xl sm:rounded-[16px] p-4 sm:p-6 lg:p-8">
               <div className="h-full w-full text-left flex items-center justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax mb-0 leading-tight text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#8AD5B7] font-conthrax uppercase mb-0 leading-tight text-center lg:text-left">
                   Expediting
                 </h2>
               </div>
@@ -445,7 +445,7 @@ const FAQS = () => {
           {/* Header Banner */}
           <div className="text-center mb-12">
             <div className="inline-block px-8 py-4 bg-[#8AD5B7] backdrop-blur-sm rounded-full">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#37403D] font-conthrax">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#37403D] font-conthrax uppercase">
                 Have any Question? Write us
               </h2>
             </div>
