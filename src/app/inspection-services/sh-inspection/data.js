@@ -25,7 +25,7 @@ export const section01 = {
     title: "Why your building needs this test",
     description:
       "FDNY Code § 903.5 Compliance isn’t Optional, it's mandated by NYC regulations to ensure optimal functionality and safety. Moreover it helps you to avoid fines, Operational Freezes and to ensure FDC pipes hold pressure during fires. Above all it's mandatory for all NYC commercial/residential buildings to get this Test done after 5 years",
-    img: "/pics/sh-inspection-pic2.png",
+    img: "/pics/sh-inspection-pic2.avif",
   };
 
   export const HydrostaticTesting = {
@@ -103,11 +103,11 @@ export const section01 = {
         },
       ],
     },
-    img: "/pics/sh-inspection-pic3.png",
+    img: "/pics/sh-inspection-pic3.avif",
   };
 
   export const whyPBS = {
-    img: "/pics/sh-inspection-pic5.png",
+    img: "/pics/sh-inspection-pic5.avif",
     title: "Why Choose PBS",
     text1:
       "Finding FDNY Certified Professionals is a task for New Yorkers. PBS has all with NYC Department’s certified inspectors Serving in your neighbourhood for 30+ years with fast-pace permitting and success ratio.",

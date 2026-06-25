@@ -19,18 +19,18 @@ export const section01 = {
       "Customization: Alerts are ranked by urgency or department.",
       "Multi-Channel Delivery: Receive alerts via email, SMS, or directly in your portal",
     ],
-    img: "/pics/alert-pic1.png",
+    img: "/pics/alert-pic1.avif",
     imgArray: [
       {
-        img: "/pics/alert-pic10.png",
+        img: "/pics/alert-pic10.avif",
         text: "Coverage:All relevant NYC agencies (DOB, HPD, FDNY, etc.)",
       },
       {
-        img: "/pics/alert-pic3.png",
+        img: "/pics/alert-pic3.avif",
         text: "Customization: Alerts are ranked by urgency or department.",
       },
       {
-        img: "/pics/alert-pic4.png",
+        img: "/pics/alert-pic4.avif",
         text: "Multi-Channel Delivery: Receive alerts via email, SMS, or directly in your portal",
       },
     ],
@@ -57,19 +57,19 @@ export const section2 = {
     items: [
       {
         text: "Address Search: Enter an address for instant results.",
-        img: "/pics/alert-ways-1.png",
+        img: "/pics/alert-ways-1.avif",
       },
       {
         text: "BIN Lookup: Search by building Identification Number (Pull full property histories from DOB records)",
-        img: "/pics/alert-ways-2.png",
+        img: "/pics/alert-ways-2.avif",
       },
       {
         text: "Agent Assistance: Request help from our PBS team",
-        img: "/pics/alert-ways-3.png",
+        img: "/pics/alert-ways-3.avif",
       },
       {
         text: "Bulk Upload: Add multiple properties via CSV for large portfolios.",
-        img: "/pics/alert-ways-4.png",
+        img: "/pics/alert-ways-4.avif",
       },
       // {
       //   text: "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
@@ -101,7 +101,7 @@ export const section3 = {
   },
 
   div3: {
-    img: "/pics/alert-pic6.png",
+    img: "/pics/alert-pic6.avif",
     text1: "Secure, Centralized, Always Available",
     text2:
       "Manage your properties anytime, anywhere from any device as our secure member portal gives you round-the-clock access to:",

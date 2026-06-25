@@ -115,7 +115,7 @@ export const inspectionServices = [
           "Hidden Risks: Like Detectives, We hunt cracks in Facades, Silent Gas Leaks, Crumbling Parapets & Elevator defects before they make headlines",
           "Disaster-proofing: Proactive inspections aren’t just checklists, they’re shields against lawsuits, injuries, and heartache. Sleep Soundly knowing your building is in good hands and your walls won’t weep or collapse",
         ],
-        img: "/pics/Inspection-service-3-1.png"
+        img: "/pics/Inspection-service-3-1.avif"
       },
       {
         headline: "NYC’s Rulebook is thick, Your Headache doesn’t have to be",
@@ -124,7 +124,7 @@ export const inspectionServices = [
           "Zero-stress Submission: Imagine DOB/FDNY paperwork that files itself. We handle the nitty-gritty, you get a golden “Compliant” Stamp.",
         ],
         additionalText: "99% of clients avoid fines by partnering with PBS",
-        img: "/pics/Inspection-service-3-2.png"
+        img: "/pics/Inspection-service-3-2.avif"
       },
       {
         headline: "We Lose Sleep so you don’t have to",
@@ -132,7 +132,7 @@ export const inspectionServices = [
           "Decades in your Corner: Our Licensed Pros have seen it all. 25 years of NYC grit means “We Spot risks others Miss”",
         ],
         additionalText: "PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
-        img: "/pics/Inspection-service-3-3.png"
+        img: "/pics/Inspection-service-3-3.avif"
       },
     ],
     cta: {

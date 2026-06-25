@@ -39,7 +39,7 @@ export default function OwnerRepresentativeClient() {
               className="glass-morphism-glow"
             >
               <Image
-                src="/pics/owner-repre-1.png"
+                src="/pics/owner-repre-1.avif"
                 alt="owner representative"
                 width={500}
                 height={500}

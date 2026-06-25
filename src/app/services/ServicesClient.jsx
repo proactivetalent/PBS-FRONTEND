@@ -210,7 +210,7 @@ const Page = () => {
               </div>
 
               <div className="w-full rounded-[16px] bg-[#1E2322]">
-                <div className="grid grid-cols-1 md:grid-cols-[260px_minmax(0,1fr)] gap-4 sm:gap-6 h-full">
+                <div className="grid grid-cols-1 md:grid-cols-[300px_minmax(0,1fr)] gap-4 sm:gap-6 h-full">
                   <div className="w-full h-[240px] sm:h-[280px] md:h-full overflow-hidden rounded-lg">
                     <Image
                       src={activeSection.image}
@@ -264,7 +264,7 @@ const Page = () => {
           {/* Why PBS image block */}
           <div className="w-full lg:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end justify-center relative mt-1 sm:-mt-6 lg:-mt-32 z-10">
             <Image
-              src="/pics/service-building.png"
+              src="/pics/service-building.avif"
               alt="building"
               width={600}
               height={800}

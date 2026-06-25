@@ -83,7 +83,7 @@ export const section01 = {
   ];
 
   export const whyPBS = {
-    img: "/pics/local-law-parking-pic3.png",
+    img: "/pics/local-law-parking-pic3.avif",
     title: "Why Choose PBS",
     text1:
       "Don't Risk Fines or Compromise Safety, Act Now to secure your property’s failure",

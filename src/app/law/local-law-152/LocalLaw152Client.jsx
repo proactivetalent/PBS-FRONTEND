@@ -48,7 +48,7 @@ const Page = () => {
       <section className="px-4 sm:px-6 md:px-0 pt-8 sm:pt-10 md:pt-16 lg:pt-20 flex flex-col gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-8 sm:py-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 sm:gap-6 lg:gap-10 2xl:justify-center 2xl:gap-16 w-full pb-8 sm:pb-10">
           <Image
-            src="/pics/local-law-152-pic1.png"
+            src="/pics/local-law-152-pic1.avif"
             alt="Inspection Services"
             width={500}
             height={500}
@@ -392,7 +392,7 @@ const Page = () => {
           <h2 className="section-heading-pill">Why it works for you</h2>
 
           <img
-            src="/pics/local-law-152-pic3.png"
+            src="/pics/local-law-152-pic3.avif"
             alt="Inspection Services"
             width={500}
             height={500}

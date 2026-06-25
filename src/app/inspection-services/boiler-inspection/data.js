@@ -133,7 +133,7 @@
   }
 
   export const whyPBS = {
-    img: "/pics/boiler-inspection-pic3.png",
+    img: "/pics/boiler-inspection-pic3.avif",
     title: "Why Choose PBS",
     text1:
       "With over 30+ years of expertise in boiler inspections, PBS is your trusted partner for seamless compliance with NYC’s stringent regulations. Our licensed inspectors combine technical precision with in-depth knowledge of local codes to deliver thorough, efficient inspections that prioritize safety and prevent costly penalties. We go beyond basic checks",

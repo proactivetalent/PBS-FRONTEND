@@ -148,7 +148,7 @@ export const section01 = {
   ]
 
   export const whyPBS = {
-    img: "/pics/local-law-152-pic4.png",
+    img: "/pics/local-law-152-pic4.avif",
     title: "Why Choose PBS",
     text1:
       "At PBS, we believe in safety, integrity, and excellence, values that drive every service we provide. With over 30+ years of experience in NYC building compliance, we combine technical mastery with a client-first approach to ensure your property meets Local Law 152 requirements seamlessly.",

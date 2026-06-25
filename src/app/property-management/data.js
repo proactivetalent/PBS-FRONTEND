@@ -9,13 +9,13 @@ export const section01 = {
     left: "New York City property ownership demands more than just management, it requires a strategic partner who anticipates problems, navigates complexities, and delivers unwavering reliability. At PBS, we go beyond the basics, diving deep into the nuances of NYC’s real estate ecosystem to protect your investment and amplify your returns. PBS as an all in one place stop covers everything about your property through its proactive approach in property management, your compliance guard and violations control.",
     right:
       "At PBS, we don’t just manage properties - we build lasting partnerships. Our mission is to protect your investment, enhance tenant satisfaction, and navigate NYC’s complex regulatory landscape so you don’t have to",
-    img: "/pics/p-management-pic1.png",
+    img: "/pics/p-management-pic1.avif",
   };
 
   export const section2 = {
     heading: "Property Management Services",
     text: "NYC’s fast-paced real estate landscape requires expertise, precision, and local know-how. Our Property Management Service covers a broad range of offerings, making you able to think of expanding your portfolio, we have got you covered in management.",
-    img: "/pics/p-management-pic2.png",
+    img: "/pics/p-management-pic2.avif",
   };
 
   export const compliance_alert = {
@@ -29,19 +29,19 @@ export const section01 = {
     locations: [
       {
         cityName: "Manhattan",
-        cityImage: "/pics/Manhattan.png",
+        cityImage: "/pics/Manhattan.avif",
       },
       {
         cityName: "Brooklyn",
-        cityImage: "/pics/Brooklyn.png",
+        cityImage: "/pics/Brooklyn.avif",
       },
       {
         cityName: "Queens",
-        cityImage: "/pics/Queens.png",
+        cityImage: "/pics/Queens.avif",
       },
       {
         cityName: "Bronx",
-        cityImage: "/pics/Bronx.png",
+        cityImage: "/pics/Bronx.avif",
       },
       // {
       //   cityName: "Staten Island",

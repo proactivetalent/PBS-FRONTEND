@@ -29,7 +29,7 @@ export const section01 = {
         "360° Assessment: We cover every single aspect of your building for facade Code compliance",
         "Visual & Physical Exams: We uncover cracks, spalling, and corrosion",
       ],
-      img: "/pics/local-law-11-pic5.png", // Placeholder image name
+      img: "/pics/local-law-11-pic5.avif", // Placeholder image name
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export const section01 = {
         "Tailored Strategies: where we prioritize repairs by urgency and budget",
         "Network of Vetted Trusted Contractors & Specialists: for Seamless Execution",
       ],
-      img: "/pics/local-law-11-pic3.png", // Placeholder image name
+      img: "/pics/local-law-11-pic3.avif", // Placeholder image name
     },
     {
       id: 3,
@@ -49,12 +49,12 @@ export const section01 = {
         "DOB-Ready Filings: We submit error-free reports electronically, no last minute scrambles",
         "Transparent Tracking: We Monitor your Compliance status in real-time via our Client Portal",
       ],
-      img: "/pics/local-law-11-pic4.png", // Placeholder image name
+      img: "/pics/local-law-11-pic4.avif", // Placeholder image name
     },
   ];
 
   export const whyPBS = {
-    img: "/pics/local-law-11-pic7.png",
+    img: "/pics/local-law-11-pic7.avif",
     title: "Why Choose PBS",
     text: "PBS Handles your Challenges and fix them by taking your pain points on board",
     list1: [

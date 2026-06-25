@@ -221,7 +221,7 @@ const AboutCompany = () => {
         {/* accordian */}
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16">
           <div className="w-full lg:w-auto flex justify-center">
-            <img src="/PBS Assets/homepage/trust/img.png" className="w-full max-w-[680px] h-auto lg:h-[400px] object-cover rounded-xl" alt="" />
+            <img src="/PBS Assets/homepage/trust/img.avif" className="w-full max-w-[680px] h-auto lg:h-[400px] object-cover rounded-xl" alt="" />
           </div>
           <div className="w-full lg:w-[680px] flex-shrink-0"><Accordion type="single" collapsible className="w-full space-y-2 sm:space-y-3">
             {reasons.map((reason, index) => {

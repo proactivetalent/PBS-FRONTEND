@@ -46,7 +46,7 @@ const Page = () => {
       <section className="px-4 sm:px-0 flex flex-col gap-5 sm:gap-6 text-[#DCE2E2] lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto pt-8 sm:pt-20 pb-4 sm:pb-8">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-5 sm:pb-6 lg:pb-10">
           <Image
-            src="/pics/boiler-inspection-pic1.png"
+            src="/pics/boiler-inspection-pic1.avif"
             alt="Inspection Services"
             width={500}
             height={500}

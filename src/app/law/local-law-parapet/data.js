@@ -57,14 +57,14 @@
     text: "Proactive Building Solutions aren’t just about compliance, they’re about preventing disasters before they happen. A small investment today avoids catastrophic costs tomorrow",
     items: [
       {
-        img: "/pics/local-law-parapet-pic3.png",
+        img: "/pics/local-law-parapet-pic3.avif",
         data: {
           title: "NYC-compliant inspections by licensed Experts",
           text: "Our team includes licensed engineers, architects, masons, and DOB-approved inspectors with deep expertise in parapet safety, we identify risks and deliver actionable solutions.",
         },
       },
       {
-        img: "/pics/local-law-parapet-pic4.png",
+        img: "/pics/local-law-parapet-pic4.avif",
         data: {
           title: "Comprehensive Inspection Process",
           text: "We follow NYC’s strict criteria to assess:",
@@ -76,7 +76,7 @@
         },
       },
       {
-        img: "/pics/local-law-parapet-pic5.png",
+        img: "/pics/local-law-parapet-pic5.avif",
         data: {
           title: "Hassle-Free Reporting & Compliance",
           text: "We are detailed NYC-ready reports that include:",
@@ -89,7 +89,7 @@
         },
       },
       {
-        img: "/pics/local-law-parapet-pic6.png",
+        img: "/pics/local-law-parapet-pic6.avif",
         data: {
           title: "Emergency Hazard Mitigation",
           text: "If hazards are found, we:",

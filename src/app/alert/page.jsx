@@ -49,7 +49,7 @@ const Page = () => {
         <div className="w-full rounded-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-[460px_minmax(0,1fr)] gap-4 sm:gap-6 lg:gap-10 items-stretch">
             <div className="w-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px] flex items-center justify-center mix-blend-luminosity">
-              <img src="/pics/alert-img1.png" alt="" className="w-[85%] sm:w-[75%] lg:w-full h-auto object-cover" />
+              <img src="/pics/alert-img1.avif" alt="" className="w-[85%] sm:w-[75%] lg:w-full h-auto object-cover" />
             </div>
 
             <div className="w-full rounded-xl bg-[#1E2322] p-4 sm:p-12 flex flex-col gap-3 sm:gap-4">
@@ -119,7 +119,7 @@ const Page = () => {
         {/* Card 03: Supporting feature snippets */}
         <div className="pt-1 sm:pt-2">
           <img
-            src="/pics/alert-pic2a.png"
+            src="/pics/alert-pic2a.avif"
             alt="Inspection Services"
             width={500}
             height={500}
@@ -193,7 +193,7 @@ const Page = () => {
         <div className="w-full flex flex-col items-center justify-center gap-6 2xl:gap-8">
           <div className="w-full sm:w-[95%] lg:w-[90%] flex flex-col lg:flex-row items-stretch justify-center gap-6 2xl:gap-8 mx-auto glass-morphism-glow mt-8 sm:mt-12 lg:mt-40 mb-8 sm:mb-12 lg:mb-20 rounded-2xl overflow-visible p-4 sm:p-6 lg:p-0">
             <Image
-              src="/pics/alert-pic11a.png"
+              src="/pics/alert-pic11a.avif"
               alt="Inspection Services"
               width={500}
               height={500}
@@ -270,7 +270,7 @@ const Page = () => {
           <div className="w-full flex flex-col">
             <div className="overflow-hidden">
               <img
-                src="/pics/alert/sec03-img1.png"
+                src="/pics/alert/sec03-img1.avif"
                 alt="computer"
                 className="object-contain my-6 w-full"
               />
@@ -321,7 +321,7 @@ const Page = () => {
               <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-5 sm:gap-6 lg:gap-10">
                 <div className="w-full lg:w-[38%] flex items-center justify-center mt-0 sm:-mt-8 lg:-mt-20">
                   <img
-                    src="/pics/alert/sec03-img2.png"
+                    src="/pics/alert/sec03-img2.avif"
                     alt="Custom property inspections"
                     className="w-[80%] sm:w-[72%] lg:w-full h-auto object-contain"
                   />
@@ -353,7 +353,7 @@ const Page = () => {
         <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8 w-full mx-auto my-8 sm:my-12 lg:my-20">
 
           <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-2 section-heading-pill py-3 sm:py-4">
-            <img src="/pics/alert/247.svg" alt="Inspection Services" className="max-h-[68px] sm:max-h-[90px] lg:max-h-[100px] object-contain" />
+            <img src="/pics/alert/247.avif" alt="Inspection Services" className="max-h-[68px] sm:max-h-[90px] lg:max-h-[100px] object-contain" />
             <p>Portal Access: Your Command Center</p>
           </div>
           {/* <Image

@@ -10,7 +10,7 @@ export const services = [
   {
     id: 1,
     title: "Owner Representatives",
-    icon: "/pics/service1.png", 
+    icon: "/pics/service1.avif", 
     description:
       "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization. From liaising with contractors to resolving violations, we simplify complexity.",
     sections: [
@@ -23,7 +23,7 @@ export const services = [
   {
     id: 2,
     title: "Compliance Inspection Services",
-    icon: "/pics/service2.png",
+    icon: "/pics/service2.avif",
     description:
       "Stay ahead of NYC’s stringent building codes with our certified inspections for facades, elevators, gas lines, and fire safety systems.",
     sections: [
@@ -35,7 +35,7 @@ export const services = [
   {
     id: 3,
     title: "Property Management",
-    icon: "/pics/service4.png",
+    icon: "/pics/service4.avif",
     description:
     "End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
     sections: [
@@ -48,7 +48,7 @@ export const services = [
   {
     id: 4,
     title: "Expediting Services",
-    icon: "/pics/service3.png",
+    icon: "/pics/service3.avif",
     description:
       "Fast-track permits and approvals for construction projects, renovations, and system upgrades. PBS expedites the permit approval process, providing clients with a faster route to project completion, eliminating bottlenecks, and ensuring adherence to project timelines.",
     sections: [
@@ -65,7 +65,7 @@ export const sections = [
     id: 1,
     title: "DEP/DOH/DSNY",
     description: `These departments often issue violations based on inspections, environmental data, or public complaints to regulate health, environmental, and sanitation standards in NYC. Failure to respond can lead to escalated enforcement actions, legal complications, or operational halts for buildings and businesses. Staying proactive is crucial in avoiding surprises`,
-    image: "/pics/service-section3.png",
+    image: "/pics/service-section3.avif",
     details: [
       {
         title: "Risks of Non-Compliance",
@@ -92,7 +92,7 @@ export const sections = [
     title: "DOB",
     description: `The DOB maintains strict oversight over all constructions, renovations, and occupancy processes in NYC. From structural work to inspections, even minor oversights can trigger violations. Proper documentation and scheduling are essential for seamless project execution and long-term compliance.`,
     image:
-      "/pics/service section3-2.png",
+      "/pics/service section3-2.avif",
     details: [
       {
         title: "Consequences of overlooking Compliance",
@@ -118,7 +118,7 @@ export const sections = [
     title: "ECB",
     description: `The Environmental Control Board, otherwise known as OATH, handles hearings for over a dozen NYC agencies, including DOB, DOT, FDNY, and more. Many building owners aren’t aware that missing just one hearing can result in default penalties, liens, or added fees. It's essential to have a structured system to track and respond to ECB notices.`,
     image:
-      "/pics/service section-3-3.png",
+      "/pics/service section-3-3.avif",
     details: [
       {
         title: "What Can Go Wrong",
@@ -144,7 +144,7 @@ export const sections = [
     title: "FDNY",
     description: `FDNY Compliance isn’t just legal–it’s about life safety. Fire suppression systems, emergency exits, and alarms must meet evolving codes. The Fire Department has many certificates, permits, and periodic inspection requirements. The department's major requirements include, but are not limited to, a five-year sprinkler flow test, annual backflow inspections, fire alarm approvals, Certificates of Fitness, letters of approval, and Certificates of Corrections.`,
     image:
-      "/pics/service section-3-4.png",
+      "/pics/service section-3-4.avif",
     details: [
       {
         title: "Impact of Non-Compliance",
@@ -170,7 +170,7 @@ export const sections = [
     title: "HPD",
     description: `The Housing Preservation & Development violations often stem from tenant complaints or random inspections. The department emphasizes safe, livable conditions in multifamily housing. HPD requires annual registration with many codes to abide by.`,
     image:
-      "/pics/service section3-5.png",
+      "/pics/service section3-5.avif",
     details: [
       {
         title: "Why It Matters",
@@ -196,7 +196,7 @@ export const sections = [
     title: "DOT",
     description: `The Department of Transportation controls access to public spaces like streets and sidewalks. Whether it's placing a dumpster, installing a scaffold, or fixing a curb, proper DOT permits and compliance documentation are mandatory.`,
     image:
-      "/pics/service section3-6.png",
+      "/pics/service section3-6.avif",
     details: [
       {
         title: "Delays & Fines Without Proper Handling",

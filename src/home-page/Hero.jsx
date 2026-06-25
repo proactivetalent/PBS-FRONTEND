@@ -10,7 +10,7 @@ import HeroCarousel from "@/home-page/HeroCarousel";
 const heroInfo = [
   {
     bg: "/PBS Assets/homepage/herosection/hero-bg.png",
-    img: "/PBS Assets/homepage/herosection/owner.png",
+    img: "/PBS Assets/homepage/herosection/owner.avif",
     text1: "Owner Representative",
     text2: "Simplify your Construction Journey with Expert Oversight",
     text3: "Avoid the stress of managing contractors, budgets, and timelines. Ensure accountability, quality, and compliance for your projects.",
@@ -20,7 +20,7 @@ const heroInfo = [
   },
   {
     bg: "/PBS Assets/homepage/herosection/hero-bg.png",
-    img: "/PBS Assets/homepage/herosection/property.png",
+    img: "/PBS Assets/homepage/herosection/property.avif",
     text1: "Property Management",
     text2: "Hassle-Free Management for Busy Owners",
     text3: "Streamline maintenance, tenant relations, and compliance. Focus on growth, not daily headaches.",
@@ -29,7 +29,7 @@ const heroInfo = [
   },
    {
     bg: "/PBS Assets/homepage/herosection/hero-bg.png",
-    img: "/PBS Assets/homepage/herosection/compliance.png",
+    img: "/PBS Assets/homepage/herosection/compliance.avif",
     text1: "Compliance Inspection Services",
     text2: "All major Inspection services addressed",
     text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",

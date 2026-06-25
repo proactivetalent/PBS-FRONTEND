@@ -71,7 +71,7 @@ const Page = () => {
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 md:gap-10 2xl:gap-16 w-full">
 
           <Image
-            src="/pics/local-law-11-pic1.png"
+            src="/pics/local-law-11-pic1.avif"
             alt="Inspection Services"
             width={500}
             height={500}
@@ -147,7 +147,7 @@ const Page = () => {
         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full glass-morphism-glow py-3 px-6 lg:py-10 lg:px-20 gap-6 lg:gap-12 rounded-[20px]">
           <div className="flex-1 w-full lg:w-[50%] flex flex-col justify-between items-center lg:items-start gap-3 rounded-2xl">
             <Image
-              src="/pics/local-law-11-pic2.png"
+              src="/pics/local-law-11-pic2.avif"
               alt="Inspection Services"
               width={500}
               height={500}
@@ -284,7 +284,7 @@ const Page = () => {
           transition={{ duration: 0.5, delay: 3 * 0.1 }}
         >
           <img
-            src="/pics/local-law-11-pic61.png"
+            src="/pics/local-law-11-pic61.avif"
             alt="Inspection Services"
 
             className="w-full sm:w-[90%] 3xl:w-[75%] object-contain mx-auto"

@@ -129,7 +129,7 @@ const Alerts = () => {
 
             {/* {laptop image section} */}
             <div className="lg:w-[50%] flex items-end justify-end -mr-2 sm:-mr-4 lg:-mr-8 -mb-2 sm:-mb-4 lg:-mb-8 mt-4 lg:mt-0">
-              <img src="/PBS Assets/homepage/alerts/laptop.png" alt="" className="w-full max-w-none object-cover object-right" />
+              <img src="/PBS Assets/homepage/alerts/laptop.avif" alt="" className="w-full max-w-none object-cover object-right" />
             </div>
           </div>
         </div>
