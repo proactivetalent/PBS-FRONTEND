@@ -17,7 +17,7 @@ import BlogContent from "./BlogContent";
  * Generate metadata for SEO
  */
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await fetchPostBySlug(slug);
 
   if (!post) {
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }) {
  * Fetches data on the server and renders SEO-friendly HTML
  */
 export default async function BlogPostPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // Fetch post data on the server
   const post = await fetchPostBySlug(slug);

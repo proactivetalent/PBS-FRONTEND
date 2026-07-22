@@ -5,12 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Building, Dot, DotIcon, HomeIcon, ReceiptText } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import CTA2 from "@/components/CTA2";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import WhyNycTrustsBento from "./WhyNycTrustsBento";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,16 +89,6 @@ const AboutCompany = () => {
     "Owner Representation",
     "Portfolio Management",
     "Consultancy over your Projects",
-  ];
-
-  const reasons = [
-    "30+ years of Combined expertise: Decades of hands-on experience in industry for navigating NYC’s Complex & ever-evolving  Building Codes, zoning Laws, and permit processes.",
-    "360° Compliance Guardrails: Full-spectrum code adherence, from design to final inspection, ensuring no detail slips through cracks, streamlined services covering your needs for code regulations.",
-    "Pre-inspection audits: Identification and resolving of compliance gaps before official inspections to guarantee first-time approval.",
-    "Real-time documentations: Digital tracking of permits, revisions, and approvals for full transparency and audit readiness.",
-    "End-to-End Solutions: From blueprint reviews to occupancy certificates, handling every step to save time and stress.",
-    "Proactive Approach: We anticipate challenges, mitigate risks, and adapt to regulatory changes before they impact your project.",
-    "Numbers that matter: It's an honour to achieve these numbers. 1453 Properties Monitored. 9852 Corrected Violations. 4,853,018 Square Footage Developed"
   ];
 
   return (
@@ -210,43 +195,7 @@ const AboutCompany = () => {
 
       </div>
 
-      {/* Why NYC Trusts PBS? */}
-      <div className="px-4 lg:px-0 lg:w-[980px] xl:w-[1140px] 2xl:w-[1236px] 3xl:w-[1440px] mx-auto py-10 sm:py-16 lg:py-20">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center uppercase font-conthrax font-semibold text-[#DCE2E2] mb-3">
-          Why NYC Trusts PBS?
-        </h2>
-        {/* Underline heading line */}
-        <div className="w-[50%] sm:w-[40%] lg:w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-6 sm:mb-8"></div>
-
-        {/* accordian */}
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16">
-          <div className="w-full lg:w-auto flex justify-center">
-            <img src="/PBS Assets/homepage/trust/img.avif" className="w-full max-w-[680px] h-auto lg:h-[400px] object-cover rounded-xl" alt="" />
-          </div>
-          <div className="w-full lg:w-[680px] flex-shrink-0"><Accordion type="single" collapsible className="w-full space-y-2 sm:space-y-3">
-            {reasons.map((reason, index) => {
-              const parts = reason.split(":");
-              const title = parts[0] + (parts.length > 1 ? ":" : "");
-              const content = parts.slice(1).join(":").trim();
-              return (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border border-[#37403D] roundled-xl bg-[#1E2322] data-[state=open]:bg-[#505A56] px-3 sm:px-4 transition-colors rounded-xl"
-                >
-                  <AccordionTrigger className="text-left text-xs sm:text-sm font-extrabold text-[#DCE2E2] hover:text-[#8AD5B7] hover:no-underline">
-                    {title}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-xs sm:text-sm text-[#D9D9D9] pt-2">
-                    {content}
-                  </AccordionContent>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
-          </div>
-        </div>
-      </div>
+      <WhyNycTrustsBento />
     </div>
   );
 };
